@@ -1,0 +1,128 @@
+
+
+/* Main Content */
+.home-section{
+  position: relative;
+  background: #ffffff;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+  overflow-x: hidden;
+  
+}
+.sidebar.open ~ .home-section{
+  transform: translateX(172px);
+  width: calc(100%-250px);
+  
+}
+@media (max-width: 768px) {
+  .sidebar.open ~ .home-section{
+    transform: translateX(172px);
+    width: 100%;
+  }
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+@media (max-width: 430px) {
+  .sidebar.open ~ .home-section{
+    
+    width: 100%;
+  }
+}
+
+
+/* main */
+
+.right{
+    margin-top: 65px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+.right>p{
+    padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+.category{
+    margin-top: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.category>div{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.category>div>img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    position: relative;
+    left: 60px;
+    object-fit: cover;
+}
+.category>div>label{
+    height: max-content;
+    width: 90%;
+    padding: 10px 15px;
+    position: relative;
+    bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    font-size: 13px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-weight: bold;
+}
+#next{
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 80px;
+    
+    background-color: rgb(41, 41, 187);
+    border-radius: 10px;
+    i{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+}
+#next:hover{
+    border: 1px solid rgb(237, 221, 221);
+}
+
+.category>button>i{
+    color: white;
+}
+
+
+.btnnext{
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  margin-right: 30px;
+}
+.btnnext button{
+  padding: 5px 10px;
+  background-color: #12089d;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}

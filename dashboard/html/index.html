@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	<link rel="stylesheet" href="../css/style.css">
+
+	<title>Dasboard</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<span class="text"><div class="mainlogo" ><img src="../images/kikiclicklogo.png"  alt=""></div>
+			</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="../html/index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/viewer.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Viewers</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/poster.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Posters</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/approveads.html">
+					<i class='bx bxs-videos'></i>
+					<span class="text">Approve Ads/Articles</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/advertisement.html">
+					<i class='bx bxs-image'></i>
+					<span class="text">Advertisement</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/reviewadmin.html">
+					<i class='bx bxs-star'></i>
+					<span class="text">Review</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a> -->
+			<a href="#" class="profile">
+				<img src="../images/admin.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>1020</h3>
+						<p>Viewers</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Posters</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>2543</h3>
+						<p>Total Users</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-image' ></i>
+					<span class="text">
+						<h3>559</h3>
+						<p>Brand Ads</p>
+					</span>
+				</li>
+			</ul>
+				 <div id="charts">
+					<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+					<script type="text/javascript">
+					  google.charts.load('current', {'packages':['corechart']});
+					  google.charts.setOnLoadCallback(drawChart);
+				
+					  function drawChart() {
+						var data = google.visualization.arrayToDataTable([
+						  ['Date', 'Posters', 'Viewers'],
+						  ['1-06-2024',  10,      5],
+						  ['2-06-2024',  5,      10],
+						  ['3-06-2024',  4,       20],
+						  ['4-06-2024',  7,      22],
+						  ['5-06-2024',  2,      19],
+  
+  
+						]);
+				
+						var options = {
+						  title: 'Company Performance',
+						  curveType: 'function',
+						  legend: { position: 'bottom' }
+						};
+				
+						var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+				
+						chart.draw(data, options);
+					  }
+					</script>
+					<div id="curve_chart" style="width: 1020px; height: 500px ; margin-top: 20px; border-radius: 10px 10px 0px 0px;"></div>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  <script type="text/javascript">
+		google.charts.load("current", {packages:["corechart"]});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+		  var data = google.visualization.arrayToDataTable([
+			['Categories', 'No of Persons'],
+			['Entertainment',     11],
+			['Education',      2],
+			['Realestate',  2],
+			['Social Media', 2],
+			['Health Care',    7],
+			['Sports',    7],
+			['Electronic',    7],
+			['Tourism',    7],
+			['Brand Promotion',    7],
+			['Restaurant',    7]
+		  ]);
+  
+		  var options = {
+			title: 'Viewers based on Categories',
+			pieHole: 0.4,
+		  };
+  
+		  var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+		  chart.draw(data, options);
+		}
+	  </script>
+	  <div id="donutchart" style="width: 1020px; height: 500px;"></div>
+	  <html>
+	<head>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  <script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+  
+		function drawChart() {
+  
+		  var data = google.visualization.arrayToDataTable([
+		  ['Categories', 'No of Persons'],
+			['Entertainment',     11],
+			['Education',      2],
+			['Realestate',  2],
+			['Social Media', 2],
+			['Health Care',    7],
+			['Sports',    7],
+			['Electronic',    7],
+			['Tourism',    7],
+			['Brand Promotion',    7],
+			['Restaurant',    7]
+		  ]);
+  
+		  var options = {
+			title: 'Posters based on Categories'
+		  };
+  
+		  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  
+		  chart.draw(data, options);
+		}
+	  </script>
+	  <div id="piechart" style="width: 1020px; height: 500px;"></div>
+</div>
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../js/script.js"></script>
+</body>
+</html>

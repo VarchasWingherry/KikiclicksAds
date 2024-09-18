@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer</title>
+    <link rel="stylesheet" href="../css/referals.css">
+    <link rel="stylesheet" href="../css/navviewer.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+    
+  <div class="upper-navbar">
+    <div class="mainlogo"  onclick="window.location.href='../html/kikiclickadshome.html'"><img src="../login_icon/kikiclicklogo.png"  alt=""></div>
+    <div class="search">
+      <!-- <p class="search-bar"><input type="text" placeholder="search..."><i class="fa-solid fa-magnifying-glass"></i></p> -->
+        <a href="../html/viewernotification.html"><i class="fa-solid fa-bell" ></i></a>
+    </div>
+  </div>
+  
+<div class="sidebar">
+<div class="logo-details">
+    <i class="fa-solid fa-bars" id="btn"></i>
+</div>
+<ul class="nav-list">
+  
+  <li>
+    <a href="../html/viewhome.html">
+        <i class="fa-solid fa-house"></i>
+      <span class="links_name">Home</span>
+    </a>
+     <span class="tooltip">Home</span>
+  </li>
+  <li>
+   <a href="../html/viewerprofile.html">
+    <i class="fa-solid fa-user"></i>
+     <span class="links_name">Viewer Profile</span>
+   </a>
+   <span class="tooltip">Viewer Profile</span>
+ </li>
+ <li>
+  <a href="../html/viewadscategory.html">
+    <i class="fas fa-ad"></i>
+    <span class="links_name">View Ads</span>
+  </a>
+  <span class="tooltip">View Ads</span>
+</li>
+ <li>
+   <a href="../html/earnpoints.html">
+    <i class="fa-solid fa-money-bill"></i>
+     <span class="links_name">Earn Points</span>
+   </a>
+   <span class="tooltip">Earn Points</span>
+ </li>
+ <li>
+   <a href="../html/totalearned.html">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+     <span class="links_name">Total Points Earned</span>
+   </a>
+   <span class="tooltip">Total Points Earned</span>
+ </li>
+
+ <li>
+   <a href="../html/coupons.html">
+    <i class="fa-solid fa-tags"></i>
+     <span class="links_name">Coupons</span>
+   </a>
+   <span class="tooltip">Coupons</span>
+ </li>
+ <li>
+   <a href="../html/referals.html">
+    <i class="fa-solid fa-network-wired"></i>
+     <span class="links_name">Refer & Earn</span>
+   </a>
+   <span class="tooltip">Refer & Earn</span>
+ </li>
+ <li class="profile">
+     <div class="profile-details">
+       <img src="../assets/profile.jpg" alt="profileImg">
+       <div class="name_job">
+         <div class="name">sam</div>
+         <div class="job">designer</div>
+       </div>
+     </div>
+     <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
+ </li>
+</ul>
+</div>
+<script src="../js/humberger.js"></script>
+
+<!-- right part -->
+  <section class="home-section">
+    <div class="right">
+        <div class="border">
+            <div class="box">
+                <div class="box1">
+                    <h4>Share the offer with your friends</h4>
+                </div>
+                <div class="box2">
+                    <p> Share your referral link to your friends to get 20% discount when they watch ads.  If they use it, you'll get a 20% reward too!</p>
+                    <h4 class="down">share with friends</h4>
+                </div>
+                <div class="box3">
+                    <div class="icon">
+                        <p><img src="../assets/send.png" alt=""> Invite your friends</p>
+                    </div>
+                    <div class="icon">
+                        <p><i class="fa-solid fa-cart-shopping"></i> Your friends get 20% off their first subscribe</p>
+                    </div>
+                    <div class="icon">
+                        <p><i class="fa-solid fa-tags"></i> You get 20% for every friend that makes a 50% subscription</p>
+                    </div>
+                </div>
+                <!-- <div class="textbox">
+                    <input type="text" placeholder="First Name" class="name"><br>
+                    <input type="text" placeholder="Email" class="email"><br>
+                   <div class="agree">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                   </div>
+                </div> -->
+                <div class="link">
+                    <p> Start Referring</p>
+                </div>
+            </div>   
+            <div class="half">
+                <div class="part">
+                    <h4>Refer History</h4>
+                    
+                </div>
+                <div class="smallboxes">
+                    <div class="small1">
+                        <div class="div">
+                            <p>0</p>
+                            <p>FRIENDS INVITED</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                    <div class="small1">
+                        <div class="div">
+                            <p>0</p>
+                            <p>FRIENDS REFERRED</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                    <div class="small1">
+    
+                        <div><p>&#8377; 0</p>
+                            <p>CREDITS EARNED</p></div>
+                    </div>
+                    <div class="small1">
+                       <div> <p>&#8377; 0</p>
+                        <p>PENDING CREDITS</p></div>
+                    </div>
+                </div>
+                <!-- <div class="pending">
+                    <p>PENDING INVITES(0)</p><hr>
+                </div> -->
+                <!-- <div class="small2">
+                    <h4>GIVE &#8377; 200,GET &#8377; 200</h4>
+                    <p>Get your referral link to give your friends a 20% off discount when they adds subscription.If they use it,we'll reward you with 20% too!</p>
+                    <p class="small3">Or copy your personal link</p>
+                    <div class="small4">
+                    <p>voucherify.io</p>
+                    <img src="copy.png" alt=""></div>
+                    <p class="small5"><b>Or use:</b></p>
+                    <div class="small6">
+                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-brands fa-square-whatsapp"></i>
+                        <i class="fa-brands fa-facebook-messenger"></i>
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </div>
+                </div> -->
+                
+            </div>
+          </div> 
+    </div>
+
+    <!-- footer -->
+     <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
+          <p class="para1"><a href="https://wingherry.com/">Wingherry Technologies Pvt.Ltd.</a></p>
+          <p class="para">"Drive targeted, high-conversion ads effortlessly to boost
+          your business growth."</p>
+          <p class="para">"Viewers effortlessly browse ads, earn points, and convert them to money."</p>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Quick Links</p>
+          <a href="../html/kikiclickadshome.html">Home</a>
+          <a href="../html/aboutus.html">About Us</a>
+          <a href="../html/loginoption.html">Ads</a>
+          <a href="../html/homegetplans.html">Get Plans</a>
+          <a href="../html/contact.html">Contact Us</a>
+          <a href="../html/loginoption.html">Login</a>
+          
+
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Support</p>
+          <a href="../html/termsandconditions.html">Terms & Conditions</a>
+          <a href="../html/privacypolicy.html">Privacy Policy</a>
+          <a href="../html/Copyrightpolicy.html">Copyright Policy</a>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Location</p>
+          <p class="para">KIKICLICK ADS <br>
+                          c/o Wingherry Technologies PVT. LTD. <br>
+                          8-3-235/9, G-11, <br>
+                          Tirumala Residential Flats, <br>
+                          Near Yousufguda Check Post, <br>
+                          Hyderabad, 500045, <br>
+                          Phone: +91 4040174113 <br>
+                          Email: hr@wingherry.com <br>
+          </p>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Follow Us</p>
+          <div>
+            <a href="https://www.facebook.com/profile.php?id=61561994622991"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/kikiclickads"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.instagram.com/kikiclickads/"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.youtube.com/@Kikiclickads"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=919985752406&text=Hai+Madam%2FSir&type=phone_number&app_absent=0"><i class="fa-brands fa-square-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Get in Touch</p>
+          <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
+          </p>
+          <div class="send">
+            <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-container2">
+        <hr class="footer-hr">
+        <p class="copy"> &#169; Wingherry Technology Pvt. Ltd.</p>
+        <p class="copy">2024 All Rights Reserved</p>
+      </div>
+
+    </footer>
+   <!-- footer -->
+     <!-- footer -->
+  </section>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+  
+    closeBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+  
+    searchBtn.addEventListener("click", ()=>{ 
+      sidebar.classList.toggle("open");
+      menuBtnChange(); 
+    });
+  
+
+    function menuBtnChange() {
+     if(sidebar.classList.contains("open")){
+       closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+     }else {
+       closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+     }
+    }
+    </script>
+         
+</body>
+</html>

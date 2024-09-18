@@ -1,0 +1,155 @@
+
+
+/* Main Content */
+.home-section{
+  position: relative;
+  background: #ffffff;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+  overflow-x: hidden;
+  
+}
+.sidebar.open ~ .home-section{
+  transform: translateX(172px);
+  width: calc(100%-250px);
+  
+}
+@media (max-width: 768px) {
+  .sidebar.open ~ .home-section{
+    transform: translateX(172px);
+    width: 100%;
+  }
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+@media (max-width: 430px) {
+  .sidebar.open ~ .home-section{
+    
+    width: 100%;
+  }
+}
+
+  
+
+  
+  
+/* right */
+.home-section {
+   overflow: hidden;
+   flex-direction: column;
+   padding: 1.5%;
+   margin-top: 50px;
+ }
+ .right {
+   background-color: #fff;
+   border: 1px solid #d2d2d2;
+   border-radius: 8px;
+   padding: 10px 15px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+ }
+
+.container{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   gap: 15px;
+ }
+ 
+ .card {
+   border: 0.5px solid rgb(203, 203, 203);
+   background-color: rgb(234, 234, 234);
+   padding: 10px 10px;
+   position: relative;
+   --mask:
+   radial-gradient(8.16px at 50% 11.2px,#000 99%,#0000 101%) calc(50% - 14px) 0/28px 51% repeat-x,
+   radial-gradient(8.16px at 50% -4.2px,#0000 99%,#000 101%) 50% 7px/28px calc(51% - 7px) repeat-x,
+   radial-gradient(8.16px at 50% calc(100% - 11.2px),#000 99%,#0000 101%) 50% 100%/28px 51% repeat-x,
+   radial-gradient(8.16px at 50% calc(100% + 4.2px),#0000 99%,#000 101%) calc(50% - 14px) calc(100% - 7px)/28px calc(51% - 7px) repeat-x;
+   -webkit-mask: var(--mask);
+         mask: var(--mask);
+   
+ }
+
+ .main,
+ .copy-button {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 10px;
+   align-items: center;
+ }
+ 
+ .co-img img {
+   padding-top: 10px;
+   width: 60px;
+   width: clamp(40px,3vw,60px);
+   
+ }
+ .vertical {
+   border-left: 3px dotted black;
+   height: 60px;
+   text-align: left;
+   
+ }
+ 
+ .content h1 {
+   font-size: 14px;
+   font-size: clam(8px,3vw,14px);
+   text-align: left;
+   color: #565656;
+ }
+ 
+ .content h1 span {
+   font-size: 12px;
+   font-size: clamp(8px,3vw,12px);
+ }
+ .content h2 {
+   font-size: 14px;
+   font-size: clamp(8px,3vw,14px);
+   color: #565656;
+   text-transform: uppercase;
+ }
+ 
+ .content p {
+   font-size: 10px;
+   font-size: clamp(8px,3vw,10px);
+   color: #696969;
+   
+ }
+ 
+ .copy-button {
+   margin: 2px 0 8px 0;
+   height: 25px;
+   border-radius: 4px;
+   padding: 0 5px;
+   border: 1px solid #e1e1e1;
+   font-size: clamp(5px,3vw,10px);
+ }
+ 
+ .copy-button input {
+   width: 100%;
+   height: 100%;
+   border: none;
+   outline: none;
+   font-size: 12px;
+   font-size: clamp(8px,3vw,12px);
+ }
+ 
+ .copy-button button {
+   padding: 0px 20px;
+   background-color: #dc143c;
+   color: #fff;
+   border: 1px solid transparent;
+   cursor: pointer;
+ }
+ .copy-button button:hover {
+  background-color: #d10632;
+ }
+
+
+ 

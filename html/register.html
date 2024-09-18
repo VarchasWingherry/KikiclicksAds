@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewer Register</title>
+    <link rel="stylesheet" href="../css/viewregister.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="right">
+            <img src="../login_icon/signup.jpg" alt="">
+        </div>
+
+        <div class="left">
+            <div class="first">
+                <h1>KIKICLICK/ADS</h1> 
+                <!-- <p>viewer</p> -->
+                <a href="../html/kikiclickadshome.html"><i class="fa-solid fa-arrow-left-long"></i>Go to Home</a>
+            </div>
+            <div class="middle">
+                <!-- <h1>Welcome Back</h1> -->
+                <div class="login-links">
+                    <a href="../html/login.html">Login</a>
+                    <a href="" class="no">Register</a>
+                </div>
+                <div class="social">
+                    <p><img src="../social/google.png" alt=""></p>
+                    <p><img src="../social/facebook.png" alt=""></p>
+                    <p><img src="../social/instagram.png" alt=""></p>
+                    <p><img src="../social/twitter.png" alt=""></p>
+                </div>
+                <div class="or">
+                    <p>Or continue with</p>
+                </div>
+                <!-- <form action="">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <div class="remember">
+                        <p><input type="checkbox" > Remember me</p>
+                        <a href="">Recover Password</a>
+                    </div>
+                    <a class="btn" href="">Login</a>
+                    
+                </form> -->
+                <form id="registerForm" onsubmit="return validateForm()">
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password', this)"></i>
+                    </div>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirmPassword', this)"></i>
+                    </div>
+                    <!-- <div class="remember">
+                        <p><input type="checkbox">Remember</p>
+                        <a href="">Recover Password</a>
+                    </div> -->
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+            <div class="last">
+                <p>Login as</p>
+                <div class="recent">
+                    <div class="logged">
+                        <img src="../social/man.png" alt="">
+                        <p><b>Name</b></p>
+                        <p>Active 1 day ago</p>
+                    </div>
+                    <div class="logged">
+                        <img src="../social/man.png" alt="">
+                        <p><b>Name</b></p>
+                        <p>Active 4 day ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <script>
+        function togglePasswordVisibility(inputId, toggleIcon) {
+            const passwordInput = document.getElementById(inputId);
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            toggleIcon.classList.toggle('fa-eye-slash');
+        }
+
+        function validateForm() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (fullName.trim() === '') {
+                alert('Full Name is required');
+                return false;
+            }
+
+            if (email.trim() === '') {
+                alert('Email is required');
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false;
+            }
+
+            alert('Registration successful');
+            return true;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+
+.main {
+    /* margin: 10px;
+    padding: 10px; */
+    max-width: 800px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    
+    
+}
+.active{
+    color: rgb(0, 160, 213);
+    font-weight: 500;
+    
+}
+.tab .tabhead{
+    background-color: rgb(240, 240, 240);
+    padding:5px 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.category-box{
+    margin: 10px;
+    text-align: left;
+}
+.center{
+    display: flex;
+    justify-content: space-evenly;
+    /* gap: 20px; */
+    width: 100%;
+}
+.promoads {
+    margin-top: 100px;
+    width: 100%;
+}
+.promoads img{
+    width: max-content;
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows flex items to wrap to the next line */
+    gap: 50px;
+    justify-content: center;
+}
+
+.column {
+    flex: 2 3 2; /* Flexibility of columns */
+    display: flex;
+    justify-content: center;
+    
+}
+
+@media (max-width: 800px) {
+    .tab{
+        display: flex;
+        gap: 10px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .promoads{
+        margin-top: 10px;
+    }
+    .column:nth-child(1) {
+        order: 2; /* Move column 1 to the second position */
+        padding: 0;
+        margin: 0;
+    }
+
+    .column:nth-child(3) {
+        order: 3; /* Move column 3 to the third position */
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.ent{
+    margin-bottom: 50px;
+}
+.ads-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    
+}
+.ad-container{
+    width: 600px;
+    
+}
+h1{
+    text-align: center;
+    
+}
+.cat-head{
+    padding: 8px 12px;
+    background-color: lightskyblue;
+    border: 1px solid rgb(87, 184, 216);
+    width: max-content;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.viewimg,
+.viewarticle {
+    display: none;
+    margin: 10px;
+    padding: 10px;
+}
+.viewvideo{
+    
+    margin: 10px;
+    padding: 10px;
+}
+.active {
+    border-bottom: 3px solid black;
+}
+/* for brandpromo */
+.columnpromo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.promoads {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.promoads img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    /* Adjust the position using JavaScript */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure this value is higher than any other z-index on the page */
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    /* margin-top: 40px; */
+    overflow: auto;
+    
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid black;
+    max-width: 800px;
+    width: 90%;
+    max-height:90%;
+    overflow: auto;
+    /* margin: 40px;
+    margin: 10px; */
+    background-color: rgba(255, 255, 255, 0.993);
+    
+    padding: 20px;
+   
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.3);
+    font-weight: 600;
+}
+
+/* design of pop up */
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+.outer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    background-color: rgb(181,219,234);
+    padding: 20px;
+    border-radius: 5px 30px;
+    /* border: 1px solid rgb(89, 207, 247); */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.inner{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+.inner a{
+    text-decoration: none;
+    background-color: rgb(28, 126, 255);
+    color: white;
+    padding: 2px 6px;
+    font-size: 14px;
+    border-radius: 5px 10px;
+    border: 1px solid rgb(0, 71, 204);
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 1.5px;
+}
+.inner a:hover{
+    background-color: rgb(0, 88, 204);
+    transform: scale(1.03);
+    border: 1px solid rgb(0, 71, 204);
+}
+.inner #companyName{
+    font-size: 20px;
+    font-weight: 600;
+}
+#companyDescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 2px 20px;
+    background-color: rgb(255, 222, 160);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}

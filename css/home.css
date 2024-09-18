@@ -1,0 +1,287 @@
+
+body{
+  background-color:white;
+}
+  /* text */
+  .ad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    
+    margin-top: 60px;
+  }
+  .ad div .para{
+    
+    display: inline-block;
+    background-color: green;
+    padding: 5px;
+    border-radius:5px ;
+    color: white;
+    font-size: 14px;
+  }
+  .ad h1{
+    margin-top: 10px;
+    font-size: clamp(26px, 3vw, 34px);
+  }
+  
+  .para{
+    font-size: clamp(8px,2vw,16px);
+  }
+ 
+/* search bar */
+.search-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid gainsboro;
+  
+  border-radius: 4px;
+}
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background-color: #ededed;
+  border-radius: 4px 0px 0px 4px;
+}
+.searchbtn input, .location input, select{
+  border: none;
+  max-width: 150px;
+  width: 100%;
+  padding: 5px 0px;
+  /* padding-left: 2px; */
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+}
+.dropdown select option{
+  max-width: 150px;
+  width: 100%;
+}
+.searchbtn, .dropdown, .location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  gap: 2px;
+  border: 1px solid rgb(211, 211, 211);
+  padding-left: 6px;
+  padding: 6px;
+  border-radius: 4px;
+  
+}
+.searchbtn i, .dropdown i, .location i{
+  font-size: 14px;
+}
+
+.go{
+  background-color: rgba(229, 56, 53, 0.96);
+  border-radius: 0px 4px 4px 0px;
+  color: white;
+  padding: 18px 20px;
+  padding-top: 19px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* search bar */
+ /* post ads */
+ .btn{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+ }
+ .button{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  background-color: rgb(64, 180, 252);
+  border: 4px solid rgb(214, 214, 4);
+  border-radius: 50px;
+  cursor: pointer;
+ }
+ .button .inner{
+  padding: 0;
+  display: flex;
+  gap: 25px;
+  text-align: center;
+  justify-items: center;
+
+ }
+ .inner p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  font-size:clamp(15px,3vw,18px) ;
+ }
+ .inner a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  background-color:rgb(229, 229, 5);
+  border: 1px solid black;
+  padding: 2px 10px 2px 6px;
+  margin-right: 5px;
+  
+  margin: 0;
+  border-radius: 100%;
+ }
+
+/* category */
+ .category-outbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+ }
+ .category-outbox .category-box{
+  border: 1px solid gainsboro;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+ }
+ .category-outbox .category-box:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ .category-box{
+  text-decoration: none;
+ }
+ .category-box .category-img{
+  max-width:50px ;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ .category-img img{
+  max-width: 50px;
+  height: auto;
+ }
+ .category-box .para{
+  font-size: 12px;
+ }
+/* cateogory */
+
+ /* slider */
+ .slider-wrapper {
+  position: relative;
+  z-index: 5;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100%; /* Ensure slides take full width */
+  height: 300px;
+}
+
+.slide img {
+  width: 100%;
+  height:300px;
+  object-fit:scale-down;
+}
+
+/* Position the slider at bottom center */
+.slider-controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure it's above other content */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .slider-container {
+    height: 200px; /* Adjust height as needed */
+  }
+
+  .slide img {
+    height: 200px; /* Adjust height as needed */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+ 
+
+  .button .inner {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .inner a {
+    font-size: 1rem;
+    padding: 2px 5px;
+  }
+
+  
+}
+
+@media only screen and (max-width: 430px) {
+  
+  .inner a{
+    padding:2px px 2px 2px;
+  }
+  /* .category .dropdown{
+    right: 1px;
+  } */
+   .slider-wrapper{
+    margin-top: 30px;
+    margin-bottom: 15px;
+   }
+   .btn{
+    margin-top: 15px;
+   }
+
+   .search-box{
+    display: flex;
+    gap: 6px;
+    border: none;
+   }
+   .go{
+    border-radius: 4px;
+    padding: 8px 30px;
+   }
+}
+

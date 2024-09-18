@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homegetplans.css">
+    <link rel="stylesheet" href="../css/navmain.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Contact Us</title>
+</head>
+<body>
+      <!-- nav bar -->
+      <nav>
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+          <li><a href="../html/kikiclickadshome.html">Home</a></li>
+          <li><a href="../html/aboutus.html">About US</a></li>
+          <li><a href="../html/loginoption.html">Ads</a></li>
+          <li><a href="../html/homegetplans.html">Get Plans</a></li>
+          <li><a href="../html/contact.html">Contact</a></li>
+          <li><a href="../html/loginoption.html" class="login"><div>Login</div></a></li> 
+        </ul>
+        <ul>
+          <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png"  alt=""></a></li>
+          <li class="hideOnMobile"><a href="../html/kikiclickadshome.html">Home</a></li>
+          <li class="hideOnMobile"><a href="../html/aboutus.html">About Us</a></li>
+          <li class="hideOnMobile"><a href="../html/loginoption.html">Ads</a></li>
+          <li class="hideOnMobile"><a href="../html/homegetplans.html">Get Plans</a></li>
+          <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
+          <li class="hideOnMobile"><a href="../html/loginoption.html" class="login"><div>Login</div></a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+      </nav>
+    
+      <script>
+        function showSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'none'
+        }
+      </script>
+       <!-- nav bar end -->
+<div class="right">
+    <div class="head1">
+        <p>Quick & Easy add Posting − Get Quality Applies</p>
+    </div>
+    <div class="head2">
+        <p>Choose Your Plan</p>
+    </div>
+
+    
+
+    <div class="pricing-container">
+
+        <div class="pricing-plan">
+            <div class="plan-header">FREE</div>
+            <div class="plan-box">
+                <div>
+                    <h2>Limited (10 ads)</h2>
+                    <p class="adv">Limited Ads Posting</p>
+                    <p class="price">Free</p>
+                    <p class="price"><span>One Month</span></p>
+                    <p>For All Cities</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>Detailed ad description</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Excel and Search Page</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Excellent customer service</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Branding</li>
+                        
+                    </ul>
+                </div>
+                <div class="button">
+                    <button class="buy-now" onclick="goToNextPage()">USE</button>
+                    <!-- <button class="monthly">USE</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-plan">
+            <div class="plan-header">MONTHLY</div>
+            <div class="plan-box">
+                <div>
+                    <h2>HOT VACANCY</h2>
+                <p class="adv">Advanced Ad Posting</p>
+                <p class="price">₹5,000<br><span>user/Per Month</span></p>
+                <p>For All Cities</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i>Detailed ad description</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excel and Search Page</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excellent customer service</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Branding</li>
+                    
+                </ul>
+                </div>
+                <div class="button">
+                    <button class="buy-now" onclick="goToNextPage()">BUY NOW</button>
+                    <!-- <button class="monthly">MONTHLY</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-plan">
+            <div class="plan-header">HALF YEARLY</div>
+            <div class="plan-box">
+                <h2>PREMIUM</h2>
+                <p class="price">₹10,000<br><span>user/Per Half Year</span></p>
+                <p>For All Cities</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i>Detailed ad description</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excel and Search Page</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excellent customer service</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Branding</li>
+                    
+                </ul>
+                <button class="buy-now" onclick="goToNextPage()">BUY NOW</button>
+                <!-- <button class="monthly">MONTHLY</button> -->
+            </div>
+        </div>
+
+        <div class="pricing-plan">
+            <div class="plan-header">YEARLY</div>
+            <div class="plan-box">
+                <h2>GOLD</h2>
+                <p class="price">₹20,000<br><span>user/Per Year</span></p>
+                <p>For Non-Metro Cities</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i>Detailed ad description</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excel and Search Page</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Excellent customer service</li>
+                    <li><i class="fa-solid fa-circle-check"></i>Branding</li>
+                    
+                </ul>
+                <button class="buy-now" onclick="goToNextPage()">BUY NOW</button>
+                <!-- <button class="monthly">MONTHLY</button> -->
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="last">
+        <div class="heading">
+            <p>Why Choose kikiclick ads?</p>
+        </div>
+        <div class="feature">
+            <div class="box">
+                <div class="image"><img src="../assets/2min.gif" alt=""></div>
+                <p class="para">2 mints to post</p>
+                <p>Quick, easy, and highly optimized ad posting form</p>
+            </div>
+            <div class="box">
+                <div class="image"><img src="../assets/audience.gif" alt=""></div>
+                <p class="para">Attract Audience</p>
+                <p>Reach to over 2 lakhs  talented ads seekers</p>
+            </div>
+            <div class="box">
+                <div class="image"><img src="../assets/30day.png" alt=""></div>
+                <p class="para">30 days visibility</p>
+                <p>Guaranteed quality applications with 30-day ad visibility.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer>
+    <div class="footer-container">
+      <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
+        <p class="para1"><a href="https://wingherry.com/">Wingherry Technologies Pvt.Ltd.</a></p>
+        <p class="para">"Drive targeted, high-conversion ads effortlessly to boost
+        your business growth."</p>
+        <p class="para">"Viewers effortlessly browse ads, earn points, and convert them to money."</p>
+      </div>
+      <div class="footer-links">
+        <p class="foot-head">Quick Links</p>
+        <a href="../html/kikiclickadshome.html">Home</a>
+        <a href="../html/aboutus.html">About Us</a>
+        <a href="../html/loginoption.html">Ads</a>
+        <a href="../html/homegetplans.html">Get Plans</a>
+        <a href="../html/contact.html">Contact Us</a>
+        <a href="../html/loginoption.html">Login</a>
+        
+
+      </div>
+      <div class="footer-links">
+        <p class="foot-head">Support</p>
+        <a href="../html/termsandconditions.html">Terms & Conditions</a>
+        <a href="../html/privacypolicy.html">Privacy Policy</a>
+        <a href="../html/Copyrightpolicy.html">Copyright Policy</a>
+      </div>
+      <div class="footer-links">
+        <p class="foot-head">Location</p>
+        <p class="para">KIKICLICK ADS <br>
+                        c/o Wingherry Technologies PVT. LTD. <br>
+                        8-3-235/9, G-11, <br>
+                        Tirumala Residential Flats, <br>
+                        Near Yousufguda Check Post, <br>
+                        Hyderabad, 500045, <br>
+                        Phone: +91 4040174113 <br>
+                        Email: hr@wingherry.com <br>
+        </p>
+      </div>
+      <div class="footer-links flex">
+        <p class="foot-head">Follow Us</p>
+        <div>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links flex">
+        <p class="foot-head">Get in Touch</p>
+        <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
+        </p>
+        <div class="send">
+          <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-container2">
+      <hr class="footer-hr">
+      <p class="copy"> &#169; Wingherry Technology Pvt. Ltd.</p>
+      <p class="copy">2024 All Rights Reserved</p>
+    </div>
+
+  </footer>
+   <!-- footer end -->
+
+<script>
+    function goToNextPage() {
+            window.location.href = '../html/login.html'; // Replace 'nextPage.html' with the URL of the next page
+        }
+</script>
+</body>
+</html>

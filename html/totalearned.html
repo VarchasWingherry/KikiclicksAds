@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="../css/transactions.css">
+    <link rel="stylesheet" href="../css/navviewer.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <div class="upper-navbar">
+    <div class="mainlogo"  onclick="window.location.href='../html/kikiclickadshome.html'"><img src="../login_icon/kikiclicklogo.png"  alt=""></div>
+    <div class="search">
+      <!-- <p class="search-bar"><input type="text" placeholder="search..."><i class="fa-solid fa-magnifying-glass"></i></p> -->
+        <a href="../html/viewernotification.html"><i class="fa-solid fa-bell" ></i></a>
+    </div>
+  </div>
+  
+<div class="sidebar">
+<div class="logo-details">
+    <i class="fa-solid fa-bars" id="btn"></i>
+</div>
+<ul class="nav-list">
+  
+  <li>
+    <a href="../html/viewhome.html">
+        <i class="fa-solid fa-house"></i>
+      <span class="links_name">Home</span>
+    </a>
+     <span class="tooltip">Home</span>
+  </li>
+  <li>
+   <a href="../html/viewerprofile.html">
+    <i class="fa-solid fa-user"></i>
+     <span class="links_name">Viewer Profile</span>
+   </a>
+   <span class="tooltip">Viewer Profile</span>
+ </li>
+ <li>
+  <a href="../html/viewadscategory.html">
+    <i class="fas fa-ad"></i>
+    <span class="links_name">View Ads</span>
+  </a>
+  <span class="tooltip">View Ads</span>
+</li>
+ <li>
+   <a href="../html/earnpoints.html">
+    <i class="fa-solid fa-money-bill"></i>
+     <span class="links_name">Earn Points</span>
+   </a>
+   <span class="tooltip">Earn Points</span>
+ </li>
+ <li>
+   <a href="../html/totalearned.html">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+     <span class="links_name">Total Points Earned</span>
+   </a>
+   <span class="tooltip">Total Points Earned</span>
+ </li>
+
+ <li>
+   <a href="../html/coupons.html">
+    <i class="fa-solid fa-tags"></i>
+     <span class="links_name">Coupons</span>
+   </a>
+   <span class="tooltip">Coupons</span>
+ </li>
+ <li>
+   <a href="../html/referals.html">
+    <i class="fa-solid fa-network-wired"></i>
+     <span class="links_name">Refer & Earn</span>
+   </a>
+   <span class="tooltip">Refer & Earn</span>
+ </li>
+ <li class="profile">
+     <div class="profile-details">
+       <img src="../assets/profile.jpg" alt="profileImg">
+       <div class="name_job">
+         <div class="name">sam</div>
+         <div class="job">designer</div>
+       </div>
+     </div>
+     <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
+ </li>
+</ul>
+</div>
+<script src="../js/humberger.js"></script>
+  
+
+  <!-- right -->
+  <section class="home-section">
+    
+        <div class="right">
+        <div class="trans">
+            <i class="bi bi-arrow-left"></i>
+            <p>Received Transactions</p>
+        </div>
+        <div class="card">
+            <p class="you">Your transaction</p>
+            <p class="plus"><i class="bi bi-plus"></i>Link Bank</p>
+            <!-- <p class="plus">+ Link Bank</p> -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="heading">ENTER YOUR BANK DETAILS</span>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form action="" id="accdetails-form">
+                <div class="account-details">
+                    <section>
+                        <label for="name">Name as per Bank Account</label>
+                        <input type="text" placeholder="Enter your Name as per you Bank Account" required id="name">
+                    </section>
+                    <section>
+                        <label for="number">Account Number</label>
+                        <input type="number" placeholder="Account Number"required id="number">
+                    </section>
+                    <section>
+                        <label for="re-number">Re-enter Account Number</label>
+                        <input type="number" placeholder="Re-enter Account Number" required id="re-number">
+                    </section>
+                    <section>
+                        <label for="ifsc">IFSC CODE</label>
+                        <input type="text"placeholder="IFSC Code" required id="ifsc">
+                    </section>
+                    <section>
+                        <label for="type">Select Account Type</label>
+                        <select name="" id="type" required>
+                            <option value="" hidden>Select Account Type</option>
+                            <option value="">Savings Account</option>
+                            <option value="">Current Account</option>
+                        </select>
+                    </section>
+                </div>
+                <div class="secured"><i class="fa-solid fa-shield-halved"></i>ALL YOUR BANK DETAILS ARE 100% SAFE</div>
+                <div class="error">Make sure account number are same</div>
+                <div class="link-account">
+                    <input type="submit" value="Link Account">
+                </div>
+            </form>
+        </div>
+    </div>
+        </div>
+        <div class="head">
+          <h3> ADD ACCOUNT TO YOUR KIKICLICK WALLET</h3>
+        </div>
+        <div class="scanner">
+            <div class="scan">
+                <p>Customer<br>VIJAY</p>
+                <div class="box">
+                    <p>ID<br>C13579246810</p>
+                    <p>MEMBER SINCE<br>2024</p>
+                </div>
+                <div class="code">
+                  <h2>Balance: ₹<span id="balance">0.00</span></h2>
+                  <button onclick="withdraw()">Withdraw</button>
+                </div>
+            </div>
+        </div>
+        <div class="outer">
+            <p>Latest Transaction</p>
+            <p class="show">Show All</p>
+        </div>
+        <div class="big">
+            <div class="icon">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <p class="icon1">Payment from varchas<br>Today, 29 Apr at 10:20</p>
+                <p class="icon2">&#8377;8,400</p>
+            </div><hr>
+            <div class="icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p class="icon1">T-shirt purchasing<br>Today, 29 Apr at 10:20</p>
+                <p class="icon2">&#8377;400</p>
+            </div><hr>
+            <div class="icon">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <p class="icon1">Payment from varchas<br>Today, 29 Apr at 10:20</p>
+                <p class="icon2">&#8377;8,400</p>
+            </div><hr>
+        </div>
+      </div>
+      <div class="half">
+        <div class="below">
+            <p>2 adds</p>
+        </div>
+        <div class="hero">
+            <img src="../assets/profile.jpg" alt="Vijay">
+            <p class="hero1">19 Apr<br>Today<br>01:09:44</p>
+        </div>
+        <div class="twenty">
+            <div class="four">
+                <p class="ten">24</p>
+                <p><i class="bi bi-badge-ad"></i>ads</p>
+            </div>
+            <div class="four">
+                <h2><i class="bi bi-gift"></i> Earned Points: <span id="points">0</span></h2>
+                <button onclick="claimPoints()">Claim Points</button>
+            </div>
+        </div>
+        <div class="total">
+            <div class="leftside">
+                <h4>Watch & Get</h4>
+                <p>Get 2 points for every add only valid for today</p>
+                <a href="../html/viewadscategory.html">watch</a>
+            </div>
+            <div class="image">
+                <img src="../assets/watch.png" alt="">
+            </div>
+        </div>
+        <div class="history">HISTORY</div>
+        <div class="text">
+            <p>20 MIN</p>
+            <p>1 ADD</p>
+            <p>123 LIKES</p>
+        </div>
+        <div class="boxes">
+            <div class="smallbox">
+                <p>17 April</p>
+                <p>2 ads</p>
+                <p>120 Points</p>
+            </div>
+            <div class="smallbox">
+                <p>18 April</p>
+                <p>4 ads</p>
+                <p>200 Points</p>
+            </div>
+            <div class="smallbox">
+                <p>19 April</p>
+                <p>4 ads</p>
+                <p>200 Points</p>
+            </div>
+            <div class="smallbox">
+                <p>20 April</p>
+                <p>7 ads</p>
+                <p>500 Points</p>
+            </div>
+        </div>
+      </div>
+    
+    <!-- footer -->
+     
+  </section>
+
+  <section class="home-sections">
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
+          <p class="para1"><a href="https://wingherry.com/">Wingherry Technologies Pvt.Ltd.</a></p>
+          <p class="para">"Drive targeted, high-conversion ads effortlessly to boost
+          your business growth."</p>
+          <p class="para">"Viewers effortlessly browse ads, earn points, and convert them to money."</p>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Quick Links</p>
+          <a href="../html/kikiclickadshome.html">Home</a>
+          <a href="../html/aboutus.html">About Us</a>
+          <a href="../html/loginoption.html">Ads</a>
+          <a href="../html/homegetplans.html">Get Plans</a>
+          <a href="../html/contact.html">Contact Us</a>
+          <a href="../html/loginoption.html">Login</a>
+          
+
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Support</p>
+          <a href="../html/termsandconditions.html">Terms & Conditions</a>
+          <a href="../html/privacypolicy.html">Privacy Policy</a>
+          <a href="../html/Copyrightpolicy.html">Copyright Policy</a>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Location</p>
+          <p class="para">KIKICLICK ADS <br>
+                          c/o Wingherry Technologies PVT. LTD. <br>
+                          8-3-235/9, G-11, <br>
+                          Tirumala Residential Flats, <br>
+                          Near Yousufguda Check Post, <br>
+                          Hyderabad, 500045, <br>
+                          Phone: +91 4040174113 <br>
+                          Email: hr@wingherry.com <br>
+          </p>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Follow Us</p>
+          <div>
+            <a href="https://www.facebook.com/profile.php?id=61561994622991"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/kikiclickads"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.instagram.com/kikiclickads/"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.youtube.com/@Kikiclickads"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=919985752406&text=Hai+Madam%2FSir&type=phone_number&app_absent=0"><i class="fa-brands fa-square-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Get in Touch</p>
+          <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
+          </p>
+          <div class="send">
+            <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-container2">
+        <hr class="footer-hr">
+        <p class="copy"> &#169; Wingherry Technology Pvt. Ltd.</p>
+        <p class="copy">2024 All Rights Reserved</p>
+      </div>
+
+    </footer>
+   <!-- footer -->
+  </section>
+  
+  <script src="../js/wallet.js"></script>
+  <script src="../js/linkbank.js"></script>
+  
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+  
+    closeBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+  
+    searchBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("open");
+      menuBtnChange(); 
+    });
+  
+
+    function menuBtnChange() {
+     if(sidebar.classList.contains("open")){
+       closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+     }else {
+       closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+     }
+    }
+    </script>
+</body>
+</html>

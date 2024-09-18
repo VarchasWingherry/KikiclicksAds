@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="../css/navmain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/joinus.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <!-- nav bar -->
+    <nav>
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+          <li><a href="../html/kikiclickadshome.html">Home</a></li>
+          <li><a href="../html/aboutus.html">About US</a></li>
+          <li><a href="../html/loginoption.html">Ads</a></li>
+          <li><a href="../html/homegetplans.html">Get Plans</a></li>
+          <li><a href="../html/contact.html">Contact</a></li>
+          <li><a href="../html/loginoption.html" class="login"><div>Login</div></a></li> 
+        </ul>
+        <ul>
+          <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png"  alt=""></a></li>
+          <li class="hideOnMobile"><a href="../html/kikiclickadshome.html">Home</a></li>
+          <li class="hideOnMobile"><a href="../html/aboutus.html">About Us</a></li>
+          <li class="hideOnMobile"><a href="../html/loginoption.html">Ads</a></li>
+          <li class="hideOnMobile"><a href="../html/homegetplans.html">Get Plans</a></li>
+          <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
+          <li class="hideOnMobile"><a href="../html/loginoption.html" class="login"><div>Login</div></a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+      </nav>
+    
+      <script>
+        function showSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'none'
+        }
+      </script>
+       <!-- nav bar end -->
+    
+    <!-- <div class="admin">
+        <a href=".././dashboard/html/adminlogin.html" class="admin-login">Admin login</a>
+    </div> -->
+    <div class="container">
+        <p class="join">Join US</p>
+        <div class="ads">
+            <div class="viewads">
+                <img src="../assets/advertisement.png" alt="">
+                <h3>View Ads</h3>
+                <p>Fed up with TV commercials and social media ads that give you nothing in return? With Kikiclick, you can transform your ad-viewing time to a profitable venture!</p>
+                <a class="log" href="../html/login.html">View ADS</a>
+            </div>
+            <div class="postads">
+                <img src="../assets//postads.png" alt="">
+                <h3>Post Ads</h3>
+                <p>Generate additional income by displaying advertisements on your website. These ads are targeted to the right audience, resulting in more clicks and increased sales.</p>
+                <a class="log" href="../html/login.html">Post ADS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
+          <p class="para1"><a href="https://wingherry.com/">Wingherry Technologies Pvt.Ltd.</a></p>
+          <p class="para">"Drive targeted, high-conversion ads effortlessly to boost
+          your business growth."</p>
+          <p class="para">"Viewers effortlessly browse ads, earn points, and convert them to money."</p>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Quick Links</p>
+          <a href="../html/kikiclickadshome.html">Home</a>
+          <a href="../html/aboutus.html">About Us</a>
+          <a href="../html/loginoption.html">Ads</a>
+          <a href="../html/homegetplans.html">Get Plans</a>
+          <a href="../html/contact.html">Contact Us</a>
+          <a href="../html/loginoption.html">Login</a>
+          
+
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Support</p>
+          <a href="../html/termsandconditions.html">Terms & Conditions</a>
+          <a href="../html/privacypolicy.html">Privacy Policy</a>
+          <a href="../html/Copyrightpolicy.html">Copyright Policy</a>
+        </div>
+        <div class="footer-links">
+          <p class="foot-head">Location</p>
+          <p class="para">KIKICLICK ADS <br>
+                          c/o Wingherry Technologies PVT. LTD. <br>
+                          8-3-235/9, G-11, <br>
+                          Tirumala Residential Flats, <br>
+                          Near Yousufguda Check Post, <br>
+                          Hyderabad, 500045, <br>
+                          Phone: +91 4040174113 <br>
+                          Email: hr@wingherry.com <br>
+          </p>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Follow Us</p>
+          <div>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links flex">
+          <p class="foot-head">Get in Touch</p>
+          <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
+          </p>
+          <div class="send">
+            <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-container2">
+        <hr class="footer-hr">
+        <p class="copy"> &#169; Wingherry Technology Pvt. Ltd.</p>
+        <p class="copy">2024 All Rights Reserved</p>
+      </div>
+
+    </footer>
+     <!-- footer end -->
+</body>
+</html>

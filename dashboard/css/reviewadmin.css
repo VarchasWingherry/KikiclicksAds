@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Lato', sans-serif;
+}
+#rating-sections{
+    margin-top: 20px;
+    padding: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    i{
+      color: #f8d406;
+      
+    }
+}
+#commentername{
+  padding: 5px;
+  margin: 10px;
+  width: 90%;
+  max-width: 260px;
+}
+.review-item {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(209, 243, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.review-header .name {
+  font-weight: bold;
+}
+.review-header .date {
+  font-size: 12px;
+  color: gray;
+}
+#rateandcomment{
+    width: 30%;
+    padding: 10px;
+    background-color: rgb(207, 239, 243);
+}
+#rating-done{
+    font-size: 15px;
+    font-weight: 500;
+}
+#rating-done>i{
+    color: #FFD900;
+}
+#comment-done{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+#addreview{
+    width: 40%;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 212, 212);
+}
+#dustbin{
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+}
