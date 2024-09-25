@@ -40,8 +40,11 @@
 
 /* main */
 .right{
+    margin: 20px;
     margin-top: 65px;
-    margin-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+    padding: 10px;
   }
 #main-review{
     font-family: "Poppins" , sans-serif;
@@ -150,7 +153,6 @@
 #rating-sections{
     display: none;
     margin-top: 20px;
-   
     padding: 8px;
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -159,6 +161,13 @@
       color: #f8d406;
       
     }
+}
+#reviews-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px   ;
 }
 #commentername{
   padding: 5px;

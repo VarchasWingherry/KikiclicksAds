@@ -39,18 +39,21 @@
 /* main */
 
 .right{
+    margin: 20px;
     margin-top: 65px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
 }
-.right h4{
-    margin-left: 20px;
-}
+
 
 #view-ads{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     /* align-items: center; */
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     font-family: "Poppins" , sans-serif;
     margin-top: 5px;
 }
@@ -142,13 +145,22 @@
     font-size: 16px;
     font-size: clamp(14px,3vw,16px);
 }
-.notapproved-ads>video{
-    display: none;
+.approved-ads>p{
+  text-align: center;
+
+}
+.notapproved-ads video{
+  width: 100%;
+  max-width: 500px;
+  
+  border-radius: 6px;
 }
 .notapproved-ads img{
-  max-width: 500px;
-  width: 100%;
+  border: 2px solid red;
+  width: 300px;
+  height: 300px;
   border-radius: 6px;
+  object-fit: contain;
 }
 .notapproved-ads>video{
     width: 100%;
@@ -190,10 +202,6 @@
     color: red;
     animation: blinked 3.0s linear infinite;
 
-}
-section p{
-  margin: 15px;
-  padding: 5px;
 }
 
 /* tab */
@@ -287,7 +295,9 @@ section p{
 }
 .cat-div{
   margin-top: 20px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 section{
   margin-bottom: 30px;
