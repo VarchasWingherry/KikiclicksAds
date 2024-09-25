@@ -19,10 +19,6 @@
   
  
 } */
-.sidebar.open ~ .home-section{
-  transform: translateX(172px);
-  width: calc(100%-250px);
-}
 @media (max-width: 768px) {
   .sidebar.open ~ .home-section{
     transform: translateX(172px);

@@ -5,12 +5,7 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
-html{
-  overflow-x: hidden;
-}
-body{
-  overflow-x: hidden;
-}
+
 .upper-navbar {
     background-color: #ffffff;
     padding: 10px 15px;
@@ -69,7 +64,7 @@ body{
   position: fixed;
   left: 0;
   top: 50px;
-  height: 100%;
+  height: calc(100%,-50px);
   width: 78px;
   background:#FBF5F3;
   overflow-x: hidden;
@@ -77,6 +72,10 @@ body{
   z-index: 99;
   transition: all 0.5s ease;
   scrollbar-width: none;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 #sidebar::--webkit-scrollbar {
 	display: none;}
@@ -134,7 +133,6 @@ body{
 }
 .sidebar li{
   position: relative;
-  margin: 6px 0;
   list-style: none;
 }
 .sidebar li .tooltip{

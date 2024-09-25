@@ -20,10 +20,7 @@
   
  
 } */
-.sidebar.open ~ .home-section{
-  transform: translateX(172px);
-  width: calc(100%-250px);
-}
+
 @media (max-width: 768px) {
   .sidebar.open ~ .home-section{
     transform: translateX(172px);
@@ -44,11 +41,9 @@
 /* main */
 .right{
     margin-top: 65px;
-    
-    
+    margin-left: 20px;
   }
 #main-review{
-    padding: 2.5%; 
     font-family: "Poppins" , sans-serif;
 }
 #main-review>h4{

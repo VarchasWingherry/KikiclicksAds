@@ -1,7 +1,6 @@
 
 /* footer */
 footer{
-  margin-top: 30px;
   padding:30px 20px;
   background-color: #36648F; 
   display: flex;
@@ -9,6 +8,7 @@ footer{
   align-items: center;
   flex-direction: column;
   border-radius: 6px;
+  margin: 20px;
 }
 .footer-container{
   display: flex;
@@ -109,14 +109,14 @@ footer{
 /* copy */
 .footer-container2{
   background-color: #36648F;
-  margin-top:20px ;
+  margin:20px ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .footer-container2 .footer-hr {
-  width: 90vw;
+  max-width: 90vw;
   border: none;
   height: 1px;
   background-color: white;
@@ -126,10 +126,10 @@ footer{
 .footer-container2 .copy{
   font-size: 14px;
   color: white;
-  
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .send{
   margin-top: 6px;

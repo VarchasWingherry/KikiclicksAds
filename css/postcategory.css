@@ -20,10 +20,6 @@
   
  
 } */
-.sidebar.open ~ .home-section{
-  transform: translateX(172px);
-  width: calc(100%-250px);
-}
 @media (max-width: 768px) {
   .sidebar.open ~ .home-section{
     transform: translateX(172px);
@@ -44,8 +40,12 @@
 /* main  from here*/
 .right{
     margin-top: 65px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
 }
 .right>p{
     padding: 10px;
@@ -55,7 +55,7 @@
   color: #000000;
 }
 .category{
-    margin-top: 10px; 
+    margin: 20px; 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -91,20 +91,22 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-weight: bold;
 }
+.next{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 #next{
-    position: absolute;
-    right: 20px;
-    height: 40px;
-    width: 80px;
-    
     background-color: rgb(41, 41, 187);
     border-radius: 10px;
+    border: 1px solid rgb(41, 41, 187);
     i{
         color: white;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px;
+        padding: 10px 30px;
     }
 }
 #next:hover{
