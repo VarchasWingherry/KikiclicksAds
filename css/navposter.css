@@ -8,7 +8,7 @@
 
 .upper-navbar {
     background-color: #ffffff;
-    padding: 10px 15px;
+    padding: 10px 25px;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -16,9 +16,13 @@
     left: 0;
     right: 0;
     z-index: 100; 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   }
+  .upper-navbar .menu-bar{
+    display: none;
+  }
+
   .upper-navbar .mainlogo img{
     max-width: 190px;
     width: 100%;
@@ -31,33 +35,21 @@
     justify-content: center;
     align-items: center;
   }
-  
-  .upper-navbar .mainlogo, .search {
-    color: #fff;
-    font-size: 16px;
-    font-size: clamp(14px,3vw,16px);
-    margin-right: 20px;
+  .upper-navbar .notify i{
+    font-size: 20px;
     cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    color: #140551;
   }
-  .upper-navbar .search{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+  .upper-navbar .notify i:hover{
+    background-color: #FBF5F3;
   }
-  
-  .search .search-bar input{
-    border-radius: 8px;
-    margin-right: 5px;
-    outline: none;
-    border: none;
-    padding: 2px 6px;
-    max-width: 110px;
-    width: 100%;
-    border: 1px solid rgb(76, 75, 75);
-  }
-  .search .search-bar input:hover{
-    border: 1px solid black;
+
+  @media (max-width:768px) {
+    .upper-navbar .menu-bar{
+      display: block;
+    }
   }
 
 .sidebar{
@@ -257,4 +249,25 @@
 .sidebar.open .profile #log_out{
   width: 50px;
   background: none;
+}
+@media (max-width:768px) {
+  .sidebar{
+    opacity: 0;
+  }
+  .sidebar #btn{
+    display: none;
+  }
+  .home-section{
+      position: relative;
+      left: 0;
+      max-width: 100%;
+      width: 100%;
+  }
+  .sidebar.open{
+    opacity: 5;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
