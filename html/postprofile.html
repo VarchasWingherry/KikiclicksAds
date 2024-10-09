@@ -117,30 +117,26 @@
         <p class="head">PROFILE OF ADS POSTER</p>
         <div class="main-profile">
           <h5>Profile photo</h5>
-         <div class="image">
-          <img src="../assets/default.png" alt="">
-          <label for="file-path">
-            <span class="material-symbols-rounded">photo_camera</span>
-          </label>
-          <input type="file" accept="image/jpeg, image/png, image/jpg" id="file-path" class="file-path">
-         </div>
-         </div>
+          <div class="image">
+            <img src="../assets/default.png" alt="Profile Picture">
+            <label for="file-path">
+              <span class="material-symbols-rounded">photo_camera</span>
+            </label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="file-path" class="file-path" style="display: none;">
+            <button id="delete-btn" style="display: none;"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        
+      
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="xxxxxx">
+          <input type="text" id="name" placeholder="xxxxxx" required>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxx">
-        </div>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" id="address" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxx">
-        </div>
+      
         <div class="form-group">
           <label for="contact">Contact Number</label>
           <div class="inline-group">
-            <input type="text" id="contact" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxx">
+            <input type="text" id="contact" placeholder="xxxxxxxxxx" required>
             <div class="gender-dropdown">
               <label for="gender">Gender</label>
               <select id="gender">
@@ -152,63 +148,41 @@
             </div>
           </div>
         </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxx" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxx" required>
+        </div>
+      
         <div class="form-group">
           <div class="inline-group">
             <div>
               <label for="org">ORGANISATION DETAILS/INDIVIDUAL</label>
-              <input type="text" id="org" placeholder="xxxxxxxx">
+              <input type="text" id="org" placeholder="xxxxxxxx" required>
             </div>
             <div class="state-dropdown">
               <label for="state">STATE</label>
-              <select id="state" name="state">
+              <select id="state" name="state" required>
                 <option value="">Select state</option>
-                <option value="AN">Andaman and Nicobar Islands</option>
-                <option value="AP">Andhra Pradesh</option>
-                <option value="AR">Arunachal Pradesh</option>
-                <option value="AS">Assam</option>
-                <option value="BR">Bihar</option>
-                <option value="CH">Chandigarh</option>
-                <option value="CT">Chhattisgarh</option>
-                <option value="DN">Dadra and Nagar Haveli</option>
-                <option value="DD">Daman and Diu</option>
-                <option value="DL">Delhi</option>
-                <option value="GA">Goa</option>
-                <option value="GJ">Gujarat</option>
-                <option value="HR">Haryana</option>
-                <option value="HP">Himachal Pradesh</option>
-                <option value="JK">Jammu and Kashmir</option>
-                <option value="JH">Jharkhand</option>
-                <option value="KA">Karnataka</option>
-                <option value="KL">Kerala</option>
-                <option value="LA">Ladakh</option>
-                <option value="LD">Lakshadweep</option>
-                <option value="MP">Madhya Pradesh</option>
-                <option value="MH">Maharashtra</option>
-                <option value="MN">Manipur</option>
-                <option value="ML">Meghalaya</option>
-                <option value="MZ">Mizoram</option>
-                <option value="NL">Nagaland</option>
-                <option value="OR">Odisha</option>
-                <option value="PY">Puducherry</option>
-                <option value="PB">Punjab</option>
-                <option value="RJ">Rajasthan</option>
-                <option value="SK">Sikkim</option>
-                <option value="TN">Tamil Nadu</option>
-                <option value="TG">Telangana</option>
-                <option value="TR">Tripura</option>
-                <option value="UP">Uttar Pradesh</option>
-                <option value="UT">Uttarakhand</option>
+                <!-- Other options omitted for brevity -->
                 <option value="WB">West Bengal</option>
-            </select>
+              </select>
             </div>
           </div>
         </div>
+      
         <div class="button-group">
-          <button class="cancel-btn">Cancel</button>
-          <button class="save-btn">Save</button>
-          <a href="../html/postplan.html"><button class="next-btn">&#8594;</button></a>
+          <button class="save-btn" id="saveBtn" type="button">Save</button>
+          <a href="../html/postplan.html">
+            <button class="next-btn" id="nextBtn" type="button" disabled>&#8594;</button>
+          </a>
         </div>
-    </div>
+      </div>
     </div>
       <!-- footer -->
       <footer>

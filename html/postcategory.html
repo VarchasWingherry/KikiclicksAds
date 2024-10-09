@@ -112,50 +112,71 @@
     <div class="right">
         <p>CATEGORY</p>
         <div class="category">
-            <div>
-                <img src="../assets/entertainment.jpg" alt="">
-                <label for="">ENTERTAINMENT<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/education.jpg" alt="">
-                <label for="">EDUCATION<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/realestate.jpg" alt="">
-                <label for="">REALESTATE<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/socialmedia.jpg" alt="">
-                <label for="">SOCIAL MEDIA<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/health.jpg" alt="">
-                <label for="">HEALTH CARE <input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/sports.jpg" alt="">
-                <label for="">SPORTS<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/electronics.jpg" alt="">
-                <label for="">ELECTRONIC<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/tourism.jpg" alt="">
-                <label for="">TOURISM<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/brandpromotion.jpg" alt="">
-                <label for="">BRAND PROMOTION<input type="checkbox" name="category"></label>
-            </div>
-            <div>
-                <img src="../assets/restaurant.jpg" alt="">
-                <label for="">RESTAURANT<input type="checkbox" name="category"></label>
-            </div>
-            <section class="next">
-              <a href="../html/postads.html" id="next"><i class="fa-solid fa-arrow-right-long"></i></a>
-            </section>
+          <div>
+              <img src="../assets/entertainment.jpg" alt="">
+              <label for="entertainment">ENTERTAINMENT
+                  <input type="radio" name="category" id="entertainment">
+              </label>
           </div>
+          <div>
+              <img src="../assets/education.jpg" alt="">
+              <label for="education">EDUCATION
+                  <input type="radio" name="category" id="education">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/realestate.jpg" alt="">
+              <label for="realestate">REALESTATE
+                  <input type="radio" name="category" id="realestate">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/socialmedia.jpg" alt="">
+              <label for="socialmedia">SOCIAL MEDIA
+                  <input type="radio" name="category" id="socialmedia">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/health.jpg" alt="">
+              <label for="health">HEALTH CARE
+                  <input type="radio" name="category" id="health">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/sports.jpg" alt="">
+              <label for="sports">SPORTS
+                  <input type="radio" name="category" id="sports">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/electronics.jpg" alt="">
+              <label for="electronics">ELECTRONIC
+                  <input type="radio" name="category" id="electronics">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/tourism.jpg" alt="">
+              <label for="tourism">TOURISM
+                  <input type="radio" name="category" id="tourism">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/brandpromotion.jpg" alt="">
+              <label for="brandpromotion">BRAND PROMOTION
+                  <input type="radio" name="category" id="brandpromotion">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/restaurant.jpg" alt="">
+              <label for="restaurant">RESTAURANT
+                  <input type="radio" name="category" id="restaurant">
+              </label>
+          </div>
+          <section class="next">
+              <a href="../html/postads.html" id="next" onclick="checkSelection(event)"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </section>
+      </div>
+      
           
     </div>
     <!-- footer -->
@@ -226,5 +247,6 @@
     </footer>
     <!-- footer -->
   </section>
+  <script src="../js/postcategory.js"></script>
 </body>
 </html>
