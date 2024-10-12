@@ -118,7 +118,7 @@
 .or p{
     font-size: 0.7rem;
 }
-form{
+#registerForm{
     margin: 0px 5px;
     padding: 5px;
     display: flex;
@@ -126,7 +126,7 @@ form{
     max-width: 500px;
     width: 100%;
 }
-form input{
+#registerForm input{
     margin:5px 0px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -137,8 +137,8 @@ form input{
 .password-wrapper{
     position: relative;
     display: flex;
-    align-items: center;
-    
+    /* align-items: center; */
+    flex-direction: column;
 }
 .toggle-password {
     position: absolute;
@@ -283,4 +283,26 @@ input{
             margin: 0px 0px;
         }
     }
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+input.error {
+    border-color: red;
+}
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

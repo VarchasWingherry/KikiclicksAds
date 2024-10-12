@@ -120,7 +120,7 @@
 .or p{
     font-size: 0.7rem;
 }
-form{
+#loginForm{
     margin: 0px 5px;
     padding: 5px;
     display: flex;
@@ -128,7 +128,7 @@ form{
     max-width: 500px;
     width: 100%;
 }
-form input{
+#loginForm input{
     margin:12px 0px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -139,7 +139,6 @@ form input{
 .password-wrapper {
     position: relative;
     display: flex;
-    align-items: center;
 }
 
 .password-wrapper input {
@@ -149,7 +148,7 @@ form input{
 .toggle-password {
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -166,6 +165,7 @@ form input{
         flex-direction: row;
         font-size: 11px;
         margin-right:0px ;
+        gap: 5px;
     }
     p input{
         margin: 0;
@@ -308,4 +308,30 @@ input{
     .form input{
         width: 100%;
     }
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+input.error {
+    border-color: red;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

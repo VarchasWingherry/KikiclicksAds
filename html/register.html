@@ -48,20 +48,24 @@
                     
                 </form> -->
                 <form id="registerForm" onsubmit="return validateForm()">
-                    <input type="text" id="fullName" placeholder="Full Name" required>
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="fullName" placeholder="Full Name" >
+                    <span class="error-message" id="fullNameError"></span>
+                
+                    <input type="email" id="email" placeholder="Email" >
+                    <span class="error-message" id="emailError"></span>
+                
                     <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" >
                         <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password', this)"></i>
+                        <span class="error-message" id="passwordError"></span>
                     </div>
+                
                     <div class="password-wrapper">
-                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" >
                         <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirmPassword', this)"></i>
+                        <span class="error-message" id="confirmPasswordError"></span>
                     </div>
-                    <!-- <div class="remember">
-                        <p><input type="checkbox">Remember</p>
-                        <a href="">Recover Password</a>
-                    </div> -->
+                
                     <button type="submit" class="btn">Register</button>
                 </form>
             </div>
@@ -85,52 +89,89 @@
         
     </div>
     <script>
-        function togglePasswordVisibility(inputId, toggleIcon) {
-            const passwordInput = document.getElementById(inputId);
-            const type = passwordInput.type === 'password' ? 'text' : 'password';
-            passwordInput.type = type;
-            toggleIcon.classList.toggle('fa-eye-slash');
-        }
-
         function validateForm() {
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+    // Clear previous errors
+    clearErrors();
 
-            if (fullName.trim() === '') {
-                alert('Full Name is required');
-                return false;
-            }
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-            if (email.trim() === '') {
-                alert('Email is required');
-                return false;
-            }
+    let valid = true;
 
-            if (!validateEmail(email)) {
-                alert('Please enter a valid email address');
-                return false;
-            }
+    // Validation checks
+    if (fullName === '') {
+        showError('fullName', 'Full Name is required');
+        valid = false;
+    }
 
-            if (password.length < 6) {
-                alert('Password must be at least 6 characters long');
-                return false;
-            }
+    if (email === '') {
+        showError('email', 'Email is required');
+        valid = false;
+    } else if (!validateEmail(email)) {
+        showError('email', 'Please enter a valid email address');
+        valid = false;
+    }
 
-            if (password !== confirmPassword) {
-                alert('Passwords do not match');
-                return false;
-            }
+    if (password === '') {
+        showError('password', 'Password is required');
+        valid = false;
+    } else if (password.length < 6) {
+        showError('password', 'Password must be at least 6 characters long');
+        valid = false;
+    }
 
-            alert('Registration successful');
-            return true;
-        }
+    if (confirmPassword === '') {
+        showError('confirmPassword', 'Confirm Password is required');
+        valid = false;
+    } else if (password !== confirmPassword) {
+        showError('confirmPassword', 'Passwords do not match');
+        valid = false;
+    }
 
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-    </script>
+    if (valid) {
+        alert('Registration successful');
+    }
+
+    return valid; // Prevent form submission if invalid
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function showError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    const errorMessage = document.getElementById(fieldId + 'Error');
+
+    input.classList.add('error'); // Add error class for red border
+    errorMessage.textContent = message; // Set the error message
+    errorMessage.style.display = 'block'; // Show the error message
+}
+
+function clearErrors() {
+    const inputs = document.querySelectorAll('input');
+    const errorMessages = document.querySelectorAll('.error-message');
+
+    inputs.forEach(input => {
+        input.classList.remove('error'); // Remove error class
+    });
+
+    errorMessages.forEach(errorMessage => {
+        errorMessage.textContent = ''; // Clear error message
+        errorMessage.style.display = 'none'; // Hide error message
+    });
+}
+
+function togglePasswordVisibility(fieldId, icon) {
+    const input = document.getElementById(fieldId);
+    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    input.setAttribute('type', type);
+    icon.classList.toggle('fa-eye-slash'); // Change icon to indicate visibility state
+}
+
+ </script>
 </body>
 </html>

@@ -1,188 +1,31 @@
-// function togglePasswordVisibility(inputId, toggleIcon) {
-//     const passwordInput = document.getElementById(inputId);
-//     const type = passwordInput.type === 'password' ? 'text' : 'password';
-//     passwordInput.type = type;
-//     toggleIcon.classList.toggle('fa-eye-slash');
-// }
-
-// function validateLoginForm() {
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
-
-//     if (!validateEmail(email)) {
-//         alert('Please enter a valid email address');
-//         return false;
-//     }
-
-//     if (password.length < 6) {
-//         alert('Password must be at least 6 characters long');
-//         return false;
-//     }
-
-//     alert('Login successful');
-//     return true;
-    
-// }
-// const tempUsername = "user@example.com";
-// const tempPassword = "password123";
-
-// if (email === tempUsername && password === tempPassword) {
-//     alert('Login successful');
-//     // Redirect to home page
-//     window.location.href = "../html/terms.html";
-// } else {
-//     alert('Invalid email or password');
-// }
-// function validateEmail(email) {
-//     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return re.test(email);
-// }
-
-
-
-// function togglePasswordVisibility(inputId, toggleIcon) {
-//     const passwordInput = document.getElementById(inputId);
-//     const type = passwordInput.type === 'password' ? 'text' : 'password';
-//     passwordInput.type = type;
-//     toggleIcon.classList.toggle('fa-eye-slash');
-// }
-
-// function validateLoginForm() {
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
-
-//     if (!validateEmail(email)) {
-//         alert('Please enter a valid email address');
-//         return false;
-//     }
-
-//     if (password.length < 6) {
-//         alert('Password must be at least 6 characters long');
-//         return false;
-//     }
-
-//     const tempUsername = "user@example.com";
-//     const tempPassword = "password123";
-
-//     if (email === tempUsername && password === tempPassword) {
-//         alert('Login successful');
-//         // Redirect to home page
-//         window.location.href = "../html/viewhome.html";
-//     } else {
-//         alert('Invalid email or password');
-//         return false;
-//     }
-// }
-
-// function validateEmail(email) {
-//     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return re.test(email);
-// }
-
-
-// script.js
-
-// function togglePasswordVisibility(inputId, toggleIcon) {
-//     const passwordInput = document.getElementById(inputId);
-//     const type = passwordInput.type === 'password' ? 'text' : 'password';
-//     passwordInput.type = type;
-//     toggleIcon.classList.toggle('fa-eye-slash');
-// }
-
-// function validateLoginForm() {
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
-
-//     if (!validateEmail(email)) {
-//         alert('Please enter a valid email address');
-//         return false;
-//     }
-
-//     if (password.length < 6) {
-//         alert('Password must be at least 6 characters long');
-//         return false;
-//     }
-
-//     const tempUsername = "user@example.com";
-//     const tempPassword = "password123";
-
-//     if (email === tempUsername && password === tempPassword) {
-//         alert('Login successful');
-//         const urlParams = new URLSearchParams(window.location.search);
-//         const redirectUrl = urlParams.get('redirect');
-//         window.location.href = redirectUrl || '../html/viewhome.html';
-//         return false;
-//     } else {
-//         alert('Invalid email or password');
-//         return false;
-//     }
-// }
-
-// function validateEmail(email) {
-//     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return re.test(email);
-// }
-
-// let isLoggedIn = false;  // This should be dynamically set based on actual login status
-
-// document.querySelectorAll('.category-box').forEach(box => {
-//     box.addEventListener('click', function() {
-//         const selectedCategory = this.getAttribute('data-category');
-        
-//         if (isLoggedIn) {
-//             window.location.href = `../html/viewads.html?category=${selectedCategory}`;
-//         } else {
-//             window.location.href = `../html/login.html?redirect=ads.html?category=${selectedCategory}`;
-//         }
-//     });
-// });
-
-
-
-
-
-// login.js
-
-// login.js
-
-let isLoggedIn = false;  // This should be dynamically set based on actual login status
-
-function togglePasswordVisibility(inputId, toggleIcon) {
-    const passwordInput = document.getElementById(inputId);
-    const type = passwordInput.type === 'password' ? 'text' : 'password';
-    passwordInput.type = type;
-    toggleIcon.classList.toggle('fa-eye-slash');
-}
-
 function validateLoginForm() {
-    const email = document.getElementById('email').value;
+    // Clear previous errors
+    clearErrors();
+
+    const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
 
-    if (!validateEmail(email)) {
-        alert('Please enter a valid email address');
-        return false;
+    let valid = true;
+
+    // Validation checks
+    if (email === '') {
+        showError('email', 'Email is required');
+        valid = false;
+    } else if (!validateEmail(email)) {
+        showError('email', 'Please enter a valid email address');
+        valid = false;
     }
 
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters long');
-        return false;
+    if (password === '') {
+        showError('password', 'Password is required');
+        valid = false;
     }
 
-    // Dummy authentication
-    const tempUsername = "user@example.com";
-    const tempPassword = "password123";
-
-    if (email === tempUsername && password === tempPassword) {
+    if (valid) {
         alert('Login successful');
-        isLoggedIn = true;  // Update login status
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectUrl = urlParams.get('redirect');
-        window.location.href = redirectUrl || '../html/viewhome.html';
-        return false;
-    } else {
-        alert('Invalid email or password');
-        return false;
     }
+
+    return valid; // Prevent form submission if invalid
 }
 
 function validateEmail(email) {
@@ -190,3 +33,32 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+function showError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    const errorMessage = document.getElementById(fieldId + 'Error');
+
+    input.classList.add('error'); // Add error class for red border
+    errorMessage.textContent = message; // Set the error message
+    errorMessage.style.display = 'block'; // Show the error message
+}
+
+function clearErrors() {
+    const inputs = document.querySelectorAll('input');
+    const errorMessages = document.querySelectorAll('.error-message');
+
+    inputs.forEach(input => {
+        input.classList.remove('error'); // Remove error class
+    });
+
+    errorMessages.forEach(errorMessage => {
+        errorMessage.textContent = ''; // Clear error message
+        errorMessage.style.display = 'none'; // Hide error message
+    });
+}
+
+function togglePasswordVisibility(fieldId, icon) {
+    const input = document.getElementById(fieldId);
+    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+    input.setAttribute('type', type);
+    icon.classList.toggle('fa-eye-slash'); // Change icon to indicate visibility state
+}
