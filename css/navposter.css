@@ -143,6 +143,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .upper-navbar .notify i{
     font-size: 20px;
@@ -165,7 +166,7 @@
   position: fixed;
   left: 0;
   top: 50px;
-  height: calc(100%,-50px);
+  height: 100vh;
   width: 78px;
   background:#FBF5F3;
   overflow-x: hidden;
@@ -365,6 +366,7 @@
 @media (max-width:768px) {
   .sidebar{
     opacity: 0;
+    height: 100vh;
   }
   .sidebar #btn{
     display: none;

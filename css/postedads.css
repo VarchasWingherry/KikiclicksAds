@@ -3,7 +3,7 @@
 .home-section{
   position: relative;
   background: #ffffff;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   top: 0;
   left: 78px;
   max-width: calc(100% - 78px);
@@ -221,16 +221,8 @@
       gap: 10px;
   }
 }
-.category-box{
-  margin: 10px;
-  text-align: left;
-}
-.center{
-  display: flex;
-  justify-content: space-evenly;
-  /* gap: 20px; */
-  width: 100%;
-}
+
+
 
 .viewimg,
 .viewarticle {
@@ -277,7 +269,7 @@
   flex-direction: column;
   align-items: center;
 }
-section{
+/* section{
   margin-bottom: 30px;
   padding-bottom: 30px;
-}
+} */
