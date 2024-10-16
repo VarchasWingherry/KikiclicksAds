@@ -5,7 +5,116 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+/* notification */
+.main-notification{
+  display: none;
+}
+.notification{
+  overflow-y: auto;
+  position: fixed;
+  z-index: 20;
+  top: 55px;
+  right: 30px;
+  background-color: #FBF5F3;
+  margin: 5px;
+  max-height: 400px;
+  height: 100%;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+  border-radius: 10px;
+  color: #140551;
+}
+.notification::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+.notification::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);        /* color of the tracking area */
+}
 
+.notification::-webkit-scrollbar-thumb {
+  background-color: #088994;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgb(112, 112, 112);  /* creates padding around scroll thumb */
+}
+.notification .notify-heading{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.notification .notify-heading>span{
+  font-size: 16px;
+  padding: 5px;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.notification .single-block{
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  align-items:start ;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px;
+}
+.notification .icon-block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.notification .icon-block>i{
+  background-color: #c1c1c1;
+  padding: 5px;
+  border-radius: 50%;
+}
+.notification .icon-block .red-dot{
+  border: 1px solid red;
+  background-color: red;
+  padding: 3px;
+  border-radius: 50%;
+}
+.red-dot.hidden {
+  display: none;
+}
+
+.notification .single-block .notify-block{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.notify-block .notify-block-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.notify-block-head .notified-heading{
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.notify-block-head>div{
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: grey;
+}
+.single-block .notify-block-body{
+  font-size: 12px;
+}
+
+/* navbar */
 .upper-navbar {
     background-color: #ffffff;
     padding: 10px 25px;
@@ -245,6 +354,9 @@
   line-height: 60px;
   border-radius: 0px;
   transition: all 0.5s ease;
+}
+#log_out{
+  cursor: pointer;
 }
 .sidebar.open .profile #log_out{
   width: 50px;
