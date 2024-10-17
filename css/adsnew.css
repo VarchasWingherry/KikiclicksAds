@@ -39,8 +39,8 @@
 }
 .center{
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
+    /* justify-content: center; */
+    /* border: 1px solid black; */
     /* gap: 20px; */
     width: 100%;
 }
@@ -54,18 +54,18 @@
 }
 .container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 50px;
     width: 100%;
     justify-content: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .column {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* flex: 2 4 2;  */
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
     
 }
 
@@ -107,7 +107,8 @@
     
 }
 .ad-container{
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     
 }
 h1{
@@ -141,8 +142,11 @@ h1{
     position: relative;
     display: flex;
     flex-direction: column;
-    /* justify-content: start; */
-    border: 5px solid black;
+    align-items: flex-start;
+    top: 0;
+    height: 100%;
+    /* border: 5px solid black; */
+   
 }
 
 .promoads {
