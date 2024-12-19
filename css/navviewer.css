@@ -260,3 +260,12 @@ body{
   width: 50px;
   background: none;
 }
+.fa-xmark, .fa-bars{
+  font-size: 22px;
+}
+@media (max-width:400px) {
+  .upper-navbar .mainlogo img{
+    max-width: 180px;
+    width: 100%;
+  }
+}

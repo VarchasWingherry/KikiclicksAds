@@ -111,6 +111,9 @@
   .sidebar a{
     width: 100%;
   }
+  .fa-xmark, .fa-bars{
+    font-size: 22px;
+  }
   .menu-button{
     display: none;
   }
@@ -123,6 +126,11 @@
     }
   }
   @media(max-width: 400px){
+    .mainlogo img{
+      max-width: 180px;
+      width: 100%;
+    }
+
     .sidebar{
       width: 100%;
     }

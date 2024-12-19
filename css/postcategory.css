@@ -50,6 +50,10 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.para{
+  font-size: 14px;
+  margin-left: 10px;
+}
 .category>div{
     height: 200px;
     width: 200px;
@@ -80,26 +84,52 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-weight: bold;
 }
-.next{
+.category {
+  position: relative; /* Ensure the parent element is positioned */
+}
+
+.next {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-#next{
-    background-color: rgb(41, 41, 187);
-    border-radius: 10px;
-    border: 1px solid rgb(41, 41, 187);
-    i{
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 30px;
-    }
+
+#next {
+  background-color: rgb(41, 41, 187);
+  border-radius: 10px;
+  border: 1px solid rgb(41, 41, 187);
+  display: flex; /* Ensure the button behaves as a flex container */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
 }
-#next:hover{
-    border: 1px solid rgb(237, 221, 221);
+#next a{
+  text-decoration: none;
+}
+#next i {
+  color: white;
+}
+
+#next:hover {
+  border: 1px solid rgb(237, 221, 221);
+}
+
+/* Fix the button at the bottom of the screen in mobile view */
+@media (max-width: 768px) {
+  .next {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
+
+  .next.scroll-out {
+    position: absolute; /* Change to absolute when leaving .category */
+    bottom: auto;
+    top: 100%; /* Ensure it moves with the .category boundary */
+    right: 10px;
+  }
 }
 
 .category>button>i{

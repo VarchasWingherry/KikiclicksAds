@@ -120,6 +120,7 @@
     padding: 10px 25px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -364,6 +365,10 @@
   background: none;
 }
 @media (max-width:768px) {
+  .upper-navbar .mainlogo img{
+    max-width: 180px;
+    width: 100%;
+  }
   .sidebar{
     opacity: 0;
     height: 100vh;
@@ -384,4 +389,7 @@
     align-items: center;
     justify-content: center;
   }
+}
+.fa-xmark, .fa-bars{
+  font-size: 22px;
 }
