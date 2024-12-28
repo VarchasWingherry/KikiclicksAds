@@ -1,3 +1,16 @@
+// custom notification
+function kikiShowNotification(message) {
+  const messageElement = document.getElementById('kikiNotificationMessage');
+  messageElement.textContent = message;
+  const notification = document.getElementById('kikiCustomNotification');
+  notification.style.display = 'block';
+}
+
+function kikiCloseNotification() {
+  const notification = document.getElementById('kikiCustomNotification');
+  notification.style.display = 'none';
+}
+// profile 
 const profilePic = document.querySelector(".image img");
 const userFile = document.querySelector(".file-path");
 const deleteBtn = document.getElementById("delete-btn");
@@ -96,9 +109,9 @@ const pname = document.getElementById('name');
 
   saveBtn.addEventListener('click', function() {
     if (validateForm()) {
-      alert('Form is valid, you can proceed.');
+      kikiShowNotification('Form is valid, you can proceed.');
     } else {
-      alert('Please fill all required fields.');
+      kikiShowNotification('Please fill all required fields.');
     }
   });
 

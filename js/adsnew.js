@@ -1,3 +1,16 @@
+function kikiShowNotification(message) {
+    const messageElement = document.getElementById('kikiNotificationMessage');
+    messageElement.textContent = message;
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'block';
+}
+
+function kikiCloseNotification() {
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'none';
+}
+
+// adsnew code
 const tabs = document.querySelectorAll('.tab > div');
 const views = document.querySelectorAll('.viewvideo, .viewimg, .viewarticle');
 
@@ -33,7 +46,7 @@ function playAd(button, claimButtonId) {
     
     videoAd.addEventListener('ended', () => {
         document.getElementById(claimButtonId).disabled = false;
-        alert("You can now claim your points.");
+        kikiShowNotification("You can now claim your points.");
     });
 }
 
@@ -44,7 +57,7 @@ function claimAdPoints(button) {
     updatePointsMessage();
 
     button.disabled = true;
-    alert("You have earned 10 points!");
+    kikiShowNotification("You have earned 10 points!");
 }
 
 function viewImage(button) {
@@ -58,7 +71,7 @@ function viewImage(button) {
     image.style.display = 'block';
 
     claimButton.disabled = false;
-    alert("You can now claim your points.");
+    kikiShowNotification("You can now claim your points.");
 }
 
 function claimImagePoints(button) {
@@ -68,7 +81,7 @@ function claimImagePoints(button) {
     updatePointsMessage();
 
     button.disabled = true;
-    alert("You have earned 10 points!");
+    kikiShowNotification("You have earned 10 points!");
 }
 
 function viewArticle(button) {
@@ -82,7 +95,7 @@ function viewArticle(button) {
     articleContent.style.display = 'block';
 
     claimButton.disabled = false;
-    alert("You can now claim your points.");
+    kikiShowNotification("You can now claim your points.");
 }
 
 function claimArticlePoints(button) {
@@ -92,6 +105,6 @@ function claimArticlePoints(button) {
     updatePointsMessage();
 
     button.disabled = true;
-    alert("You have earned 10 points!");
+    kikiShowNotification("You have earned 10 points!");
 }
 

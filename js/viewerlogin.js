@@ -1,3 +1,15 @@
+function kikiShowNotification(message) {
+    const messageElement = document.getElementById('kikiNotificationMessage');
+    messageElement.textContent = message;
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'block';
+}
+
+function kikiCloseNotification() {
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'none';
+}
+
 function validateLoginForm() {
     // Clear previous errors
     clearErrors();
@@ -22,7 +34,7 @@ function validateLoginForm() {
     }
 
     if (valid) {
-        alert('Login successful');
+        kikiShowNotification('Login successful');
     }
 
     return valid; // Prevent form submission if invalid
