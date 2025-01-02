@@ -5,21 +5,15 @@
     box-sizing: border-box;
     font-family: "Poppins" , sans-serif;
   }
-  .logo{
-    color: rgb(0,123,255);
-    font-size: 20px;
-    font-weight: bolder;
-    padding-top: 10px;
-    padding-left: 10px;
-  }
-  .main{
+ 
+  .main {
     display: flex;
     justify-content: center;
     align-items: center;
     
     padding: 10px;
   }
-  .box{
+  .main .box{
     margin-top: 100px;
     padding: 15px;
     display: flex;
@@ -32,28 +26,28 @@
     border-radius: 8px;
     width: 500px;
   }
-  .heading{
+  .main .heading{
     font-size: 22px;
     font-weight: 500;
     color:#000000;
   }
-  .para{
+  .main .para{
     font-size: 14px;
     color: rgb(80, 80, 80);
   }
-  .send{
+  .main .send{
     color: #f13d4f;
     font-weight: 500;
     cursor: pointer;
   }
-  .first, .second, .last{
+  .main .first, .main .second, .main .last{
     margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .btn{
+  .main .btn{
     margin-top: 5px;
     width: 100%;
     background-color: #DC3545;

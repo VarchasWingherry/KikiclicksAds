@@ -10,7 +10,7 @@
    button, input {
     
     font-weight: 700;
-    letter-spacing: 1.4px;
+    letter-spacing: 1px;
   }
   
   .background {
@@ -20,7 +20,7 @@
   }
   
   .container {
-    flex: 0 1 700px;
+    flex: 0 1 900px;
     margin: 10px auto;
     padding: 10px;
   }
@@ -37,12 +37,12 @@
   }
   
   .screen-body-item {
-    flex: 1;
-    padding: 50px 50px 50px 50px;
+    flex: 1 400px;
+    padding: 50px;
   }
   @media (max-width: 768px) {
     .screen-body-item {
-        padding-bottom: 10px;
+        padding-bottom: 60px;
     }
   }
   .screen-body-item.left {
@@ -56,6 +56,7 @@
     position: relative;
     color: #ffffff;
     font-size: 26px;
+    margin-bottom: 20px;
   }
   
   .app-title:after {
@@ -64,7 +65,7 @@
     position: absolute;
     left: 0;
     bottom: 0px;
-    width: 29px;
+    width:70%;
     height: 4px;
     background: #ffffff;
   }
@@ -77,6 +78,8 @@
   
   .app-form-group {
     margin-bottom: 15px;
+    max-width: 600px;
+    width: 100%;
   }
   
   .app-form-group.message {
@@ -90,13 +93,13 @@
   
   .app-form-control {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px ;
     background: none;
     border: none;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
     font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     outline: none;
     transition: border-color .2s;
   }

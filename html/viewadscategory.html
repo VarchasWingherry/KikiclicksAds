@@ -188,62 +188,84 @@
 
 
     <section class="home-section">
-        <div class="right">
-            <p>CATEGORY</p>
-            <div class="category">
-                <div>
-                    <img src="../assets/entertainment.jpg" alt="">
-                    <label for="entertainment">ENTERTAINMENT<input type="checkbox" name="category" id="entertainment"></label>
-                </div>
-                <div>
-                    <img src="../assets/education.jpg" alt="">
-                    <label for="education">EDUCATION<input type="checkbox" name="category" id="education"></label>
-                </div>
-                <div>
-                    <img src="../assets/realestate.jpg" alt="">
-                    <label for="realestate">REALESTATE<input type="checkbox" name="category" id="realestate"></label>
-                </div>
-                <div>
-                    <img src="../assets/socialmedia.jpg" alt="">
-                    <label for="socialmedia">SOCIAL MEDIA<input type="checkbox" name="category" id="socialmedia"></label>
-                </div>
-                <div>
-                    <img src="../assets/health.jpg" alt="">
-                    <label for="health">HEALTH CARE <input type="checkbox" name="category" id="health"></label>
-                </div>
-                <div>
-                    <img src="../assets/sports.jpg" alt="">
-                    <label for="sports">SPORTS<input type="checkbox" name="category" id="sports"></label>
-                </div>
-                <div>
-                    <img src="../assets/electronics.jpg" alt="">
-                    <label for="electronics">ELECTRONIC<input type="checkbox" name="category" id="electronics"></label>
-                </div>
-                <div>
-                    <img src="../assets/tourism.jpg" alt="">
-                    <label for="tourism">TOURISM<input type="checkbox" name="category" id="tourism"></label>
-                </div>
-                <div>
-                    <img src="../assets/brandpromotion.jpg" alt="">
-                    <label for="brandpromotion">BRAND PROMOTION<input type="checkbox" name="category" id="brandpromotion"></label>
-                </div>
-                <div>
-                    <img src="../assets/restaurant.jpg" alt="">
-                    <label for="restaurant">RESTAURANT<input type="checkbox" name="category" id="restaurant"></label>
-                </div>
-                <section class="next">
-                  <a href="#" id="next" onclick="validateCheckboxes(event)"><i class="fa-solid fa-arrow-right-long"></i></a>
-              </section>                           
-            </div>
-            <!-- custon pop up -->
-            <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
-              <div class="kikiNotificationContent">
-                  <span id="kikiNotificationMessage">Message goes here</span>
-                  <button onclick="kikiCloseNotification()">OK</button>
-              </div>
+      <div class="right">
+        <p>CATEGORY</p>
+        <div class="para">Select Category and click on next</div>
+        <div class="category">
+          <div>
+              <img src="../assets/entertainment.jpg" alt="">
+              <label for="entertainment">ENTERTAINMENT
+                  <input type="radio" name="category" id="entertainment">
+              </label>
           </div>
-          
+          <div>
+              <img src="../assets/education.jpg" alt="">
+              <label for="education">EDUCATION
+                  <input type="radio" name="category" id="education">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/realestate.jpg" alt="">
+              <label for="realestate">REALESTATE
+                  <input type="radio" name="category" id="realestate">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/socialmedia.jpg" alt="">
+              <label for="socialmedia">SOCIAL MEDIA
+                  <input type="radio" name="category" id="socialmedia">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/health.jpg" alt="">
+              <label for="health">HEALTH CARE
+                  <input type="radio" name="category" id="health">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/sports.jpg" alt="">
+              <label for="sports">SPORTS
+                  <input type="radio" name="category" id="sports">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/electronics.jpg" alt="">
+              <label for="electronics">ELECTRONIC
+                  <input type="radio" name="category" id="electronics">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/tourism.jpg" alt="">
+              <label for="tourism">TOURISM
+                  <input type="radio" name="category" id="tourism">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/brandpromotion.jpg" alt="">
+              <label for="brandpromotion">BRAND PROMOTION
+                  <input type="radio" name="category" id="brandpromotion">
+              </label>
+          </div>
+          <div>
+              <img src="../assets/restaurant.jpg" alt="">
+              <label for="restaurant">RESTAURANT
+                  <input type="radio" name="category" id="restaurant">
+              </label>
+          </div>
+          <section class="next">
+              <a href="../html/viewads.html" id="next" onclick="checkSelection(event)"><i class="fa-solid fa-arrow-right-long"></i></a>
+          </section>
+          <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+            <div class="kikiNotificationContent">
+                <span id="kikiNotificationMessage">Please select a category before proceeding.</span>
+                <button onclick="kikiCloseNotification()">OK</button>
+            </div>
         </div>
+        
+      </div>
+      
+          
+    </div>
 
         <!-- footer -->
      <footer>
