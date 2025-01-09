@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Post Ads Profile</title>
+    <title>View Ads Profile</title>
     <link rel="stylesheet" href="../css/postprofile.css">
     <link rel="stylesheet" href="../css/navposter.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -204,70 +204,100 @@
           </div>
         </div>
         
+        <form id="userForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Full Name" required>
+          </div>
       
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="fullName" required>
-        </div>
-      
-        <div class="form-group">
-          <label for="contact">Contact Number</label>
-          <div class="inline-group">
-            <input type="text" id="contact" placeholder="Contact Number" required>
-            <div class="gender-dropdown">
-              <label for="gender">Gender</label>
-              <select id="gender">
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
+          <div class="form-group">
+            <label for="contact">Contact Number</label>
+            <div class="inline-group">
+              <input type="text" id="contact" placeholder="Contact Number" required>
+              <div class="gender-dropdown">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
+      
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email ID" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Address" required>
+          </div>
+      
+          <div class="form-group">
+            <div class="inline-group">
+              <div>
+                <label for="org">ORGANISATION DETAILS/INDIVIDUAL</label>
+                <input type="text" id="org" placeholder="Organisation Details" required>
+              </div>
+              <div class="state-dropdown">
+                <label for="state">STATE</label>
+                <select id="state" name="state" required>
+                  <option value="">Select State</option>
+                  <option value="AP">Andhra Pradesh</option>
+                  <option value="AR">Arunachal Pradesh</option>
+                  <option value="AS">Assam</option>
+                  <option value="BR">Bihar</option>
+                  <option value="CT">Chhattisgarh</option>
+                  <option value="GA">Goa</option>
+                  <option value="GJ">Gujarat</option>
+                  <option value="HR">Haryana</option>
+                  <option value="HP">Himachal Pradesh</option>
+                  <option value="JK">Jammu & Kashmir</option>
+                  <option value="JH">Jharkhand</option>
+                  <option value="KA">Karnataka</option>
+                  <option value="KL">Kerala</option>
+                  <option value="MP">Madhya Pradesh</option>
+                  <option value="MH">Maharashtra</option>
+                  <option value="MN">Manipur</option>
+                  <option value="ML">Meghalaya</option>
+                  <option value="MZ">Mizoram</option>
+                  <option value="NL">Nagaland</option>
+                  <option value="OR">Odisha</option>
+                  <option value="PB">Punjab</option>
+                  <option value="RJ">Rajasthan</option>
+                  <option value="SK">Sikkim</option>
+                  <option value="TN">Tamil Nadu</option>
+                  <option value="TG">Telangana</option>
+                  <option value="TR">Tripura</option>
+                  <option value="UP">Uttar Pradesh</option>
+                  <option value="UT">Uttarakhand</option>
+                  <option value="WB">West Bengal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+      
+          <div class="button-group">
+            <button class="save-btn" id="saveBtn" type="button">Save</button>
+            <a href="../html/viewadscategory.html">
+              <button class="next-btn" id="nextBtn" type="button" disabled>&#8594;</button>
+            </a>
+          </div>
+        </form>
         
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Email ID" required>
-        </div>
-      
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Address" required>
-        </div>
-      
-        <div class="form-group">
-          <div class="inline-group">
-            <div>
-              <label for="org">ORGANISATION DETAILS/INDIVIDUAL</label>
-              <input type="text" id="org" placeholder="Organisation Details" required>
-            </div>
-            <div class="state-dropdown">
-              <label for="state">STATE</label>
-              <select id="state" name="state" required>
-                <option value="">Select state</option>
-                <!-- Other options omitted for brevity -->
-                <option value="WB">West Bengal</option>
-              </select>
-            </div>
+        <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+          <div class="kikiNotificationContent">
+              <span id="kikiNotificationMessage">Message goes here</span>
+              <button onclick="kikiCloseNotification()">OK</button>
           </div>
-        </div>
-      
-        <div class="button-group">
-          <button class="save-btn" id="saveBtn" type="button">Save</button>
-          <a href="../html/viewadscategory.html">
-            <button class="next-btn" id="nextBtn" type="button" disabled>&#8594;</button>
-          </a>
+          </div>
+       
         </div>
       </div>
-      <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
-        <div class="kikiNotificationContent">
-            <span id="kikiNotificationMessage">Message goes here</span>
-            <button onclick="kikiCloseNotification()">OK</button>
-        </div>
-    </div>
-    
-    </div>
+  
       <!-- footer -->
       <footer>
         <div class="footer-container">
