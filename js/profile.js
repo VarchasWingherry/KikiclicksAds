@@ -1,4 +1,4 @@
-// custom notification
+// Custom Notification
 function kikiShowNotification(message) {
   const messageElement = document.getElementById('kikiNotificationMessage');
   messageElement.textContent = message;
@@ -10,7 +10,8 @@ function kikiCloseNotification() {
   const notification = document.getElementById('kikiCustomNotification');
   notification.style.display = 'none';
 }
-// profile 
+
+// Profile Picture Upload
 const profilePic = document.querySelector(".image img");
 const userFile = document.querySelector(".file-path");
 const deleteBtn = document.getElementById("delete-btn");
@@ -28,135 +29,73 @@ deleteBtn.onclick = function () {
   deleteBtn.style.display = "none"; 
 };
 
+document.getElementById('saveBtn').addEventListener('click', function () {
+  const fields = ['name', 'contact', 'gender', 'email', 'address', 'org', 'state'];
+  let isValid = true;
 
+  for (let field of fields) {
+    const input = document.getElementById(field);
 
-const pname = document.getElementById('name');
-  const email = document.getElementById('email');
-  const address = document.getElementById('address');
-  const contact = document.getElementById('contact');
-  const gender = document.getElementById('gender');
-  const org = document.getElementById('org');
-  const state = document.getElementById('state');
-  const saveBtn = document.getElementById('saveBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  function validateForm() {
-    let valid = true;
-
-    if (!pname.value.trim()) {
-      pname.style.borderColor = 'red';
-      
-      valid = false;
-    } else {
-      pname.style.borderColor = '';
-    }
-
-    if (!email.value.trim()) {
-      email.style.borderColor = 'red';
-      valid = false;
-    } 
-    else if (!/\S+@\S+\.\S+/.test(email.value)) {  
-      email.style.borderColor = 'red';
-      valid = false;
-    } else {
-      email.style.borderColor = '';
-    }
-    
-
-    if (!address.value.trim()) {
-      address.style.borderColor = 'red';
-      valid = false;
-    } else {
-      address.style.borderColor = '';
-    }
-
-    if (!contact.value.trim()) {
-      contact.style.borderColor = 'red';
-      valid = false;
-  } else if (!/^\d{10}$/.test(contact.value.trim())) {
-      contact.style.borderColor = 'red';
-      valid = false;
-  } else {
-      contact.style.borderColor = '';
-  }
-  
-
-    if (!gender.value) {
-      gender.style.borderColor = 'red';
-      valid = false;
-    } else {
-      gender.style.borderColor = '';
-    }
-
-    if (!org.value.trim()) {
-      org.style.borderColor = 'red';
-      valid = false;
-    } else {
-      org.style.borderColor = '';
-    }
-
-    if (!state.value) {
-      state.style.borderColor = 'red';
-      valid = false;
-    } else {
-      state.style.borderColor = '';
-    }
-
-    nextBtn.disabled = !valid;
-
-    return valid;
-  }
-
-  saveBtn.addEventListener('click', function() {
-    if (validateForm()) {
-      kikiShowNotification('Form is valid, you can proceed.');
-    } else {
-      kikiShowNotification('Please fill all required fields.');
-    }
-  });
-
-  const inputs = [pname, email, address, contact, gender, org, state];
-  inputs.forEach(input => {
-    input.addEventListener('input', validateForm);
-  });
-
-  document.getElementById('name').addEventListener('input', function(event) {
-    let value = event.target.value;
-            value = value.replace(/[^a-zA-Z\s]/g, '');
-
-            if (value.startsWith(' ')) {
-                value = value.slice(1);
-            }
-
-            event.target.value = value;
-});
-document.getElementById('email').addEventListener('input', function(event) {
-    event.target.value = event.target.value.replace(/[^a-z_@.]/g, '');
-});
-document.getElementById('address').addEventListener('input', function(event) {
-  let value = event.target.value;
-          value = value.replace(/[^a-zA-Z0-9\s]/g, '');
-
-          if (value.startsWith(' ')) {
-              value = value.slice(1);
-          }
-
-          event.target.value = value;
-});
-document.getElementById('contact').addEventListener('input', function(event) {
-  let value = event.target.value;
-
-  if (value && !/^[6789]/.test(value)) {
-      event.target.value = '';
+    // General validation: check if the field is empty
+    if (!input.value.trim()) {
+      input.classList.add('error');
+      input.focus();
+      kikiShowNotification(`${field.charAt(0).toUpperCase() + field.slice(1)} cannot be empty.`);
+      isValid = false;
       return;
+    } else {
+      input.classList.remove('error');
+    }
+
+    // Specific validations
+    if (field === 'contact') {
+      const contactPattern = /^[6-9]\d{9}$/; // Validates 10 digits starting with 6, 7, 8, or 9
+      if (!contactPattern.test(input.value.trim())) {
+        input.classList.add('error');
+        input.focus();
+        kikiShowNotification('Contact number must be 10 digits and start with 6, 7, 8, or 9.');
+        isValid = false;
+        return;
+      } else {
+        input.classList.remove('error');
+      }
+    }
+
+    if (field === 'email') {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Validates email format
+      if (!emailPattern.test(input.value.trim())) {
+        input.classList.add('error');
+        input.focus();
+        kikiShowNotification('Please enter a valid email address.');
+        isValid = false;
+        return;
+      } else {
+        input.classList.remove('error');
+      }
+    }
   }
 
-  event.target.value = value.replace(/[^0-9]/g, '');
+  if (isValid) {
+    document.getElementById('nextBtn').disabled = false;
+    kikiShowNotification('Profile Updated successfully', true);
+    document.getElementById('nextLink').setAttribute('href', '../html/viewadscategory.html');
+
+  }
 });
 
-document.getElementById('proj-area').addEventListener('input', function(event) {
-    event.target.value = event.target.value.replace(/[^0-9]/g, '');
+// Next button click without saving
+document.getElementById('nextBtn').addEventListener('click', function (event) {
+  if (document.getElementById('nextBtn').disabled) {
+    event.preventDefault();
+    kikiShowNotification('Enter details of the profile.');
+  }
 });
-document.getElementById('email').addEventListener('input', function(event) {
-  event.target.value = event.target.value.replace(/[^a-zA-Z]/g, '');
-});
+
+// Utility function to show notifications
+// function kikiShowNotification(message, success = false) {
+//   const notification = document.createElement('div');
+//   notification.textContent = message;
+//   notification.className = success ? 'notification success' : 'notification error';
+//   document.body.appendChild(notification);
+//   setTimeout(() => notification.remove(), 3000);
+// }
