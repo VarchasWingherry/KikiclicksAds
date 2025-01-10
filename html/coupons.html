@@ -182,7 +182,6 @@
  </li>
 </ul>
 </div>
-<script src="../js/humberger.js"></script>
     
           <!-- 
             right
@@ -408,6 +407,13 @@
                     </div>
                 </div>
             </div>
+            <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+              <div class="kikiNotificationContent">
+                <span id="kikiNotificationMessage">Please select a category before proceeding.</span>
+                <button onclick="kikiCloseNotification()">OK</button>
+              </div>
+            </div>
+            
            </section>
                        <!-- footer -->
                        <footer>
@@ -476,23 +482,38 @@
                   
                       </footer>
                <!-- footer end -->
-           <script>
-            function copyIt(copyId) {
-                  var copyText = document.getElementById(copyId);
-                  copyText.select();
-                  copyText.setSelectionRange(0, 99999); // For mobile devices
+               <script src="../js/humberger.js"></script>
 
-                  try {
-                      document.execCommand("copy");
-                      alert("Copied the text: " + copyText.value);
-                  } catch (err) {
-                      console.error('Failed to copy text: ', err);
-                  }
-              }
+          <script>
+            function copyIt(inputId) {
+  // Get the input element and copy its value
+  const inputElement = document.getElementById(inputId);
+  inputElement.select();
+  inputElement.setSelectionRange(0, 99999); // For mobile devices
+  document.execCommand("copy");
 
-   
+  // Get the copied value
+  const copiedValue = inputElement.value;
 
-           </script>
+  // Display the notification
+  const notification = document.getElementById("kikiCustomNotification");
+  const notificationMessage = document.getElementById("kikiNotificationMessage");
+  notificationMessage.innerText = `Copied: ${copiedValue}`;
+  notification.style.display = "block";
+
+  // Automatically hide the notification after 3 seconds
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
+}
+
+function kikiCloseNotification() {
+  const notification = document.getElementById("kikiCustomNotification");
+  notification.style.display = "none";
+}
+
+
+          </script>
            
 </body>
 </html>

@@ -30,17 +30,16 @@
   border-radius: 10px;
   color: #140551;
 }
-.notification::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
+.notification::state(webkit-scrollbar) {
+  width: 5px;
 }
-.notification::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);        /* color of the tracking area */
+.notification::state(webkit-scrollbar-track) {
+  background: rgb(255, 255, 255);
 }
-
-.notification::-webkit-scrollbar-thumb {
-  background-color: #088994;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid rgb(112, 112, 112);  /* creates padding around scroll thumb */
+.notification::state(webkit-scrollbar-thumb) {
+  background-color: #088994;
+  border-radius: 20px;
+  border: 3px solid rgb(112, 112, 112);
 }
 .notification .notify-heading{
   display: flex;
@@ -180,7 +179,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
-#sidebar::--webkit-scrollbar {
+#sidebar::state(webkit-scrollbar) {
 	display: none;}
 .sidebar.open{
   width: 250px;
