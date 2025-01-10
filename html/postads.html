@@ -190,11 +190,10 @@
      </li>
     </ul>
   </div>
-  <script src="../js/humberger.js"></script>
 
   <!-- main -->
   <section class="home-section">
-    <div class="right"></div>
+    <div class="right">
     <div id="notification">
     </div>
     
@@ -227,10 +226,16 @@
               <a href="../html/reviews.html">RATE YOUR EXPERIENCE</a>
           </div>
       </form>
+      <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+        <div class="kikiNotificationContent">
+            <span id="kikiNotificationMessage">Please select a category before proceeding.</span>
+            <button onclick="kikiCloseNotification()">OK</button>
+        </div>
+    </div>
       </div>
   
     </div>
-
+  
   </section>
       <!-- footer -->
       <footer>
@@ -299,6 +304,8 @@
   
       </footer>
        <!-- footer -->
+
+  <script src="../js/humberger.js"></script>
   <script src="../js/kikiclikadspostingads.js"></script>
 
 

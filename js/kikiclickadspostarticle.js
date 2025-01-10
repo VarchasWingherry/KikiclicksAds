@@ -60,7 +60,7 @@ function showFile() {
         }
         fileReader.readAsDataURL(file);
     } else {
-        alert("Please upload a valid video file or image.");
+        kikiShowNotification("Please upload a valid video file or image.");
     }
 }
 
@@ -146,3 +146,18 @@ document.getElementById('title').addEventListener('input', function(event) {
             event.target.value = value;
 });
 
+function kikiShowNotification(message) {
+    // Set the message for the notification
+    const messageElement = document.getElementById('kikiNotificationMessage');
+    messageElement.textContent = message;
+  
+    // Display the notification
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'block';
+  }
+  
+  function kikiCloseNotification() {
+    // Close the notification by hiding it
+    const notification = document.getElementById('kikiCustomNotification');
+    notification.style.display = 'none';
+  }
