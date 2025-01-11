@@ -1,8 +1,9 @@
-function showSidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'flex'
-  }
-  function hideSidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'none'
-  }
+function showNavbar() {
+  const navbar = document.querySelector('.masternavbarnav');
+  navbar.style.display = 'flex';
+}
+
+function hideNavbar() {
+  const navbar = document.querySelector('.masternavbarnav');
+  navbar.style.display = 'none';
+}

@@ -182,7 +182,6 @@
  </li>
 </ul>
 </div>
-<script src="../js/humberger.js"></script>
   
 
   <!-- right -->
@@ -344,7 +343,6 @@
      
   </section>
 
-  <section class="home-sections">
     <!-- footer -->
     <footer>
       <div class="footer-container">
@@ -398,7 +396,7 @@
           <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
           </p>
           <div class="send">
-            <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+             <p><input type="text" placeholder="enter your email" id="footer-email"><i class="fa-solid fa-arrow-right-long"></i></p>
             
           </div>
         </div>
@@ -412,34 +410,10 @@
 
     </footer>
    <!-- footer -->
-  </section>
-  
+
+  <script src="../js/humberger.js"></script>
   <script src="../js/wallet.js"></script>
   <script src="../js/linkbank.js"></script>
-  
-  <script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    let searchBtn = document.querySelector(".bx-search");
-  
-    closeBtn.addEventListener("click", ()=>{
-      sidebar.classList.toggle("open");
-      menuBtnChange();
-    });
-  
-    searchBtn.addEventListener("click", ()=>{
-      sidebar.classList.toggle("open");
-      menuBtnChange(); 
-    });
-  
 
-    function menuBtnChange() {
-     if(sidebar.classList.contains("open")){
-       closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-     }else {
-       closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
-     }
-    }
-    </script>
-</body>
+  </body>
 </html>

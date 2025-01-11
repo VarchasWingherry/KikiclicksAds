@@ -12,27 +12,28 @@
 </head>
 <body>
      <!-- nav bar -->
-     <nav>
-      <ul class="sidebar">
-        <li onclick=hideSidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+     <nav class="masterpagesnavbar">
+      <ul class="masternavbarnav">
+        <li onclick="hideNavbar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
         <li><a href="../html/kikiclickadshome.html">Home</a></li>
-        <li><a href="../html/aboutus.html">About US</a></li>
+        <li><a href="../html/aboutus.html">About Us</a></li>
         <li><a href="../html/loginoption.html">Ads</a></li>
         <li><a href="../html/homegetplans.html">Get Plans</a></li>
         <li><a href="../html/contact.html">Contact</a></li>
         <li><a href="../html/loginoption.html" class="login"><div>Login</div></a></li> 
       </ul>
       <ul>
-        <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png"  alt=""></a></li>
+        <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png" alt=""></a></li>
         <li class="hideOnMobile"><a href="../html/kikiclickadshome.html">Home</a></li>
         <li class="hideOnMobile"><a href="../html/aboutus.html">About Us</a></li>
         <li class="hideOnMobile"><a href="../html/loginoption.html">Ads</a></li>
         <li class="hideOnMobile"><a href="../html/homegetplans.html">Get Plans</a></li>
         <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
         <li class="hideOnMobile"><a href="../html/loginoption.html" class="login"><div>Login</div></a></li>
-        <li class="menu-button" onclick=showSidebar()><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        <li class="menu-button" onclick="showNavbar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
       </ul>
     </nav>
+    
 
      <!-- nav bar end -->
 
@@ -48,13 +49,13 @@
 
           <div class="searchbtn">
             <i class="fa-solid fa-magnifying-glass"></i> 
-            <input type="text" placeholder="Search Ads">
+            <input type="text" id="searchads" placeholder="Search Ads">
             
           </div>
 
           <div class="dropdown">
             <i class="fa-solid fa-layer-group"></i>
-            <select>
+            <select id="category-select">
               <option hidden selected> Select Category</option>
               <option>ENTERTAINMENT</option>
               <option>EDUCATION</option>
@@ -71,7 +72,7 @@
 
           <div class="location">
             <i class="fa-solid fa-location-dot"></i> 
-            <input type="text" placeholder=" location">
+            <input type="text" id="location" placeholder=" location">
             
           </div>
           
@@ -160,28 +161,7 @@
 
      <!-- category -->
 
-    <!-- slider -->
-    <!-- <div class="slider-wrapper">
-      <div class="slider-container">
-        <div class="slider">
-          <div class="slide">
-            <img src="../assets/slider1.gif" alt="slider 1">
-          </div>
-          <div class="slide">
-            <img src="../assets/slider2.gif" alt="slider 2">
-          </div> -->
-          <!-- <div class="slide">
-            <img src="../assets/slider3.gif" alt="slider 3">
-          </div> -->
-          <!-- <div class="slide">
-            <img src="../assets/slider4.gif" alt="slider 4">
-          </div> -->
-          <!-- <div class="slide">
-            <img src="../assets/slider5.gif" alt="slider 5">
-          </div> -->
-        <!-- </div>
-      </div>
-    </div> -->
+    
 
     <!-- footer -->
      <footer>
@@ -236,7 +216,7 @@
           <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
           </p>
           <div class="send">
-            <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+             <p><input type="text" placeholder="enter your email" id="footer-email"><i class="fa-solid fa-arrow-right-long"></i></p>
             
           </div>
         </div>
@@ -250,21 +230,7 @@
 
     </footer>
      <!-- footer end -->
-    <!-- <script>
-      const slider = document.querySelector('.slider');
-      const slides = document.querySelectorAll('.slide');
-      let currentIndex = 0;
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        const offset = -currentIndex * slides[0].offsetWidth;
-        slider.style.transform = `translateX(${offset}px)`;
-      }
-
-      setInterval(nextSlide, 4000); // Change slide every 4 seconds
-
-
-    </script> -->
+    
     <script src="../js/navbarmain.js"></script>
     <script src="../js/homecategory.js"></script>
 

@@ -14,25 +14,25 @@
 </head>
 <body>
       <!-- nav bar -->
-      <nav>
-        <ul class="sidebar">
-          <li onclick=hideSidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+      <nav class="masterpagesnavbar">
+        <ul class="masternavbarnav">
+          <li onclick="hideNavbar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
           <li><a href="../html/kikiclickadshome.html">Home</a></li>
-          <li><a href="../html/aboutus.html">About US</a></li>
+          <li><a href="../html/aboutus.html">About Us</a></li>
           <li><a href="../html/loginoption.html">Ads</a></li>
           <li><a href="../html/homegetplans.html">Get Plans</a></li>
           <li><a href="../html/contact.html">Contact</a></li>
           <li><a href="../html/loginoption.html" class="login"><div>Login</div></a></li> 
         </ul>
         <ul>
-          <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png"  alt=""></a></li>
+          <li><a class="mainlogo" href="../html/kikiclickadshome.html"><img src="../login_icon/kikiclicklogo.png" alt=""></a></li>
           <li class="hideOnMobile"><a href="../html/kikiclickadshome.html">Home</a></li>
           <li class="hideOnMobile"><a href="../html/aboutus.html">About Us</a></li>
           <li class="hideOnMobile"><a href="../html/loginoption.html">Ads</a></li>
           <li class="hideOnMobile"><a href="../html/homegetplans.html">Get Plans</a></li>
           <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
           <li class="hideOnMobile"><a href="../html/loginoption.html" class="login"><div>Login</div></a></li>
-          <li class="menu-button" onclick=showSidebar()><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+          <li class="menu-button" onclick="showNavbar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
         </ul>
       </nav>
     
@@ -312,7 +312,7 @@
         <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
         </p>
         <div class="send">
-          <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+           <p><input type="text" placeholder="enter your email" id="footer-email"><i class="fa-solid fa-arrow-right-long"></i></p>
           
         </div>
       </div>

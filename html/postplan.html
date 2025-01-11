@@ -20,7 +20,7 @@
     </div>
     <div class="mainlogo"  onclick="window.location.href='../html/kikiclickadshome.html'"><img src="../login_icon/kikiclicklogo.png"  alt=""></div>
     <div class="notify">
-      <i class="fa-solid fa-bell"></i>
+      <i class="fa-solid fa-bell" id="bell"></i>
     </div>
   </div>
   
@@ -80,13 +80,7 @@
    </a>
    <span class="tooltip">View Posted Article</span>
  </li>
- <li>
-  <a href="../html/notification.html">
-    <i class="fa-solid fa-bell"></i>
-    <span class="links_name">Notification</span>
-  </a>
-  <span class="tooltip">Notification</span>
-</li>
+
 <li>
   <a href="../html/reviews.html">
     <i class="fa-solid fa-star"></i>
@@ -107,7 +101,6 @@
  </li>
 </ul>
 </div>
-  <script src="../js/humberger.js"></script>
     <!-- main content -->
     <section class="home-section">
         <div class="right">
@@ -330,6 +323,13 @@
               </div>
           </div>
         </div>
+        <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+          <div class="kikiNotificationContent">
+            <span id="kikiNotificationMessage">Please select a category before proceeding.</span>
+            <button onclick="kikiCloseNotification()">OK</button>
+          </div>
+        </div>
+        
     </section>
             <!-- footer -->
             <footer>
@@ -384,7 +384,7 @@
                   <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
                   </p>
                   <div class="send">
-                    <p><input type="text" placeholder="enter your email" ><i class="fa-solid fa-arrow-right-long"></i></p>
+                     <p><input type="text" placeholder="enter your email" id="footer-email"><i class="fa-solid fa-arrow-right-long"></i></p>
                     
                   </div>
                 </div>
@@ -403,5 +403,7 @@
             window.location.href = '../html/paymentmethod.html'; 
         }
     </script>
+      <script src="../js/humberger.js"></script>
+
 </body>
 </html>
