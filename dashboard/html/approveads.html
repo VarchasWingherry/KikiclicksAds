@@ -139,24 +139,22 @@
 	
 			<div class="viewvideo">
 				<div class="cat-div">
-				  <h1 class="cat-head">Entertainment</h1>
-				  <section class="approved-ads">
-				  
-					<h3>Wingherry Technologies</h3>
-					<video src="../../assets/viewads.mp4" controls></video>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus alias explicabo nisi dolor. In, pariatur nihil?</p>
-					
-					<div class="part">
-					<div class="location"><i class="fa-solid fa-location-dot"></i> Hyderabad</div>
-					</div>
-					<div class="part">
-					  <div class="date">Date of Posting: 28/05/2024</div>
-					  <div class="time">Time: 12:45 PM</div>
-					</div>
-					<button class="approve" onclick="disableButton()">Approve</button>
-					<button class="disapprove" onclick="notdisableButton()">Dispapprove</button>
-				   </section>
-				</div>
+					<h1 class="cat-head">Entertainment</h1>
+					<section class="approved-ads">
+					  <h3>Wingherry Technologies</h3>
+					  <video src="../../assets/viewads.mp4" controls></video>
+					  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus alias explicabo nisi dolor. In, pariatur nihil?</p>
+					  <div class="part">
+						<div class="location"><i class="fa-solid fa-location-dot"></i> Hyderabad</div>
+					  </div>
+					  <div class="part">
+						<div class="date">Date of Posting: 28/05/2024</div>
+						<div class="time">Time: 12:45 PM</div>
+					  </div>
+					  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+					  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+					</section>
+				  </div>
 				 <div class="cat-div">
 				  <h1 class="cat-head">Education</h1>
 				  
@@ -171,8 +169,8 @@
 					  <div class="date">Date of Posting: 28/05/2024</div>
 					  <div class="time">Time: 12:45 PM</div>
 					</div>
-					<button class="approve" onclick="disableButton()">Approve</button>
-					<button class="disapprove" onclick="notdisableButton()">Dispapprove</button>
+					<button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+					<button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 					  </section>
 				 </div>
 				  
@@ -192,6 +190,8 @@
 					<div class="date">Date of Posting: 28/05/2024</div>
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
+				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -207,6 +207,8 @@
 					<div class="date">Date of Posting: 28/05/2024</div>
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
+				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 				</section>
 			  </div>
 			  
@@ -228,6 +230,8 @@
 					<div class="date">Date of Posting: 28/05/2024</div>
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
+				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -243,6 +247,8 @@
 					<div class="date">Date of Posting: 28/05/2024</div>
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
+				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -257,11 +263,36 @@
 					<div class="date">Date of Posting: 28/05/2024</div>
 				  <div class="time">Time: 12:45 PM</div>
 				  </div>
+				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
 			  </section>
 			  </div>
 			</div>
 			
 		</div>
+		<!-- Confirmation Modal -->
+<div id="confirmationModal" class="modal" style="display: none;">
+	<div class="modal-content">
+	  <h2 id="confirmationTitle"></h2>
+	  <p id="confirmationMessage"></p>
+	  <div class="modal-actions">
+		<button onclick="performAction()">Yes</button>
+		<button onclick="closeModal()">Cancel</button>
+	  </div>
+	</div>
+  </div>
+  
+  <!-- Success Modal -->
+  <div id="successModal" class="modal" style="display: none;">
+	<div class="modal-content">
+	  <h2 id="successTitle"></h2>
+	  <p id="successMessage"></p>
+	  <div class="modal-actions">
+		<button onclick="closeSuccessModal()">OK</button>
+	  </div>
+	</div>
+  </div>
+
 	  </div>
 		<!-- MAIN -->
 	</section>
@@ -291,38 +322,65 @@
 				}
 			}
 
-			function disableButton() {
-				var button = document.querySelector(".approve");
-				var button2=document.querySelector(".disapprove");
-				alert("This ad is approved")
-				button.disabled = true;
-				button2.disabled=true;
+			let currentAction = null;
+			let currentButton = null;
+
+			// Open Confirmation Modal
+			function openConfirmationPopup(action, button) {
+				currentAction = action;
+				currentButton = button;
+
+				const confirmationModal = document.getElementById("confirmationModal");
+				const confirmationTitle = document.getElementById("confirmationTitle");
+				const confirmationMessage = document.getElementById("confirmationMessage");
+
+				if (action === "approve") {
+				confirmationTitle.textContent = "Approve Ad";
+				confirmationMessage.textContent = "Do you want to approve this ad?";
+				} else if (action === "disapprove") {
+				confirmationTitle.textContent = "Disapprove Ad";
+				confirmationMessage.textContent = "Do you want to disapprove this ad?";
+				}
+
+				confirmationModal.style.display = "flex";
 			}
 
-			function notdisableButton() {
-				var button = document.querySelector(".approve");
-				var button2=document.querySelector(".disapprove");
-				alert("This ad is disapproved")
-				button2.disabled=true;
-				button.disabled = true;
+			// Perform Action (Approve/Disapprove)
+			function performAction() {
+				const successModal = document.getElementById("successModal");
+				const successTitle = document.getElementById("successTitle");
+				const successMessage = document.getElementById("successMessage");
+
+				if (currentAction === "approve") {
+				successTitle.textContent = "Ad Approved";
+				successMessage.textContent = "The ad has been successfully approved.";
+				} else if (currentAction === "disapprove") {
+				successTitle.textContent = "Ad Disapproved";
+				successMessage.textContent = "The ad has been successfully disapproved.";
+				}
+
+				// Disable both buttons
+				const buttons = currentButton.parentElement.querySelectorAll("button");
+				buttons.forEach((btn) => (btn.disabled = true));
+
+				closeModal(); // Close confirmation modal
+				successModal.style.display = "flex"; // Show success modal
 			}
 
-			function idisableButton() {
-				var button = document.querySelector(".iapprove");
-				var button2=document.querySelector(".idisapprove");
-				alert("This ad is approved")
-				button.disabled = true;
-				button2.disabled=true;
+			// Close Confirmation Modal
+			function closeModal() {
+				const confirmationModal = document.getElementById("confirmationModal");
+				confirmationModal.style.display = "none";
 			}
 
-			function inotdisableButton() {
-				var button = document.querySelector(".iapprove");
-				var button2=document.querySelector(".idisapprove");
-				alert("This ad is disapproved")
-				button2.disabled=true;
-				button.disabled = true;
-			}
+			// Close Success Modal
+			function closeSuccessModal() {
+				const successModal = document.getElementById("successModal");
+				successModal.style.display = "none";
 
+				currentAction = null;
+				currentButton = null;
+			}
 				</script>
 
 	<script src="../js/script.js"></script>
