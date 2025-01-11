@@ -586,5 +586,6 @@ footer{
 @media (max-width:768px) {
   footer{
     margin-left: 10px;
+    margin-right: 10px;
   }
-}
+} 
