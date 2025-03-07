@@ -6,7 +6,12 @@
     <title>Review</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="../css/accesspage.css">
+
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <!-- SIDEBAR -->
@@ -96,8 +101,8 @@
 			<div class="accesscontainer">
 				<button onclick="openForm()">Create</button>
 				
-				<h3>Active Admins</h3>
-				<table>
+				<h3>Active Admins / Employees</h3>
+				<table id="activeAdmins" class="display">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -110,19 +115,29 @@
 					<tbody>
 						<tr>
 							<td>John Doe</td>
-							<td>1234567890</td>
+							<td>9876543210</td>
 							<td>john@example.com</td>
-							<td>03/03/2025</td>
-							<td class="action-col">
-								<button onclick="confirmAction('Deny access to John Doe?')">Deny Access</button>
-								<button onclick="confirmAction('Delete John Doe?')">Delete</button>
+							<td>2024-03-01</td>
+							<td>
+								<button class="btn-deny-access" data-name="John Doe">Deny Access</button>
+								<button class="btn-delete-user" data-name="John Doe">Delete</button>
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Smith</td>
+							<td>8765432109</td>
+							<td>jane@example.com</td>
+							<td>2024-03-02</td>
+							<td>
+								<button class="btn-deny-access" data-name="Jane Smith">Deny Access</button>
+								<button class="btn-delete-user" data-name="Jane Smith">Delete</button>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				
-				<h3>Inactive Admins</h3>
-				<table>
+				<h3>Inactive Admins / Employees</h3>
+				<table id="inactiveAdmins" class="display">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -134,66 +149,93 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>Jane Smith</td>
-							<td>9876543210</td>
-							<td>jane@example.com</td>
-							<td>02/03/2025</td>
-							<td class="action-col">
-								<button onclick="confirmAction('Grant access to Jane Smith?')">Grant Access</button>
-								<button onclick="confirmAction('Delete Jane Smith?')">Delete</button>
+							<td>David Brown</td>
+							<td>7654321098</td>
+							<td>david@example.com</td>
+							<td>2024-02-25</td>
+							<td>
+								<button class="btn-grant-access" data-name="David Brown">Grant Access</button>
+								<button class="btn-delete-user" data-name="David Brown">Delete</button>
+							</td>
+						</tr>
+						<tr>
+							<td>Emma Wilson</td>
+							<td>6543210987</td>
+							<td>emma@example.com</td>
+							<td>2024-02-20</td>
+							<td>
+								<button class="btn-grant-access" data-name="Emma Wilson">Grant Access</button>
+								<button class="btn-delete-user" data-name="Emma Wilson">Delete</button>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			
-			<!-- Popup Form -->
-			<div id="accessModal" class="modal">
-				<div class="modal-content">
-					<h2>Give Access</h2>
-					<form class="accessForm" id="accessForm">
-						<div class="row">
-							<div class="form-group">
-								<label>Employee Name *</label>
-								<input type="text" id="empName" placeholder="Employee Name" required>
-							</div>
-							<div class="form-group">
-								<label>Mobile *</label>
-								<input type="tel" id="mobile" placeholder="Mobile" required>
+		</div>
+	
+		<!-- Popup Confirmation -->
+		<div id="confirmPopup" class="modal-pop">
+			<div class="modal-content-pop">
+				<p id="confirmMessage"></p>
+				<button id="confirmYes">Yes</button>
+				<button id="confirmNo">No</button>
+			</div>
+		</div>
+	
+		<!-- Popup Alert -->
+		<div id="alertPopup" class="modal-pop">
+			<div class="modal-content-pop">
+				<p id="alertMessage"></p>
+				<button id="alertOk">OK</button>
+			</div>
+		</div>
+
+		<!-- Popup Form -->
+		<div id="accessModal" class="modal">
+			<div class="modal-content">
+				<h2>Give Access</h2>
+				<form class="accessForm" id="accessForm">
+					<div class="row">
+						<div class="form-group">
+							<label>Employee Name *</label>
+							<input type="text" id="empName" placeholder="Employee Name" required>
+						</div>
+						<div class="form-group">
+							<label>Mobile *</label>
+							<input type="tel" id="mobile" placeholder="Mobile" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label>Email ID *</label>
+							<input type="email" id="email" placeholder="Email Id" required>
+						</div>
+						<div class="form-group">
+							<label>Password *</label>
+							<input type="password" id="password" placeholder="Password" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label>Gender *</label>
+							<div class="radio-group">
+								<input type="radio" name="gender" value="Male" checked> Male
+								<input type="radio" name="gender" value="Female"> Female
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group">
-								<label>Email ID *</label>
-								<input type="email" id="email" placeholder="Email Id" required>
-							</div>
-							<div class="form-group">
-								<label>Password *</label>
-								<input type="password" id="password" placeholder="Password" required>
+						<div class="form-group">
+							<label>User Type *</label>
+							<div class="radio-group">
+								<input type="radio" name="userType" value="Employee" checked> Employee
+								<input type="radio" name="userType" value="Admin"> Admin
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group">
-								<label>Gender *</label>
-								<div class="radio-group">
-									<input type="radio" name="gender" value="Male" checked> Male
-									<input type="radio" name="gender" value="Female"> Female
-								</div>
-							</div>
-							<div class="form-group">
-								<label>User Type *</label>
-								<div class="radio-group">
-									<input type="radio" name="userType" value="Employee" checked> Employee
-									<input type="radio" name="userType" value="Admin"> Admin
-								</div>
-							</div>
-						</div>
-						<div class="access-sub-btn">
-							<button type="submit">Submit</button>
-							<button type="button" onclick="closeForm()">Cancel</button>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="access-sub-btn">
+						<button type="submit">Submit</button>
+						<button type="button" onclick="closeForm()">Cancel</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	   </main>
@@ -201,5 +243,8 @@
 
 	<script src="../js/script.js"></script>
 	<script src="../js/accesspage.js"></script>
+	<script>
+
+	</script>
 </body>
 </html>
