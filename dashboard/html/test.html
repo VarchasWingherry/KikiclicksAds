@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access Management</title>
+    <link rel="stylesheet" href="../css/accesspage.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <div class="content-of-page">
+        <div class="accesscontainer">
+            <button id="openForm">Create</button>
+            
+            <h3>Active Admins / Employees</h3>
+            <table id="activeAdmins" class="display">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Created Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <h3>Inactive Admins / Employees</h3>
+            <table id="inactiveAdmins" class="display">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Created Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Popup Confirmation -->
+    <div id="confirmPopup" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p id="confirmMessage"></p>
+            <button id="confirmYes">Yes</button>
+            <button id="confirmNo">No</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#activeAdmins').DataTable({
+                "ajax": "active_admins.json",
+                "columns": [
+                    { "data": "name" },
+                    { "data": "mobile" },
+                    { "data": "email" },
+                    { "data": "created_date" },
+                    {
+                        "data": null,
+                        "render": function(data, type, row) {
+                            return `<button class='deny-access' data-name='${row.name}'>Deny Access</button>
+                                    <button class='delete' data-name='${row.name}'>Delete</button>`;
+                        }
+                    }
+                ]
+            });
+
+            $('#inactiveAdmins').DataTable({
+                "ajax": "inactive_admins.json",
+                "columns": [
+                    { "data": "name" },
+                    { "data": "mobile" },
+                    { "data": "email" },
+                    { "data": "created_date" },
+                    {
+                        "data": null,
+                        "render": function(data, type, row) {
+                            return `<button class='grant-access' data-name='${row.name}'>Grant Access</button>
+                                    <button class='delete' data-name='${row.name}'>Delete</button>`;
+                        }
+                    }
+                ]
+            });
+
+            $(document).on("click", ".deny-access, .delete, .grant-access", function() {
+                let action = $(this).hasClass("deny-access") ? "Deny Access" : $(this).hasClass("delete") ? "Delete" : "Grant Access";
+                let name = $(this).data("name");
+                $("#confirmMessage").text(`Are you sure you want to ${action} for ${name}?`);
+                $("#confirmPopup").fadeIn();
+
+                $("#confirmYes").off().on("click", function() {
+                    alert(`${action} confirmed for ${name}.`);
+                    $("#confirmPopup").fadeOut();
+                });
+
+                $("#confirmNo").off().on("click", function() {
+                    $("#confirmPopup").fadeOut();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
