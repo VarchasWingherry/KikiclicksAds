@@ -78,23 +78,54 @@ function resetLoginForm() {
 }
 
 // ✅ Handle Login Button Click
+// document.getElementById('loginBtn').addEventListener('click', function () {
+//     // ✅ Step 1: Validate Email First
+//     const isEmailValid = validateEmail();
+//     if (!isEmailValid) {
+//         return; // Stop if email validation fails
+//     }
+
+//     // ✅ Step 2: Validate Password Only After Email is Valid
+//     const isPasswordValid = validatePassword();
+//     if (!isPasswordValid) {
+//         return; // Stop if password validation fails
+//     }
+
+//     // ✅ If both validations pass
+//     showCustomNotification('Login successful!');
+
+    
+//     // ✅ Reset form after successful login
+//     resetLoginForm();
+// });
+
+
+
+// new code
+// ✅ Handle Login Button Click (Merged Validation + Admin Check)
 document.getElementById('loginBtn').addEventListener('click', function () {
     // ✅ Step 1: Validate Email First
-    const isEmailValid = validateEmail();
-    if (!isEmailValid) {
+    if (!validateEmail()) {
         return; // Stop if email validation fails
     }
 
     // ✅ Step 2: Validate Password Only After Email is Valid
-    const isPasswordValid = validatePassword();
-    if (!isPasswordValid) {
+    if (!validatePassword()) {
         return; // Stop if password validation fails
     }
 
-    // ✅ If both validations pass
+    // ✅ Step 3: Check for Admin Login
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email === 'admin@gmail.com' && password === 'Admin@123') {
+        window.location.href = '../dashboard/html/index.html'; // Redirect to admin dashboard
+        return;
+    }
+
+    // ✅ If not admin, show success notification
     showCustomNotification('Login successful!');
 
-    
     // ✅ Reset form after successful login
     resetLoginForm();
 });

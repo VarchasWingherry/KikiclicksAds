@@ -106,7 +106,9 @@ button {
   cursor: pointer;
   /* margin-top: 10px; */
 }
-
+.access-sub-btn .danger{
+  background-color: #dc3545;
+}
  /* button:hover {
   background: #0056b3;
 } */

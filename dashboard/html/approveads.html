@@ -152,7 +152,7 @@
 						<div class="time">Time: 12:45 PM</div>
 					  </div>
 					  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-					  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+					  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 					</section>
 				  </div>
 				 <div class="cat-div">
@@ -170,7 +170,7 @@
 					  <div class="time">Time: 12:45 PM</div>
 					</div>
 					<button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-					<button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+					<button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 					  </section>
 				 </div>
 				  
@@ -191,7 +191,7 @@
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
 				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -208,7 +208,7 @@
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
 				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 				</section>
 			  </div>
 			  
@@ -231,7 +231,7 @@
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
 				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -248,7 +248,7 @@
 					<div class="time">Time: 12:45 PM</div>
 				  </div>
 				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 				</section>
 			  </div>
 			  <div class="cat-div">
@@ -264,7 +264,7 @@
 				  <div class="time">Time: 12:45 PM</div>
 				  </div>
 				  <button class="approve" onclick="openConfirmationPopup('approve', this)">Approve</button>
-				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Disapprove</button>
+				  <button class="disapprove" onclick="openConfirmationPopup('disapprove', this)">Reject</button>
 			  </section>
 			  </div>
 			</div>
@@ -338,8 +338,8 @@
 				confirmationTitle.textContent = "Approve Ad";
 				confirmationMessage.textContent = "Do you want to approve this ad?";
 				} else if (action === "disapprove") {
-				confirmationTitle.textContent = "Disapprove Ad";
-				confirmationMessage.textContent = "Do you want to disapprove this ad?";
+				confirmationTitle.textContent = "Rejected Ad";
+				confirmationMessage.textContent = "Do you want to Reject this ad?";
 				}
 
 				confirmationModal.style.display = "flex";
@@ -355,8 +355,8 @@
 				successTitle.textContent = "Ad Approved";
 				successMessage.textContent = "The ad has been successfully approved.";
 				} else if (currentAction === "disapprove") {
-				successTitle.textContent = "Ad Disapproved";
-				successMessage.textContent = "The ad has been successfully disapproved.";
+				successTitle.textContent = "Ad Rejected";
+				successMessage.textContent = "The ad has been successfully Rejected.";
 				}
 
 				// Disable both buttons
