@@ -4,11 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Access Management</title>
-    <link rel="stylesheet" href="../css/accesspage.css">
-
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .content-of-page {
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        .accesscontainer {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #openForm {
+            background-color: #007bff;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .btn-deny-access {
+            background-color: #ffc107;
+            color: black;
+        }
+        .btn-delete-user {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-grant-access {
+            background-color: #28a745;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            margin: 20% auto;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .modal-content button {
+            margin: 5px;
+        }
+        .dataTables_wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        @media screen and (max-width: 600px) {
+            .modal-content {
+                margin-top: 40%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="content-of-page">
@@ -26,7 +109,18 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>9876543210</td>
+                        <td>john@example.com</td>
+                        <td>2024-03-01</td>
+                        <td>
+                            <button class="btn-deny-access" data-name="John Doe">Deny Access</button>
+                            <button class="btn-delete-user" data-name="John Doe">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             
             <h3>Inactive Admins / Employees</h3>
@@ -40,70 +134,57 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td>David Brown</td>
+                        <td>7654321098</td>
+                        <td>david@example.com</td>
+                        <td>2024-02-25</td>
+                        <td>
+                            <button class="btn-grant-access" data-name="David Brown">Grant Access</button>
+                            <button class="btn-delete-user" data-name="David Brown">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
-
-    <!-- Popup Confirmation -->
-    <div id="confirmPopup" class="modal" style="display: none;">
+    
+    <div id="alertPopup" class="modal">
         <div class="modal-content">
-            <p id="confirmMessage"></p>
-            <button id="confirmYes">Yes</button>
-            <button id="confirmNo">No</button>
+            <p id="alertMessage"></p>
+            <button id="alertOk">OK</button>
         </div>
     </div>
-
+    
     <script>
         $(document).ready(function() {
-            $('#activeAdmins').DataTable({
-                "ajax": "active_admins.json",
-                "columns": [
-                    { "data": "name" },
-                    { "data": "mobile" },
-                    { "data": "email" },
-                    { "data": "created_date" },
-                    {
-                        "data": null,
-                        "render": function(data, type, row) {
-                            return `<button class='deny-access' data-name='${row.name}'>Deny Access</button>
-                                    <button class='delete' data-name='${row.name}'>Delete</button>`;
-                        }
-                    }
-                ]
+            $('#activeAdmins, #inactiveAdmins').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "responsive": true
             });
+            
+            function showAlert(message) {
+                $("#alertMessage").text(message);
+                $("#alertPopup").fadeIn();
+            }
 
-            $('#inactiveAdmins').DataTable({
-                "ajax": "inactive_admins.json",
-                "columns": [
-                    { "data": "name" },
-                    { "data": "mobile" },
-                    { "data": "email" },
-                    { "data": "created_date" },
-                    {
-                        "data": null,
-                        "render": function(data, type, row) {
-                            return `<button class='grant-access' data-name='${row.name}'>Grant Access</button>
-                                    <button class='delete' data-name='${row.name}'>Delete</button>`;
-                        }
-                    }
-                ]
+            $("#alertOk").on("click", function() {
+                $("#alertPopup").fadeOut();
             });
-
-            $(document).on("click", ".deny-access, .delete, .grant-access", function() {
-                let action = $(this).hasClass("deny-access") ? "Deny Access" : $(this).hasClass("delete") ? "Delete" : "Grant Access";
-                let name = $(this).data("name");
-                $("#confirmMessage").text(`Are you sure you want to ${action} for ${name}?`);
-                $("#confirmPopup").fadeIn();
-
-                $("#confirmYes").off().on("click", function() {
-                    alert(`${action} confirmed for ${name}.`);
-                    $("#confirmPopup").fadeOut();
-                });
-
-                $("#confirmNo").off().on("click", function() {
-                    $("#confirmPopup").fadeOut();
-                });
+            
+            $(document).on("click", ".btn-deny-access", function() {
+                showAlert("Access denied for " + $(this).data("name"));
+            });
+            
+            $(document).on("click", ".btn-delete-user", function() {
+                showAlert($(this).data("name") + " has been deleted.");
+            });
+            
+            $(document).on("click", ".btn-grant-access", function() {
+                showAlert("Access granted for " + $(this).data("name"));
             });
         });
     </script>
