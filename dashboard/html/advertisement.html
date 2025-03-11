@@ -52,9 +52,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="../html/accespage.html">
+				<a href="../html/reviewadmin.html">
 					<i class='bx bxs-star'></i>
-					<span class="text">Access Page</span>
+					<span class="text">Review</span>
 				</a>
 			</li>
 		</ul>
@@ -114,7 +114,7 @@
             
                             <div class="form-content">
                                 <label for="email">Email :</label>
-                            <input type="email" id="email" name="email" placeholder="enter email" required>
+                                <input type="email" id="email" name="email" placeholder="Enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                             </div>
                        </div>
         
@@ -126,7 +126,7 @@
             
                             <div class="form-content">
                                 <label for="contact">Contact :</label>
-                            <input type="tel" id="contact" name="contact" placeholder="enter mob No" required>
+                                <input type="tel" id="contact" name="contact" placeholder="enter mob No" pattern="^[6-9]\d{9}$" required>
                             </div>
                         </div>
         
@@ -141,21 +141,27 @@
                            </div>
         
                            <div class="form-content">
-                            <label for="logoUpload">Company Logo Upload :</label>
-                            <input type="file" id="logoUpload" name="logoUpload" accept="image/*"  required>
-                           </div>
+                            <label for="logoUpload">Company Logo Upload:</label>
+                            <input type="file" id="logoUpload" name="logoUpload" accept="image/*" required>
+                            
+                            <!-- Container for the uploaded image preview -->
+                            <div id="imagePreviewContainer" style="display: none; position: relative; margin-top: 10px;">
+                                <img id="imagePreview" src="" alt="Logo Preview" style="max-width: 150px; height: auto;">
+                                <button type="button" id="removeImage" style="position: absolute; top: 0; background: red; color: white; border: none; border-radius: 50%; padding: 5px 10px;">X</button>
+                            </div>
+                        </div>
                         </div>
         
                         <div class="form-group">
                             <div class="form-content">
                                 <label for="description">Company Description :</label>
-                                <textarea id="description" name="description" rows="10" cols="50" placeholder="enter description" required></textarea>
+                                <textarea id="description" name="description" rows="2" cols="50" placeholder="enter description" required></textarea>
                             </div>
             
-                           <div class="form-content">
+                           <!-- <div class="form-content">
                             <label for="duration">Duration :</label>
                             <input type="number" id="duration" name="duration" placeholder="enter duration" required>
-                           </div>
+                           </div> -->
                         </div>
         
                         <div class="form-group">
@@ -170,120 +176,199 @@
                             </div>
                         </div>
         
-                        <div class="from-group">
+                        <div class="from-group" id="submittion-section">
+                            <button id="cancel"> Cancel</button>
                             <input type="submit" value="Submit">
                         </div>
                     </form>
                 </div>
             </div>
+            <!-- Update Popup -->
+            <div id="updatePopup" class="popup">
+                <div class="popup-content">
+                    <span class="updateClose">&times;</span>
+                    <h2>Update Advertisement</h2>
+                    <form>
+                        <div class="updateForm-group">
+                            <div class="updateForm-content">
+                                <label for="updateName">Name :</label>
+                                <input type="text" id="updateName" name="name" placeholder="enter name" required value="John Doe">
+                            </div>
 
+                            <div class="updateForm-content">
+                                <label for="updateEmail">Email :</label>
+                                <input type="email" id="updateEmail" name="email" placeholder="Enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" value="john.doe@example.com"/>
+                            </div>
+                        </div>
+
+                        <div class="updateForm-group">
+                            <div class="updateForm-content">
+                                <label for="updateCompanyName">Company Name :</label>
+                                <input type="text" id="updateCompanyName" name="companyName" placeholder="enter company name" required value="ABC Corp">
+                            </div>
+
+                            <div class="updateForm-content">
+                                <label for="updateContact">Contact :</label>
+                                <input type="tel" id="updateContact" name="contact" placeholder="enter mob No" pattern="^[6-9]\d{9}$" required value="9876543210">
+                            </div>
+                        </div>
+
+                        <div class="updateForm-group">
+                            <div class="updateForm-content">
+                                <label for="updateLogoSize">Logo Size :</label>
+                                <select id="updateLogoSize" name="logoSize" required>
+                                    <option value="140x40">140x40</option>
+                                    <option value="180x100">180x100</option>
+                                    <option value="200x50">200x50</option>
+                                </select>
+                            </div>
+
+                            <div class="updateForm-content">
+                                <label for="updateLogoUpload">Company Logo Upload:</label>
+                                <input type="file" id="updateLogoUpload" name="logoUpload" accept="image/*" required>
+
+                                <!-- Container for the uploaded image preview -->
+                                <div id="updateImagePreviewContainer" style="position: relative; margin-top: 10px;">
+                                    <img id="updateImagePreview" src="../images/admin.jpg" alt="Logo Preview" style="max-width: 150px; height: auto;">
+                                    <button type="button" id="updateRemoveImage" style="position: absolute; top: 0; background: red; color: white; border: none; border-radius: 50%; padding: 5px 10px;">X</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="updateForm-group">
+                            <div class="updateForm-content">
+                                <label for="updateDescription">Company Description :</label>
+                                <textarea id="updateDescription" name="description" rows="2" cols="50" placeholder="enter description" required>Best company in tech</textarea>
+                            </div>
+                        </div>
+
+                        <div class="updateForm-group">
+                            <div class="updateForm-content">
+                                <label for="updateStartDate">Start Date :</label>
+                                <input type="date" id="updateStartDate" name="startDate" required value="2025-01-01">
+                            </div>
+
+                            <div class="updateForm-content">
+                                <label for="updateEndDate">End Date :</label>
+                                <input type="date" id="updateEndDate" name="endDate" required value="2025-12-31">
+                            </div>
+                        </div>
+
+                        <div class="updateFrom-group" id="updateSubmittion-section">
+                            <button id="updateCancel"> Cancel</button>
+                            <input type="submit" value="Update">
+                        </div>
+                    </form>
+                </div>
+            </div>
 
             <div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Active Advertisement</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>No</th>
+                <div class="order">
+                    <div class="head">
+                        <h3>Active Advertisement</h3>
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i>
+                    </div>
+                    <table id="advertisementTable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email Id</th>
                                 <th>Company Name</th>
-                                <th>Start Date </th>
-                                <th>End date</th>
-								<th>Email Id</th>
-                                <th>Logo</th>
                                 <th>Logo Size</th>
+                                <th>Logo</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 <th>Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								
-								<td>1</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Vijay</td>
+                                <td>vijay@gmail.com</td>
                                 <td>Yuktha Construction</td>
+                                <td>140 * 40</td>
+                                <td class="user">
+                                    <img src="../images/admin.jpg" alt="Logo">
+                                </td>
                                 <td>02/07/2024</td>
                                 <td>05/09/2024</td>
-                                <td>vijay@gmail.com</td>
-                                <td class="user">
-									<img src="../images/admin.jpg">
-									
-								</td>
-                                <td>140 * 40</td>
                                 <td>
                                     <p class="p1">Edit</p>
-                                    <p class="p2">Delete</p>
+                                    <p class="p2 delete">Delete</p>
                                 </td>
-							</tr>
-							<tr>
-								<td>2</td>
-                                <td>Yuktha Construction</td>
-                                <td>02/07/2024</td>
-                                <td>05/09/2024</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Vijay</td>
                                 <td>vijay@gmail.com</td>
-                                <td class="user">
-									<img src="../images/admin.jpg">
-									
-								</td>
+                                <td>Yuktha Construction</td>
                                 <td>180 * 100</td>
-                                <td>
-                                    <p class="p1">Edit</p>
-                                    <p class="p2">Delete</p>
+                                <td class="user">
+                                    <img src="../images/admin.jpg" alt="Logo">
                                 </td>
-							</tr>
-							<tr>
-								<td>3</td>
-                                <td>Yuktha Construction</td>
                                 <td>02/07/2024</td>
                                 <td>05/09/2024</td>
+                                <td>
+                                    <p class="p1">Edit</p>
+                                    <p class="p2 delete">Delete</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Vijay</td>
                                 <td>vijay@gmail.com</td>
-                                <td class="user">
-									<img src="../images/admin.jpg">
-									
-								</td>
+                                <td>Yuktha Construction</td>
                                 <td>140 * 40</td>
-                                <td>
-                                    <p class="p1">Edit</p>
-                                    <p class="p2">Delete</p>
+                                <td class="user">
+                                    <img src="../images/admin.jpg" alt="Logo">
                                 </td>
-							</tr>
-							<tr>
-								<td>4</td>
-                                <td>Yuktha Construction</td>
                                 <td>02/07/2024</td>
                                 <td>05/09/2024</td>
+                                <td>
+                                    <p class="p1">Edit</p>
+                                    <p class="p2 delete">Delete</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Vijay</td>
                                 <td>vijay@gmail.com</td>
-                                <td class="user">
-									<img src="../images/admin.jpg">
-									
-								</td>
+                                <td>Yuktha Construction</td>
                                 <td>200 * 50</td>
-                                <td>
-                                    <p class="p1">Edit</p>
-                                    <p class="p2">Delete</p>
+                                <td class="user">
+                                    <img src="../images/admin.jpg" alt="Logo">
                                 </td>
-							</tr>
-							<tr>
-								<td>5</td>
-                                <td>Yuktha Construction</td>
                                 <td>02/07/2024</td>
                                 <td>05/09/2024</td>
-                                <td>vijay@gmail.com</td>
-                                <td class="user">
-									<img src="../images/admin.jpg">
-									
-								</td>
-                                <td>180 * 100</td>
                                 <td>
                                     <p class="p1">Edit</p>
-                                    <p class="p2">Delete</p>
+                                    <p class="p2 delete">Delete</p>
                                 </td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Vijay</td>
+                                <td>vijay@gmail.com</td>
+                                <td>Yuktha Construction</td>
+                                <td>180 * 100</td>
+                                <td class="user">
+                                    <img src="../images/admin.jpg" alt="Logo">
+                                </td>
+                                <td>02/07/2024</td>
+                                <td>05/09/2024</td>
+                                <td>
+                                    <p class="p1">Edit</p>
+                                    <p class="p2 delete">Delete</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
          </main>
 
     </section>
