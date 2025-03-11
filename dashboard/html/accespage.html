@@ -99,15 +99,17 @@
        <main>
 		<div class="content-of-page">
 			<div class="accesscontainer">
-				<button onclick="openForm()">Create</button>
+				<button class="createempbtn" onclick="openForm()">Create</button>
 				
-				<h3>Active Admins / Employees</h3>
+				<div class="table-box">
+					<h3>Active Admins / Employees</h3>
 				<table id="activeAdmins" class="display">
 					<thead>
 						<tr>
 							<th>Name</th>
 							<th>Mobile</th>
 							<th>Email</th>
+							<th>User Type</th>
 							<th>Created Date</th>
 							<th>Actions</th>
 						</tr>
@@ -117,8 +119,9 @@
 							<td>John Doe</td>
 							<td>9876543210</td>
 							<td>john@example.com</td>
+							<td>Employee</td>
 							<td>2024-03-01</td>
-							<td>
+							<td class="action-btn">
 								<button class="btn-deny-access" data-name="John Doe">Deny Access</button>
 								<button class="btn-delete-user" data-name="John Doe">Delete</button>
 							</td>
@@ -127,22 +130,26 @@
 							<td>Jane Smith</td>
 							<td>8765432109</td>
 							<td>jane@example.com</td>
+							<td>Admin</td>
 							<td>2024-03-02</td>
-							<td>
+							<td class="action-btn">
 								<button class="btn-deny-access" data-name="Jane Smith">Deny Access</button>
 								<button class="btn-delete-user" data-name="Jane Smith">Delete</button>
 							</td>
 						</tr>
 					</tbody>
 				</table>
+				</div>
 				
-				<h3>Inactive Admins / Employees</h3>
+				<div class="table-box">
+					<h3>Inactive Admins / Employees</h3>
 				<table id="inactiveAdmins" class="display">
 					<thead>
 						<tr>
 							<th>Name</th>
 							<th>Mobile</th>
 							<th>Email</th>
+							<th>user Type</th>
 							<th>Created Date</th>
 							<th>Actions</th>
 						</tr>
@@ -152,8 +159,9 @@
 							<td>David Brown</td>
 							<td>7654321098</td>
 							<td>david@example.com</td>
+							<td>Employee</td>
 							<td>2024-02-25</td>
-							<td>
+							<td class="action-btn">
 								<button class="btn-grant-access" data-name="David Brown">Grant Access</button>
 								<button class="btn-delete-user" data-name="David Brown">Delete</button>
 							</td>
@@ -162,14 +170,16 @@
 							<td>Emma Wilson</td>
 							<td>6543210987</td>
 							<td>emma@example.com</td>
+							<td>Admin</td>
 							<td>2024-02-20</td>
-							<td>
+							<td class="action-btn">
 								<button class="btn-grant-access" data-name="Emma Wilson">Grant Access</button>
 								<button class="btn-delete-user" data-name="Emma Wilson">Delete</button>
 							</td>
 						</tr>
 					</tbody>
 				</table>
+				</div>
 			</div>
 		</div>
 	

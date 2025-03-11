@@ -21,18 +21,23 @@
 .accesscontainer {
   width: 100%;
   /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
   background: white;
-  padding: 20px;
+  padding: 25px 20px;
+  margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 h3 {
   margin-bottom: 15px;
 } 
-.modal-content{
+/* .modal-content{
   max-width: 840px;
   width: 100%;
-}
+} */
  .accessForm{
   padding: 10px;
   display: flex;
@@ -142,6 +147,9 @@ button {
   align-items: center;
   justify-content: center;
 }
+.action-btn button {
+  margin-bottom: 5px;
+}
 .accesscontainer th {
   background: #007bff;
   color: white;
@@ -164,31 +172,35 @@ th, td {
 } */
 /* Modal */
 .modal {
-  display: none;
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay */
+}
+
+.modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: #fff;
   padding: 20px;
-  margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 840px;
   width: 100%;
-  border-radius: 10px;
-  
+  text-align: center;
 }
 
-.modal-content {
-  max-width: 800px;
-  width: 100%;
-}
+
 
 /* confirmation */
 .modal-pop {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   left: 0;
   top: 0;
@@ -199,7 +211,7 @@ th, td {
 .modal-content-pop {
   background-color: white;
   padding: 20px;
-  margin: 20% auto;
+  margin: 25% auto;
   width: 300px;
   text-align: center;
   border-radius: 8px;

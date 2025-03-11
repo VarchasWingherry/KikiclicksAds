@@ -1,9 +1,10 @@
 function openForm() {
     document.getElementById("accessModal").style.display = "block";
-}
-function closeForm() {
+  }
+
+  function closeForm() {
     document.getElementById("accessModal").style.display = "none";
-}
+  }
 $(document).ready(function() {
     $('#activeAdmins, #inactiveAdmins').DataTable({
         "paging": true,
