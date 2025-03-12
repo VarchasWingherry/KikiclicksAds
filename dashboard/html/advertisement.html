@@ -109,31 +109,31 @@
                        <div class="form-group">
                            <div class="form-content">
                             <label for="name">Name :</label>
-                            <input type="text" id="name" name="name" placeholder="enter name" required>
+                            <input type="text" id="name" name="name" placeholder="enter name" >
                            </div>
             
                             <div class="form-content">
                                 <label for="email">Email :</label>
-                                <input type="email" id="email" name="email" placeholder="Enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+                                <input type="email" id="email" name="email" placeholder="Enter email" />
                             </div>
                        </div>
         
                         <div class="form-group">
                            <div class="form-content">
                             <label for="companyName">Company Name :</label>
-                            <input type="text" id="companyName" name="companyName" placeholder="enter company name" required>
+                            <input type="text" id="companyName" name="companyName" placeholder="enter company name" >
                            </div>
             
                             <div class="form-content">
                                 <label for="contact">Contact :</label>
-                                <input type="tel" id="contact" name="contact" placeholder="enter mob No" pattern="^[6-9]\d{9}$" required>
+                                <input type="tel" id="contact" name="contact" placeholder="enter mob No">
                             </div>
                         </div>
         
                         <div class="form-group">
                            <div class="form-content">
                             <label for="logoSize">Logo Size :</label>
-                            <select id="logoSize" name="logoSize" required>
+                            <select id="logoSize" name="logoSize" >
                                 <option value="140x40">140x40</option>
                                 <option value="180x100">180x100</option>
                                 <option value="200x50">200x50</option>
@@ -142,7 +142,7 @@
         
                            <div class="form-content">
                             <label for="logoUpload">Company Logo Upload:</label>
-                            <input type="file" id="logoUpload" name="logoUpload" accept="image/*" required>
+                            <input type="file" id="logoUpload" name="logoUpload" accept="image/png, image/jpeg, image/jpg" >
                             
                             <!-- Container for the uploaded image preview -->
                             <div id="imagePreviewContainer" style="display: none; position: relative; margin-top: 10px;">
@@ -155,30 +155,30 @@
                         <div class="form-group">
                             <div class="form-content">
                                 <label for="description">Company Description :</label>
-                                <textarea id="description" name="description" rows="2" cols="50" placeholder="enter description" required></textarea>
+                                <textarea id="description" name="description" rows="2" cols="50" placeholder="enter description" ></textarea>
                             </div>
             
                            <div class="form-content">
                             <label for="duration">Duration :</label>
-                            <input type="number" id="duration" min="1" max="30" placeholder="Enter duration (1-30 seconds)" required>
+                            <input type="number" id="duration" min="1" max="30" placeholder="Enter duration (1-30 seconds)" >
                         </div>
                         </div>
         
                         <div class="form-group">
                            <div class="form-content">
                             <label for="startDate">Start Date :</label>
-                            <input type="date" id="startDate" name="startDate" required>
+                            <input type="date" id="startDate" name="startDate" >
                            </div>
             
                             <div class="form-content">
                                 <label for="endDate">End Date :</label>
-                            <input type="date" id="endDate" name="endDate" required>
+                            <input type="date" id="endDate" name="endDate" >
                             </div>
                         </div>
         
                         <div class="from-group" id="submittion-section">
-                            <button id="cancel" class="danger"> Cancel</button>
                             <input type="submit" value="Submit">
+                            <button type="button" id="cancel" class="danger"> Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -192,31 +192,31 @@
                         <div class="updateForm-group">
                             <div class="updateForm-content">
                                 <label for="updateName">Name :</label>
-                                <input type="text" id="updateName" name="name" placeholder="enter name" required value="John Doe">
+                                <input type="text" id="updateName" name="name" placeholder="enter name"  value="John Doe">
                             </div>
 
                             <div class="updateForm-content">
                                 <label for="updateEmail">Email :</label>
-                                <input type="email" id="updateEmail" name="email" placeholder="Enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" value="john.doe@example.com"/>
+                                <input type="email" id="updateEmail" name="email" placeholder="Enter email"  value="john.doe@example.com"/>
                             </div>
                         </div>
 
                         <div class="updateForm-group">
                             <div class="updateForm-content">
                                 <label for="updateCompanyName">Company Name :</label>
-                                <input type="text" id="updateCompanyName" name="companyName" placeholder="enter company name" required value="ABC Corp">
+                                <input type="text" id="updateCompanyName" name="companyName" placeholder="enter company name"  value="ABC Corp">
                             </div>
 
                             <div class="updateForm-content">
                                 <label for="updateContact">Contact :</label>
-                                <input type="tel" id="updateContact" name="contact" placeholder="enter mob No" pattern="^[6-9]\d{9}$" required value="9876543210">
+                                <input type="tel" id="updateContact" name="contact" placeholder="enter mob No"  value="9876543210">
                             </div>
                         </div>
 
                         <div class="updateForm-group">
                             <div class="updateForm-content">
                                 <label for="updateLogoSize">Logo Size :</label>
-                                <select id="updateLogoSize" name="logoSize" required>
+                                <select id="updateLogoSize" name="logoSize" >
                                     <option value="140x40">140x40</option>
                                     <option value="180x100">180x100</option>
                                     <option value="200x50">200x50</option>
@@ -225,7 +225,7 @@
 
                             <div class="updateForm-content">
                                 <label for="updateLogoUpload">Company Logo Upload:</label>
-                                <input type="file" id="updateLogoUpload" name="logoUpload" accept="image/*" required>
+                                <input type="file" id="updateLogoUpload" name="logoUpload" accept="image/*" >
 
                                 <!-- Container for the uploaded image preview -->
                                 <div id="updateImagePreviewContainer" style="position: relative; margin-top: 10px;">
@@ -238,30 +238,30 @@
                         <div class="updateForm-group">
                             <div class="updateForm-content">
                                 <label for="updateDescription">Company Description :</label>
-                                <textarea id="updateDescription" name="description" rows="2" cols="50" placeholder="enter description" required>Best company in tech</textarea>
+                                <textarea id="updateDescription" name="description" rows="2" cols="50" placeholder="enter description" >Best company in tech</textarea>
                             </div>
 
                             <div class="form-content">
                                 <label for="duration">Duration :</label>
-                                <input type="number" id="duration" min="1" max="30" placeholder="Enter duration (1-30 seconds)" value="20" required>
+                                <input type="number" id="duration" min="1" max="30" placeholder="Enter duration (1-30 seconds)" value="20" >
                             </div>
                         </div>
 
                         <div class="updateForm-group">
                             <div class="updateForm-content">
                                 <label for="updateStartDate">Start Date :</label>
-                                <input type="date" id="updateStartDate" name="startDate" required value="2025-01-01">
+                                <input type="date" id="updateStartDate" name="startDate"  value="2025-01-01">
                             </div>
 
                             <div class="updateForm-content">
                                 <label for="updateEndDate">End Date :</label>
-                                <input type="date" id="updateEndDate" name="endDate" required value="2025-12-31">
+                                <input type="date" id="updateEndDate" name="endDate"  value="2025-12-31">
                             </div>
                         </div>
 
                         <div class="updateFrom-group" id="updateSubmittion-section">
-                            <button id="updateCancel" class="danger"> Cancel</button>
                             <input type="submit" value="Update">
+                            <button type="button" id="updateCancel" class="danger"> Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -380,6 +380,17 @@
                 </div>
             </div>
             
+            <!-- Custom Delete Confirmation Popup -->
+            <div id="kikiCustomConfirm" class="kikiNotification" style="display: none;">
+                <div class="kikiNotificationContent">
+                    <span id="kikiConfirmMessage">Are you sure you want to delete this row?</span>
+                    <div>
+                        <button id="kikiConfirmDelete" class="confirmBtn">Yes</button>
+                        <button id="kikiCancelDelete" class="cancelBtn">No</button>
+                    </div>
+                </div>
+            </div>
+
          </main>
 
     </section>

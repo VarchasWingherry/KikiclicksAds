@@ -1,16 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('advertisementTable');
+    const modal = document.getElementById('kikiCustomConfirm');
+    const confirmBtn = document.getElementById('kikiConfirmDelete');
+    const cancelBtn = document.getElementById('kikiCancelDelete');
+    
+    let currentRow = null;
 
     // Event delegation for delete buttons
     table.addEventListener('click', (event) => {
         if (event.target.classList.contains('delete')) {
-            const confirmation = confirm('Are you sure you want to delete this row?');
-            if (confirmation) {
-                const row = event.target.closest('tr');
-                row.remove();
-                updateRowNumbers();
-            }
+            currentRow = event.target.closest('tr'); 
+            modal.style.display = 'block';
         }
+    });
+
+    // Confirm delete action
+    confirmBtn.addEventListener('click', () => {
+        if (currentRow) {
+            currentRow.remove();
+            updateRowNumbers();
+        }
+        modal.style.display = 'none';
+    });
+
+    // Cancel delete action
+    cancelBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        currentRow = null;
     });
 
     function updateRowNumbers() {
@@ -19,145 +35,192 @@ document.addEventListener('DOMContentLoaded', () => {
             row.querySelector('td:first-child').textContent = index + 1;
         });
     }
+});
+
 
     // Handle Create Popup
-    const createBtn = document.querySelector('.create');
-    const popup = document.getElementById('popup');
-    const closeBtn = document.querySelector('.close');
-    const cancelBtn = document.getElementById('cancel'); // Cancel button
-    const form1 = popup.querySelector("form");
+   
+    
+    
+    
+    
+    
+// });
 
-    createBtn.addEventListener('click', () => {
-        popup.style.display = 'block';
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const createBtn = document.querySelector(".create");
+    const editBtns = document.querySelectorAll(".p1");
+    const popup = document.getElementById("popup");
+    const updatePopup = document.getElementById("updatePopup");
+    const closeBtns = document.querySelectorAll(".close, .updateClose");
+    const cancelBtns = document.querySelectorAll("#cancel, #updateCancel");
 
-    closeBtn.addEventListener('click', () => closePopup(popup, form1));
-    cancelBtn.addEventListener('click', () => closePopup(popup, form1)); // Close on Cancel
-
-    window.addEventListener('click', (event) => {
-        if (event.target === popup) closePopup(popup, form1);
-    });
-
-    function closePopup(popup, form) {
-        popup.style.display = 'none';
-        form.reset();
-    }
-
-    // Handle Update Popup
-    const editBtns = document.querySelectorAll('.p1');
-    const updatePopup = document.getElementById('updatePopup');
-    const updateCloseBtn = document.querySelector('.updateClose');
-    const updateCancelBtn = document.getElementById('updateCancel'); // Cancel button
+    const createForm = popup.querySelector("form");
     const updateForm = updatePopup.querySelector("form");
 
-    editBtns.forEach(editBtn => {
-        editBtn.addEventListener('click', () => {
-            updatePopup.style.display = 'block';
+    // Open Create Popup
+    createBtn.addEventListener("click", () => {
+        popup.style.display = "block";
+    });
+
+    // Open Update Popup
+    editBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            updatePopup.style.display = "block";
         });
     });
 
-    updateCloseBtn.addEventListener('click', () => closePopup(updatePopup, updateForm));
-    updateCancelBtn.addEventListener('click', () => closePopup(updatePopup, updateForm)); // Close on Cancel
+    // Close Popups and Reset Forms
+    function closePopups() {
+        popup.style.display = "none";
+        updatePopup.style.display = "none";
+        createForm.reset();
+        updateForm.reset();
+        clearErrors(createForm);
+        clearErrors(updateForm);
+    }
 
-    window.addEventListener('click', (event) => {
-        if (event.target === updatePopup) closePopup(updatePopup, updateForm);
+    closeBtns.forEach((btn) => {
+        btn.addEventListener("click", closePopups);
     });
 
-    // Input Validations
-    function textValidation(event) {
-        let value = event.target.value.replace(/[^a-zA-Z\s]/g, '');
-        event.target.value = value.trimStart();
+    cancelBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            closePopups();
+        });
+    });
+
+    // Clear existing error messages
+    function clearErrors(form) {
+        form.querySelectorAll(".error-msg").forEach(el => el.remove());
     }
 
-    function emailValidation(event) {
-        let value = event.target.value.replace(/[^a-zA-Z0-9@._-]/g, '');
-        let atCount = (value.match(/@/g) || []).length;
-        if (atCount > 1) value = value.slice(0, value.lastIndexOf('@'));
-        event.target.value = value.trimStart();
+    // Validate Form
+    function validateForm(form) {
+        let isValid = true;
+        const inputs = form.querySelectorAll("input, textarea, select");
+        clearErrors(form);
+
+        inputs.forEach((input) => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+
+        return isValid;
     }
 
-    document.getElementById('name').addEventListener('input', textValidation);
-    document.getElementById('email').addEventListener('input', emailValidation);
-    document.getElementById('companyName').addEventListener('input', textValidation);
+    // Validate Single Field
+    function validateField(input) {
+        let errorMsg = "";
+        const value = input.value.trim();
+        const errorSpan = document.createElement("span");
+        errorSpan.classList.add("error-msg");
+        errorSpan.style.color = "red";
+        errorSpan.style.fontSize = "12px";
+        errorSpan.style.display = "block";
+        errorSpan.style.marginTop = "5px";
 
-    const contactInput = document.getElementById('contact');
-    contactInput.addEventListener('input', () => contactInput.setCustomValidity(''));
-    contactInput.addEventListener('invalid', function () {
-        if (this.validity.patternMismatch || this.value.length !== 10) {
-            this.setCustomValidity('Please enter a valid 10-digit mobile number');
+        if (!value) {
+            errorMsg = "This field is required.";
+        } else if (input.id.includes("updateName") || input.id.includes("updateCompanyName")) {
+            if (!/^[A-Z][a-zA-Z\s]+$/.test(value)) {
+                errorMsg = "Must start with uppercase & only letters/spaces.";
+            }
+        } else if (input.id.includes("updateEmail")) {
+            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+                errorMsg = "Enter a valid email.";
+            }
+        } else if (input.id.includes("updateContact")) {
+            if (!/^[6789]\d{9}$/.test(value)) {
+                errorMsg = "Must start with 6,7,8,9 & be 10 digits.";
+            }
+        } else if (input.id.includes("updateLogoUpload")) {
+            if (input.files.length > 0) {
+                const file = input.files[0];
+                if (!file.type.startsWith("image/")) {
+                    errorMsg = "Only image files allowed.";
+                }
+            }
+        } else if (input.id.includes("duration")) {
+            if (value < 1 || value > 30) {
+                errorMsg = "Duration must be between 1-30 seconds.";
+            }
+        } else if (input.id.includes("updateStartDate") || input.id.includes("updateEndDate")) {
+            const startDate = document.getElementById("updateStartDate")?.value;
+            const endDate = document.getElementById("updateEndDate")?.value;
+            if (startDate && endDate && new Date(endDate) <= new Date(startDate)) {
+                errorMsg = "End Date must be after Start Date.";
+            }
+        }
+
+        if (errorMsg) {
+            errorSpan.innerText = errorMsg;
+            input.parentNode.appendChild(errorSpan);
+            return false;
+        }
+
+        return true;
+    }
+
+    // Submit Form Validation (Create)
+    createForm.addEventListener("submit", function (event) {
+        if (!validateForm(createForm)) {
+            event.preventDefault();
+            popup.style.display = "block";
+        } else {
+            closePopups();
         }
     });
 
-    // Image Upload Handling
-    function handleImageUpload(inputId, previewContainerId, previewId, removeBtnId) {
-        const fileInput = document.getElementById(inputId);
-        const previewContainer = document.getElementById(previewContainerId);
-        const imagePreview = document.getElementById(previewId);
-        const removeButton = document.getElementById(removeBtnId);
-
-        fileInput.addEventListener('change', function (event) {
-            const file = event.target.files[0];
-            if (file) {
-                imagePreview.src = URL.createObjectURL(file);
-                previewContainer.style.display = 'block';
-            }
-        });
-
-        removeButton.addEventListener('click', function () {
-            fileInput.value = '';
-            imagePreview.src = '';
-            previewContainer.style.display = 'none';
-        });
-    }
-
-    handleImageUpload('logoUpload', 'imagePreviewContainer', 'imagePreview', 'removeImage');
-
-    // Date Validation
-    function validateDates(startDateId, endDateId) {
-        const startDate = document.getElementById(startDateId).value;
-        const endDate = document.getElementById(endDateId).value;
-
-        if (startDate && endDate) {
-            if (new Date(startDate) >= new Date(endDate)) {
-                document.getElementById(endDateId).setCustomValidity('End Date must be after Start Date.');
-            } else {
-                document.getElementById(endDateId).setCustomValidity('');
-            }
+    // Submit Form Validation (Update)
+    updateForm.addEventListener("submit", function (event) {
+        if (!validateForm(updateForm)) {
+            event.preventDefault();
+            updatePopup.style.display = "block";
+        } else {
+            closePopups();
         }
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        const durationInput = document.getElementById('duration');
-    
-        durationInput.addEventListener('input', function () {
-            let value = parseInt(this.value, 10);
-    
-            // If value is NaN or less than 1, set it to 1
-            if (isNaN(value) || value < 1) {
-                this.value = 1;
-            }
-            // If value is greater than 30, set it to 30
-            else if (value > 30) {
-                this.value = 30;
-            }
-        });
-    
-        durationInput.addEventListener('keydown', function (event) {
-            // Prevent entering non-numeric characters
-            if (!/^[0-9]$/.test(event.key) && event.key !== 'Backspace' && event.key !== 'Delete') {
-                event.preventDefault();
-            }
-        });
-    
-        durationInput.addEventListener('change', function () {
-            // Ensure value remains within 1-30 range after change
-            if (this.value < 1) this.value = 1;
-            if (this.value > 30) this.value = 30;
-        });
     });
-    
-    document.getElementById('startDate').addEventListener('change', () => validateDates('startDate', 'endDate'));
-    document.getElementById('endDate').addEventListener('change', () => validateDates('startDate', 'endDate'));
 
-    document.getElementById('updateStartDate').addEventListener('change', () => validateDates('updateStartDate', 'updateEndDate'));
-    document.getElementById('updateEndDate').addEventListener('change', () => validateDates('updateStartDate', 'updateEndDate'));
+    // Image Preview Handling
+    function handleImagePreview(input, previewContainer, previewImage, removeButton) {
+        input.addEventListener("change", function () {
+            if (input.files.length > 0) {
+                const file = input.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImage.src = e.target.result;
+                    previewContainer.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        removeButton.addEventListener("click", function () {
+            input.value = "";
+            previewContainer.style.display = "none";
+            previewImage.src = "";
+        });
+    }
+
+    // Setup Image Preview for Create
+    handleImagePreview(
+        document.getElementById("logoUpload"),
+        document.getElementById("imagePreviewContainer"),
+        document.getElementById("imagePreview"),
+        document.getElementById("removeImage")
+    );
+
+    // Setup Image Preview for Update
+    handleImagePreview(
+        document.getElementById("updateLogoUpload"),
+        document.getElementById("updateImagePreviewContainer"),
+        document.getElementById("updateImagePreview"),
+        document.getElementById("updateRemoveImage")
+    );
 });
+
+
+

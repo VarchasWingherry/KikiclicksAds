@@ -18,13 +18,13 @@
 
 .popup {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
+    /* overflow: auto;  */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -34,8 +34,8 @@
     margin:8% 25%; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
     max-width: 800px;
+    width: 100%; /* Could be more or less, depending on screen size */
     border-radius: 12px;
     background-color: rgb(252, 252, 252);
 }
@@ -66,7 +66,7 @@ tr td .p1{
     cursor: pointer;
 }
 tr td .p2{
-    background-color: rgb(219, 7, 7);
+    background-color: #c0392b;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -89,6 +89,9 @@ tr td .p2{
     flex-wrap: wrap;
     width: 100%;
 }
+.form-group .form-content{
+    width: 50%;
+}
 #submittion-section{
     width: 100%;
     display: flex;
@@ -97,7 +100,7 @@ tr td .p2{
     gap:20px;
 }
 #cancel{
-    background-color: #DB0707;
+    background-color: #e74c3c;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -106,7 +109,7 @@ tr td .p2{
     color: white;
 }
 #cancel:hover{
-    background-color: #a51010;
+    background-color: #c0392b;
 }
 .popup .form-content {
     flex: 1 1 calc(50% - 20px); /* Adjust the width to fit two per row with a gap */
@@ -161,7 +164,7 @@ input[type="submit"]:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
+    overflow: auto; 
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -171,8 +174,8 @@ input[type="submit"]:hover {
     margin:8% 25%; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
     max-width: 800px;
+    width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 12px;
     background-color: rgb(252, 252, 252);
 }
@@ -200,7 +203,7 @@ input[type="submit"]:hover {
 }
 
 .updateForm-content {
-    flex: 1 1 calc(50% - 20px); /* Adjust the width to fit two per row with a gap */
+    width: 50%;
 }
 #updateSubmittion-section{
     width: 100%;
@@ -260,4 +263,65 @@ input[type="submit"]:hover {
     .updateForm-content {
         flex: 1 1 100%; /* Make each item take full width on smaller screens */
     }
+
+    .popup .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group .form-content{
+        width: 100%;
+    }
+
 }
+
+
+.kikiNotification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(254, 254, 254);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .kikiNotificationContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .kikiNotification button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .confirmBtn {
+    background-color: #e74c3c; /* Red for delete */
+    color: white;
+  }
+  
+  .cancelBtn {
+    background-color: #95a5a6; /* Grey for cancel */
+    color: white;
+  }
+  
+  .confirmBtn:hover {
+    background-color: #c0392b;
+  }
+  
+  .cancelBtn:hover {
+    background-color: #7f8c8d;
+  }
+  

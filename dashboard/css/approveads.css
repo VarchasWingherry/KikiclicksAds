@@ -395,4 +395,28 @@ section{
     margin: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+
+  }
+
+  .yesbtn{
+    background-color: #e74c3c; /* Red for delete */
+    color: white;
+    border: none;
+  }
+  .yesbtn:hover{
+    background-color: #c0392b;
+  }
+  .nobtn{
+    background-color: #95a5a6; /* Grey for cancel */
+    color: white;
+  }
+  .nobtn:hover{
+    background-color: #7f8c8d;
+  }
+  .okbtn{
+    background-color: #007bff;
+    color: white;
   }

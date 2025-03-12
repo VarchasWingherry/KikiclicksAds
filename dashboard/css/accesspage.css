@@ -83,10 +83,14 @@ h3 {
 
 .accessForm .radio-group {
   display: flex;
+  align-items: center;
   gap: 10px;
-  width: max-content;
+  width: 100%;
   padding-top: 4px;
 
+}
+.radio-group input{
+  width: 15px;
 }
 .accessForm .access-sub-btn{
   width: 100%;
@@ -181,6 +185,8 @@ th, td {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Black overlay */
+  overflow: auto;
+
 }
 
 .modal-content {
@@ -195,8 +201,13 @@ th, td {
   max-width: 840px;
   width: 100%;
   text-align: center;
+  overflow-y: auto;
 }
-
+@media (max-width:600px) {
+  .modal-content {
+    height: 90vh;
+  }
+}
 
 
 /* confirmation */
@@ -225,3 +236,80 @@ th, td {
   max-width: 100%;
   overflow-x: auto;
 }
+
+#confirmYes{
+  background-color: #e74c3c; /* Red for delete */
+  color: white;
+}
+#confirmYes:hover{
+  background-color: #c0392b;
+}
+#confirmNo{
+  background-color: #95a5a6; /* Grey for cancel */
+  color: white;
+}
+#confirmNo:hover{
+  background-color: #7f8c8d;
+}
+#confirmMessage, #alertMessage{
+  margin-bottom: 10px;
+}
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+
+.kikiNotification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(254, 254, 254);
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.kikiNotificationContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kikiNotification button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Space for the icon */
+}
+
+.password-container i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
