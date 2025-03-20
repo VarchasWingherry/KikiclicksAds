@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Lato', sans-serif;
+}
+.content-of-page {
+    max-width: 100%;
+    height: 100vh;
+    overflow-x: auto;
+}
+.table-box{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#artTable{
+    font-size: 16px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+#artTable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.table-container {
+    margin: 30px 0;
+}
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 15px;
+}
+
+#artTable th, #artTable td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+}
+#artTable thead {
+    background: #007bff;
+    color: white;
+}
+#artTable td{
+    text-align: center;
+}
+#artTable th{
+    padding-right: 15px;
+}
+.approved, .rejected{
+    border: 1px solid gray;
+    font-weight: 800;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+.status-approved .approved{
+    background-color: green;
+}
+.status-rejected .rejected{
+    background-color: #e74c3c;
+}
+
+/* Modal background */
+.art-modal {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content */
+.art-modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@media (max-width:500px) {
+    .art-modal-content {
+        width: 96%;
+        margin: 15% auto;
+    }
+}
+/* Close button (×) */
+.art-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Close button styling */
+.art-modal-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.art-close-btn {
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.art-close-btn:hover {
+    background-color: darkred;
+}
+
+/* Content inside pop up */
+.approved-arts{
+    background-color: rgb(245, 245, 250);
+    max-width: 550px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    margin: 5px;
+    margin-top: 20px;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.approved-arts img{
+  max-width: 500px;
+  width: 100%;
+  border-radius: 6px;
+}
+.approved-arts>video{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 6px;
+}
+#views{
+    font-size: 14px;
+    font-size: clamp(12px,3vw,14px);
+    padding: 5px;
+}
+.location{
+    font-size: 14px;
+    font-size: clamp(12px,3vw,14px);
+    padding: 5px;
+}
+.date{
+    font-size: 14px;
+    font-size: clamp(12px,3vw,14px);
+    padding: 5px;
+}
+#app{
+    color: green;
+    padding: 5px;
+    font-size: 14px;
+    font-size: clamp(12px,3vw,14px);
+    font-weight: 600;
+}
+.time{
+    font-size: 14px;
+    font-size: clamp(12px,3vw,14px);
+    padding: 5px;
+}

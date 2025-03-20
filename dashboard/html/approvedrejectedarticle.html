@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve / Rejected Article</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/approvedrejectedarticle.css">
+
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+    <!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<span class="text"><div class="mainlogo" ><img src="../images/kikiclicklogo.png"  alt=""></div>
+			</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href="../html/index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li >
+				<a href="../html/viewer.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Viewers</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/poster.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Posters</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/approveads.html">
+					<i class='bx bxs-videos'></i>
+					<span class="text">Approve Ads/Articles</span>
+				</a>
+			</li>
+            <li>
+				<a href="../html/approvedrejectedads.html">
+					<i class='bx bxs-videos'></i>
+					<span class="text">Approved/Rejected Ads</span>
+				</a>
+			</li>
+            <li class="active">
+				<a href="../html/approvedrejectedarticle.html">
+					<i class='bx bxs-videos'></i>
+					<span class="text">Approved/Rejected Article</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/advertisement.html">
+					<i class='bx bxs-image'></i>
+					<span class="text">Advertisement</span>
+				</a>
+			</li>
+			<li>
+				<a href="../html/accespage.html">
+					<i class='bx bxs-star'></i>
+					<span class="text">Access Page</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+			
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a> -->
+			<a href="#" class="profile">
+				<img src="../images/admin.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+       <main>
+		<div class="content-of-page">
+			<div class="table-box">
+				<h3 class="heading">Approved / Rejected Articles</h3>
+				<div class="table-container">
+					<table id="artTable" class="display">
+						<thead>
+							<tr>
+								<th>Article Code</th>
+								<th>Category</th>
+								<th>Title</th>
+								<th>Article Type</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+								<th>Created Date</th>
+								<th>Created By</th>
+								<th>Approval Status</th>
+								<th>Approved Date</th>
+								<th>Approved By</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="#">ART123</a></td>
+								<td>Real Estate</td>
+								<td>Luxury Apartment Article</td>
+								<td>Image</td>
+								<td>2024-03-01</td>
+								<td>2024-04-01</td>
+								<td>2024-02-20</td>
+								<td>John Doe</td>
+								<td class="status-approved"><button class="approved">Approved</button></td>
+								<td>2024-02-22</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART124</a></td>
+								<td>Automobile</td>
+								<td>Car Sale Review</td>
+								<td>Video</td>
+								<td>2024-03-05</td>
+								<td>2024-04-05</td>
+								<td>2024-02-25</td>
+								<td>Jane Smith</td>
+								<td class="status-rejected"><button class="rejected">Rejected</button></td>
+								<td>2024-02-28</td>
+								<td>Admin</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- Modal (Hidden Initially) -->
+			<div id="art-modal" class="art-modal">
+				<div class="art-modal-content">
+					<span class="art-close">&times;</span>
+					<div class="art-content">
+						<section class="approved-articles">
+							<h3>Wingherry Technologies</h3>
+							<video src="../../assets/viewarticles.mp4" controls></video>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea delectus alias explicabo
+								nisi dolor. In, pariatur nihil?</p>
+							<div class="part">
+								<div class="location"><i class="fa-solid fa-location-dot"></i> Hyderabad</div>
+							</div>
+							<div class="part">
+								<div class="date">Date of Posting: 28/05/2024</div>
+								<div class="time">Time: 12:45 PM</div>
+							</div>
+						</section>
+					</div>
+					<div class="art-modal-footer">
+						<button class="art-close-btn">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+	   </main>
+        
+
+	<script src="../js/script.js"></script>
+	<script src="../js/approvedrejectedarticle.js"></script>
+	<script>
+
+	</script>
+</body>
+</html>

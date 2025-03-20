@@ -1,194 +1,200 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Post Ads Profile</title>
-    <link rel="stylesheet" href="../css/postprofile.css">
-    <link rel="stylesheet" href="../css/navposter.css">
-    <!-- <link rel="stylesheet" href="../css/footer.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Post Ads Profile</title>
+  <link rel="stylesheet" href="../css/postprofile.css">
+  <link rel="stylesheet" href="../css/navposter.css">
+  <!-- <link rel="stylesheet" href="../css/footer.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
-   </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
+</head>
+
 <body>
   <div class="upper-navbar">
     <div class="menu-bar">
       <i class="fa-solid fa-bars" id="bar"></i>
     </div>
-    <div class="mainlogo"  onclick="window.location.href='../html/kikiclickadshome.html'"><img src="../login_icon/kikiclicklogo.png"  alt=""></div>
+    <div class="mainlogo" onclick="window.location.href='../html/kikiclickadshome.html'"><img
+        src="../login_icon/kikiclicklogo.png" alt=""></div>
     <div class="notify">
       <i class="fa-solid fa-bell" id="bell"></i>
     </div>
   </div>
   <div class="main-notification">
     <div class="notification">
-        <div class="notify-heading">
-            <span>NOTIFICATIONS</span>
-        </div>
-        <div class="single-block" id="rating-notification">
-          <div class="icon-block">
-            <span class="red-dot"></span>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <div class="notify-block">
-              <div class="notify-block-head">
-                  <span class="notified-heading">Ratings</span>
-                  <div>
-                      <span>Today</span>
-                      <span>9:30PM</span>
-                  </div>
-              </div>
-              <div class="notify-block-body">
-                  <span>Please rate your experience about posting the ads.</span>
-              </div>
-          </div>
+      <div class="notify-heading">
+        <span>NOTIFICATIONS</span>
       </div>
-        <div class="single-block" id="viewpostedads-notification">
-            <div class="icon-block">
-                <span class="red-dot"></span>
-                <i class="fa-solid fa-eye"></i>
-            </div>
-            <div class="notify-block">
-                <div class="notify-block-head">
-                    <span class="notified-heading">View Posted Ads</span>
-                    <div>
-                        <span>Today</span>
-                        <span>5:30AM</span>
-                    </div>
-                </div>
-                <div class="notify-block-body">
-                    <span>Your ad has been approved by admin.</span>
-                </div>
-            </div>
+      <div class="single-block" id="rating-notification">
+        <div class="icon-block">
+          <span class="red-dot"></span>
+          <i class="fa-solid fa-star"></i>
         </div>
-        <div class="single-block" id="postingedads-notification">
-            <div class="icon-block">
-              <i class="fas fa-ad"></i>
+        <div class="notify-block">
+          <div class="notify-block-head">
+            <span class="notified-heading">Ratings</span>
+            <div>
+              <span>Today</span>
+              <span>9:30PM</span>
             </div>
-            <div class="notify-block">
-                <div class="notify-block-head">
-                    <span class="notified-heading">Post Ads</span>
-                    <div>
-                        <span>1 day ago</span>
-                        <span>5:30AM</span>
-                    </div>
-                </div>
-                <div class="notify-block-body">
-                    <span>Your ad has been sent for admin approval please wait for the approval.</span>
-                </div>
-            </div>
+          </div>
+          <div class="notify-block-body">
+            <span>Please rate your experience about posting the ads.</span>
+          </div>
         </div>
-        <div class="single-block" id="plans-notification">
-            <div class="icon-block">
-              <i class="fa-solid fa-square-check"></i>
-            </div>
-            <div class="notify-block">
-                <div class="notify-block-head">
-                    <span class="notified-heading">Plans</span>
-                    <div>
-                        <span>2 days ago</span>
-                        <span>5:30AM</span>
-                    </div>
-                </div>
-                <div class="notify-block-body">
-                    <span>Thankyou for selecting the package. Now you can post your ads.</span>
-                </div>
-            </div>
+      </div>
+      <div class="single-block" id="viewpostedads-notification">
+        <div class="icon-block">
+          <span class="red-dot"></span>
+          <i class="fa-solid fa-eye"></i>
         </div>
-        <div class="single-block" id="profile-notification">
-            <div class="icon-block">
-              <i class="fa-solid fa-user"></i>
+        <div class="notify-block">
+          <div class="notify-block-head">
+            <span class="notified-heading">View Posted Ads</span>
+            <div>
+              <span>Today</span>
+              <span>5:30AM</span>
             </div>
-            <div class="notify-block">
-                <div class="notify-block-head">
-                  <span class="notified-heading">Profile</span>
-                    <div>
-                        <span>8 days ago</span>
-                        <span>9:30AM</span>
-                    </div>
-                </div>
-                <div class="notify-block-body">
-                    <span>Congrulations, your profile has been updated successfully.</span>
-                </div>
-            </div>
+          </div>
+          <div class="notify-block-body">
+            <span>Your ad has been approved by admin.</span>
+          </div>
         </div>
+      </div>
+      <div class="single-block" id="postingedads-notification">
+        <div class="icon-block">
+          <i class="fas fa-ad"></i>
+        </div>
+        <div class="notify-block">
+          <div class="notify-block-head">
+            <span class="notified-heading">Post Ads</span>
+            <div>
+              <span>1 day ago</span>
+              <span>5:30AM</span>
+            </div>
+          </div>
+          <div class="notify-block-body">
+            <span>Your ad has been sent for admin approval please wait for the approval.</span>
+          </div>
+        </div>
+      </div>
+      <div class="single-block" id="plans-notification">
+        <div class="icon-block">
+          <i class="fa-solid fa-square-check"></i>
+        </div>
+        <div class="notify-block">
+          <div class="notify-block-head">
+            <span class="notified-heading">Plans</span>
+            <div>
+              <span>2 days ago</span>
+              <span>5:30AM</span>
+            </div>
+          </div>
+          <div class="notify-block-body">
+            <span>Thankyou for selecting the package. Now you can post your ads.</span>
+          </div>
+        </div>
+      </div>
+      <div class="single-block" id="profile-notification">
+        <div class="icon-block">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="notify-block">
+          <div class="notify-block-head">
+            <span class="notified-heading">Profile</span>
+            <div>
+              <span>8 days ago</span>
+              <span>9:30AM</span>
+            </div>
+          </div>
+          <div class="notify-block-body">
+            <span>Congrulations, your profile has been updated successfully.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<div class="sidebar">
-<div class="logo-details">
-    <i class="fa-solid fa-bars" id="btn"></i>
-</div>
-<ul class="nav-list">
-  
-  <li>
-    <a href="../html/posthome.html">
-        <i class="fa-solid fa-house"></i>
-      <span class="links_name">Home</span>
-    </a>
-     <span class="tooltip">Home</span>
-  </li>
-  <li>
-   <a href="../html/postprofile.html">
-    <i class="fa-solid fa-user"></i>
-     <span class="links_name">Poster Profile</span>
-   </a>
-   <span class="tooltip">Poster Profile</span>
- </li>
- <li>
-  <a href="../html/postplan.html">
-    <i class="fa-solid fa-square-check"></i>
-    <span class="links_name">Get plans</span>
-  </a>
-  <span class="tooltip">Get Plans</span>
-</li>
- <li>
-   <a href="../html/postcategory.html">
-    <i class="fas fa-ad"></i>
-     <span class="links_name">Post Ads</span>
-   </a>
-   <span class="tooltip">Post Ads</span>
- </li>
- <li>
-   <a href="../html/postedads.html">
-    <i class="fa-solid fa-eye"></i>
-     <span class="links_name">View Posted Ads</span>
-   </a>
-   <span class="tooltip">View Posted Ads</span>
- </li>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="fa-solid fa-bars" id="btn"></i>
+    </div>
+    <ul class="nav-list">
 
- <li>
-   <a href="../html/articlecategory.html">
-    <i class="fa-solid fa-newspaper"></i>
-     <span class="links_name">Article</span>
-   </a>
-   <span class="tooltip">Article</span>
- </li>
- <li>
-   <a href="../html/articleposted.html">
-    <i class="fa-regular fa-eye"></i>
-     <span class="links_name">View Posted Article</span>
-   </a>
-   <span class="tooltip">View Posted Article</span>
- </li>
+      <li>
+        <a href="../html/posthome.html">
+          <i class="fa-solid fa-house"></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a href="../html/postprofile.html">
+          <i class="fa-solid fa-user"></i>
+          <span class="links_name">Poster Profile</span>
+        </a>
+        <span class="tooltip">Poster Profile</span>
+      </li>
+      <li>
+        <a href="../html/postplan.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span class="links_name">Get plans</span>
+        </a>
+        <span class="tooltip">Get Plans</span>
+      </li>
+      <li>
+        <a href="../html/postcategory.html">
+          <i class="fas fa-ad"></i>
+          <span class="links_name">Post Ads</span>
+        </a>
+        <span class="tooltip">Post Ads</span>
+      </li>
+      <li>
+        <a href="../html/postedads.html">
+          <i class="fa-solid fa-eye"></i>
+          <span class="links_name">View Posted Ads</span>
+        </a>
+        <span class="tooltip">View Posted Ads</span>
+      </li>
+
+      <li>
+        <a href="../html/articlecategory.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span class="links_name">Article</span>
+        </a>
+        <span class="tooltip">Article</span>
+      </li>
+      <li>
+        <a href="../html/articleposted.html">
+          <i class="fa-regular fa-eye"></i>
+          <span class="links_name">View Posted Article</span>
+        </a>
+        <span class="tooltip">View Posted Article</span>
+      </li>
 
 
- <li class="profile">
-     <div class="profile-details">
-       <img src="../assets/profile.jpg" alt="profileImg">
-       <div class="name_job">
-         <div class="name">sam</div>
-         <div class="job">designer</div>
-       </div>
-     </div>
-     <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
- </li>
-</ul>
-</div>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="../assets/profile.jpg" alt="profileImg">
+          <div class="name_job">
+            <div class="name">sam</div>
+            <div class="job">designer</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
 
-<!-- main -->
+  <!-- main -->
 
   <section class="home-section">
     <div class="main-container">
@@ -201,18 +207,19 @@
             <label for="file-path">
               <span class="material-symbols-rounded">photo_camera</span>
             </label>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="file-path" class="file-path" style="display: none;">
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="file-path" class="file-path"
+              style="display: none;">
             <button id="delete-btn" style="display: none;"><i class="fa-regular fa-trash-can"></i></button>
           </div>
         </div>
-        
-      
+
+
         <form id="userForm">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Full Name" required>
           </div>
-        
+
           <div class="form-group">
             <label for="contact">Contact Number</label>
             <div class="inline-group">
@@ -228,17 +235,17 @@
               </div>
             </div>
           </div>
-        
+
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Email ID" required>
           </div>
-        
+
           <div class="form-group">
             <label for="address">Address</label>
             <input type="text" id="address" placeholder="Address" required>
           </div>
-        
+
           <div class="form-group">
             <div class="inline-group">
               <div>
@@ -282,7 +289,7 @@
               </div>
             </div>
           </div>
-        
+
           <div class="button-group">
             <button class="save-btn" id="saveBtn" type="button">Save</button>
             <a href="../html/postplan.html">
@@ -292,21 +299,21 @@
         </form>
         <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
           <div class="kikiNotificationContent">
-              <span id="kikiNotificationMessage">Message goes here</span>
-              <button onclick="kikiCloseNotification()">OK</button>
+            <span id="kikiNotificationMessage">Message goes here</span>
+            <button onclick="kikiCloseNotification()">OK</button>
           </div>
-          </div>
+        </div>
       </div>
     </div>
-     
+
   </section>
-   <!-- footer -->
-   <footer>
+  <!-- footer -->
+  <footer>
     <div class="footer-container">
-      <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
+      <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a>
         <p class="para1"><a href="https://wingherry.com/">Wingherry Technologies Pvt.Ltd.</a></p>
         <p class="para">"Drive targeted, high-conversion ads effortlessly to boost
-        your business growth."</p>
+          your business growth."</p>
         <p class="para">"Viewers effortlessly browse ads, earn points, and convert them to money."</p>
       </div>
       <div class="footer-links">
@@ -317,7 +324,7 @@
         <a href="../html/homegetplans.html">Get Plans</a>
         <a href="../html/contact.html">Contact Us</a>
         <a href="../html/loginoption.html">Login</a>
-        
+
 
       </div>
       <div class="footer-links">
@@ -329,13 +336,13 @@
       <div class="footer-links">
         <p class="foot-head">Location</p>
         <p class="para">KIKICLICK ADS <br>
-                        c/o Wingherry Technologies PVT. LTD. <br>
-                        8-3-235/9, G-11, <br>
-                        Tirumala Residential Flats, <br>
-                        Near Yousufguda Check Post, <br>
-                        Hyderabad, 500045, <br>
-                        Phone: +91 4040174113 <br>
-                        Email: kikiclickads@gmail.com <br>
+          c/o Wingherry Technologies PVT. LTD. <br>
+          8-3-235/9, G-11, <br>
+          Tirumala Residential Flats, <br>
+          Near Yousufguda Check Post, <br>
+          Hyderabad, 500045, <br>
+          Phone: +91 4040174113 <br>
+          Email: kikiclickads@gmail.com <br>
         </p>
       </div>
       <div class="footer-links flex">
@@ -345,20 +352,23 @@
           <a href="https://x.com/kikiclickads"><i class="fa-brands fa-square-x-twitter"></i></a>
           <a href="https://www.instagram.com/kikiclickads/"><i class="fa-brands fa-square-instagram"></i></a>
           <a href="https://www.youtube.com/@Kikiclickads"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://api.whatsapp.com/send/?phone=919985752406&text=Hai+Madam%2FSir&type=phone_number&app_absent=0"><i class="fa-brands fa-square-whatsapp"></i></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=919985752406&text=Hai+Madam%2FSir&type=phone_number&app_absent=0"><i
+              class="fa-brands fa-square-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-links flex">
         <p class="foot-head">Get in Touch</p>
-        <p class="para"> Reach out to  us  for  personalized       support and expert assistance with  your needs
+        <p class="para"> Reach out to us for personalized support and expert assistance with your needs
         </p>
         <div class="send">
-           <p><input type="text" placeholder="enter your email" id="footer-email"><i class="fa-solid fa-arrow-right-long"></i></p>
-          
+          <p><input type="text" placeholder="enter your email" id="footer-email"><i
+              class="fa-solid fa-arrow-right-long"></i></p>
+
         </div>
       </div>
     </div>
-    
+
     <div class="footer-container2">
       <hr class="footer-hr">
       <p class="copy"> &#169; Wingherry Technology Pvt. Ltd.</p>
@@ -366,8 +376,9 @@
     </div>
 
   </footer>
-   <!-- footer -->
+  <!-- footer -->
   <script src="../js/profile.js"></script>
   <script src="../js/humberger.js"> </script>
 </body>
+
 </html>
