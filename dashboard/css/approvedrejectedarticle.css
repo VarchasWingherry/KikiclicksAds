@@ -17,6 +17,8 @@
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+
 }
 #artTable{
     font-size: 16px;
@@ -85,12 +87,15 @@
 /* Modal content */
 .art-modal-content {
     background-color: white;
-    margin: 2% auto;
     padding: 20px;
     width: 60%;
+    height: auto; /* Adjust height as needed */
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,9 +135,25 @@
 .art-close-btn:hover {
     background-color: darkred;
 }
-
+.header-part{
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.header-part .heading{
+    text-align: center;
+    padding-bottom: 10px;font-weight: 600;
+}
+.header-part .date-part{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.date-part{
+    font-weight: 500;
+}
 /* Content inside pop up */
-.approved-arts{
+.approved-articles{
     background-color: rgb(245, 245, 250);
     max-width: 550px;
     width: 100%;
@@ -148,7 +169,7 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.approved-arts img{
+.approved-articles img{
   max-width: 500px;
   width: 100%;
   border-radius: 6px;
@@ -173,6 +194,12 @@
     font-size: clamp(12px,3vw,14px);
     padding: 5px;
 }
+.part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+ }
 #app{
     color: green;
     padding: 5px;

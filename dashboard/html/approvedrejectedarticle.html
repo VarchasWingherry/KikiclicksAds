@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="../css/approvedrejectedarticle.css">
 
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	
 
 </head>
 <body>
@@ -48,17 +49,17 @@
 				</a>
 			</li>
             <li>
-				<a href="../html/approvedrejectedads.html">
-					<i class='bx bxs-videos'></i>
-					<span class="text">Approved/Rejected Ads</span>
-				</a>
-			</li>
+                <a href="../html/approvedrejectedads.html">
+                    <i class='bx bxs-landscape'></i>
+                    <span class="text">Approved/Rejected Ads</span>
+                </a>
+            </li>
             <li class="active">
-				<a href="../html/approvedrejectedarticle.html">
-					<i class='bx bxs-videos'></i>
-					<span class="text">Approved/Rejected Article</span>
-				</a>
-			</li>
+                <a href="../html/approvedrejectedarticle.html">
+                    <i class='bx bx-news'></i>
+                    <span class="text">Approved/Rejected Article</span>
+                </a>
+            </li>
 			<li>
 				<a href="../html/advertisement.html">
 					<i class='bx bxs-image'></i>
@@ -74,7 +75,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="#" id="logout-btn" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -84,7 +85,14 @@
 	</section>
 	<!-- SIDEBAR -->
 
-
+	<!-- ✅ Logout Confirmation Modal (ADDED) -->
+	<div id="log-modal-pop" class="log-modal-pop">
+		<div class="log-modal-content-pop">
+			<p>Are you sure you want to logout?</p>
+			<button id="log-confirmYes">Yes</button>
+			<button id="log-confirmNo">No</button>
+		</div>
+	</div>
 
 	<!-- CONTENT -->
 	<section id="content">
@@ -92,10 +100,10 @@
 		<nav>
 			<i class='bx bx-menu' ></i>
 			<form action="#">
-				<div class="form-input">
+				<!-- <div class="form-input">
 					<input type="search" placeholder="Search...">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
+				</div> -->
 			</form>
 			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
@@ -137,12 +145,12 @@
 								<td>Real Estate</td>
 								<td>Luxury Apartment Article</td>
 								<td>Image</td>
-								<td>2024-03-01</td>
-								<td>2024-04-01</td>
-								<td>2024-02-20</td>
+								<td>03-01-2024</td>
+								<td>03-02-2024</td>
+								<td>03-01-2024</td>
 								<td>John Doe</td>
 								<td class="status-approved"><button class="approved">Approved</button></td>
-								<td>2024-02-22</td>
+								<td>02-06-2024</td>
 								<td>Admin</td>
 							</tr>
 							<tr>
@@ -150,12 +158,113 @@
 								<td>Automobile</td>
 								<td>Car Sale Review</td>
 								<td>Video</td>
-								<td>2024-03-05</td>
-								<td>2024-04-05</td>
-								<td>2024-02-25</td>
+								<td>03-05-2024</td>
+								<td>03-06-2024</td>
+								<td>03-05-2024</td>
 								<td>Jane Smith</td>
 								<td class="status-rejected"><button class="rejected">Rejected</button></td>
-								<td>2024-02-28</td>
+								<td>28-02-2024</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART123</a></td>
+								<td>Real Estate</td>
+								<td>Luxury Apartment Article</td>
+								<td>Image</td>
+								<td>03-01-2024</td>
+								<td>03-02-2024</td>
+								<td>03-01-2024</td>
+								<td>John Doe</td>
+								<td class="status-approved"><button class="approved">Approved</button></td>
+								<td>02-06-2024</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART124</a></td>
+								<td>Automobile</td>
+								<td>Car Sale Review</td>
+								<td>Video</td>
+								<td>03-05-2024</td>
+								<td>03-06-2024</td>
+								<td>03-05-2024</td>
+								<td>Jane Smith</td>
+								<td class="status-rejected"><button class="rejected">Rejected</button></td>
+								<td>28-02-2024</td>
+								<td>Admin</td>
+							</tr><tr>
+								<td><a href="#">ART123</a></td>
+								<td>Real Estate</td>
+								<td>Luxury Apartment Article</td>
+								<td>Image</td>
+								<td>03-01-2024</td>
+								<td>03-02-2024</td>
+								<td>03-01-2024</td>
+								<td>John Doe</td>
+								<td class="status-approved"><button class="approved">Approved</button></td>
+								<td>02-06-2024</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART124</a></td>
+								<td>Automobile</td>
+								<td>Car Sale Review</td>
+								<td>Video</td>
+								<td>03-05-2024</td>
+								<td>03-06-2024</td>
+								<td>03-05-2024</td>
+								<td>Jane Smith</td>
+								<td class="status-rejected"><button class="rejected">Rejected</button></td>
+								<td>28-02-2024</td>
+								<td>Admin</td>
+							</tr><tr>
+								<td><a href="#">ART123</a></td>
+								<td>Real Estate</td>
+								<td>Luxury Apartment Article</td>
+								<td>Image</td>
+								<td>03-01-2024</td>
+								<td>03-02-2024</td>
+								<td>03-01-2024</td>
+								<td>John Doe</td>
+								<td class="status-approved"><button class="approved">Approved</button></td>
+								<td>02-06-2024</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART124</a></td>
+								<td>Automobile</td>
+								<td>Car Sale Review</td>
+								<td>Video</td>
+								<td>03-05-2024</td>
+								<td>03-06-2024</td>
+								<td>03-05-2024</td>
+								<td>Jane Smith</td>
+								<td class="status-rejected"><button class="rejected">Rejected</button></td>
+								<td>28-02-2024</td>
+								<td>Admin</td>
+							</tr><tr>
+								<td><a href="#">ART123</a></td>
+								<td>Real Estate</td>
+								<td>Luxury Apartment Article</td>
+								<td>Image</td>
+								<td>03-01-2024</td>
+								<td>03-02-2024</td>
+								<td>03-01-2024</td>
+								<td>John Doe</td>
+								<td class="status-approved"><button class="approved">Approved</button></td>
+								<td>02-06-2024</td>
+								<td>Admin</td>
+							</tr>
+							<tr>
+								<td><a href="#">ART124</a></td>
+								<td>Automobile</td>
+								<td>Car Sale Review</td>
+								<td>Video</td>
+								<td>03-05-2024</td>
+								<td>03-06-2024</td>
+								<td>03-05-2024</td>
+								<td>Jane Smith</td>
+								<td class="status-rejected"><button class="rejected">Rejected</button></td>
+								<td>28-02-2024</td>
 								<td>Admin</td>
 							</tr>
 						</tbody>
@@ -168,9 +277,16 @@
 				<div class="art-modal-content">
 					<span class="art-close">&times;</span>
 					<div class="art-content">
+						<div class="header-part">
+							<div class="heading">View Ad - AD1567</div>
+							<div class="date-part">
+								<div class="start-date">Start-Date <span class="date"> 03/03/2025</span></div>
+								<div class="end-date">End-Date<span class="date">03/04/2025</span></div>
+							</div>
+						</div>
 						<section class="approved-articles">
 							<h3>Wingherry Technologies</h3>
-							<video src="../../assets/viewarticles.mp4" controls></video>
+							<img src="../../assets/article.png" >
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea delectus alias explicabo
 								nisi dolor. In, pariatur nihil?</p>
 							<div class="part">

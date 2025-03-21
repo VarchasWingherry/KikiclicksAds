@@ -53,7 +53,9 @@
     text-decoration: none;
     cursor: pointer;
 }
-
+tr td {
+    border-bottom: 1px solid #7f8c8d3c;
+}
 tr td p{
     margin: 5px;
     padding: 2px 6px;
@@ -71,7 +73,19 @@ tr td .p2{
     border-radius: 6px;
     cursor: pointer;
 }
+.table-container {
+    margin: 30px 0; /* Adds space above and below the table */
+}
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px; /* Space between search/sort and table */
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 15px; /* Space between table and pagination */
+}
 .popup-content h2{
+    font-size: 20px;
+    padding-bottom: 10px;
     font-weight: 600;
 }
 .popup form {
@@ -153,6 +167,113 @@ input[type="submit"]:hover {
     }
     .form-content {
         flex: 1 1 100%; /* Make each item take full width on smaller screens */
+    }
+}
+/* Form Group */
+.updateForm-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Each Form Content */
+.updateForm-content {
+    flex: 1 1 calc(50% - 10px); /* Two items per row */
+}
+
+/* Labels */
+.updateForm-content label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.updateForm-content input,
+.updateForm-content select,
+.updateForm-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Submit & Cancel Buttons */
+#updateSubmittion-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#updateSubmittion-section input[type="submit"],
+#updateCancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#updateSubmittion-section input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+}
+
+#updateSubmittion-section input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#updateCancel {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#updateCancel:hover {
+    background-color: #c0392b;
+}
+
+/* Image Preview */
+#updateImagePreviewContainer {
+    position: relative;
+    margin-top: 10px;
+}
+
+#updateImagePreview {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+
+#updateRemoveImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#updateRemoveImage:hover {
+    background: darkred;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+    }
+
+    .updateForm-content {
+        flex: 1 1 100%; /* Full width on smaller screens */
     }
 }
 /* Update Popup */
@@ -274,7 +395,16 @@ input[type="submit"]:hover {
 
 }
 
-
+/* confirmation */
+.kikiOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    z-index: 999; /* Ensure it is below the modal but above other content */
+}
 .kikiNotification {
     position: fixed;
     top: 50%;
@@ -289,6 +419,7 @@ input[type="submit"]:hover {
     text-align: center;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    
   }
   
   .kikiNotificationContent {

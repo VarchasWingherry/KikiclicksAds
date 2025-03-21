@@ -47,7 +47,9 @@ body {
 }
 
 
-
+.bx-menu{
+	font-size: 24px;
+}
 
 
 /* SIDEBAR */
@@ -174,7 +176,56 @@ body {
 }
 
 
+/* logout code */
+.log-modal-pop {
+	display: none;
+	position: absolute;
+	z-index: 99999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	
+	background-color: rgba(0, 0, 0, 0.5);
+}
 
+.log-modal-content-pop {
+	background-color: white;
+	padding: 20px;
+	margin: 20% auto;
+	width: 300px;
+	text-align: center;
+	border-radius: 8px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.log-modal-content-pop p{
+	margin-bottom: 15px;
+}
+.log-modal-content-pop button {
+	margin: 5px;
+	padding: 8px 15px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#log-confirmYes {
+	background-color: #e74c3c; /* Red for logout */
+	color: white;
+}
+
+#log-confirmYes:hover {
+	background-color: #c0392b;
+}
+
+#log-confirmNo {
+	background-color: #95a5a6; /* Grey for cancel */
+	color: white;
+}
+
+#log-confirmNo:hover {
+	background-color: #7f8c8d;
+}
 
 /* NAVBAR */
 #content nav {
@@ -567,12 +618,12 @@ body {
 
 @media screen and (max-width: 768px) {
 	#sidebar {
-		width: 200px;
+		width: 260px;
 	}
 
 	#content {
 		width: calc(100% - 60px);
-		left: 200px;
+		left: 260px;
 	}
 
 	#content nav .nav-link {

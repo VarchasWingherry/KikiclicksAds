@@ -1,41 +1,57 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const table = document.getElementById('advertisementTable');
-    const modal = document.getElementById('kikiCustomConfirm');
-    const confirmBtn = document.getElementById('kikiConfirmDelete');
-    const cancelBtn = document.getElementById('kikiCancelDelete');
-    
-    let currentRow = null;
-
-    // Event delegation for delete buttons
-    table.addEventListener('click', (event) => {
-        if (event.target.classList.contains('delete')) {
-            currentRow = event.target.closest('tr'); 
-            modal.style.display = 'block';
-        }
+$(document).ready(function () {
+    // Initialize DataTable
+    const table = $('#advertisementTable').DataTable({
+        "paging": true,        
+        "searching": true,    
+        "ordering": true,     
+        "info": true,         
+        "autoWidth": false,    
+        "responsive": true    
     });
 
-    // Confirm delete action
+    const modal = document.getElementById('kikiCustomConfirm');
+    const overlay = document.getElementById('kikiOverlay');
+    const confirmBtn = document.getElementById('kikiConfirmDelete');
+    const cancelBtn = document.getElementById('kikiCancelDelete');
+
+    let currentRowIndex = null;
+
+    // Open confirmation modal on delete button click
+    $('#advertisementTable tbody').on('click', '.delete', function () {
+        currentRowIndex = table.row($(this).closest('tr')).index();
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+    });
+
+    // Confirm delete action (Handled by DataTables)
     confirmBtn.addEventListener('click', () => {
-        if (currentRow) {
-            currentRow.remove();
-            updateRowNumbers();
+        if (currentRowIndex !== null) {
+            table.row(currentRowIndex).remove().draw(false); 
+            updateSerialNumbers(); 
         }
-        modal.style.display = 'none';
+        closeModal();
     });
 
     // Cancel delete action
-    cancelBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-        currentRow = null;
-    });
+    cancelBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal); 
 
-    function updateRowNumbers() {
-        const rows = table.querySelectorAll('tbody tr');
-        rows.forEach((row, index) => {
-            row.querySelector('td:first-child').textContent = index + 1;
+    function closeModal() {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+        currentRowIndex = null;
+    }
+
+    // Update serial numbers after deletion
+    function updateSerialNumbers() {
+        $('#advertisementTable tbody tr').each(function (index) {
+            $(this).find('td:first').text(index + 1); 
         });
     }
 });
+
+
+
 
 
     // Handle Create Popup

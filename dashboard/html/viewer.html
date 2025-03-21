@@ -8,6 +8,13 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/viewer.css">
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+	<!-- jQuery and DataTables JS -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 	<title>Viewer</title>
 </head>
@@ -46,6 +53,18 @@
 				</a>
 			</li>
 			<li>
+                <a href="../html/approvedrejectedads.html">
+                    <i class='bx bxs-landscape'></i>
+                    <span class="text">Approved/Rejected Ads</span>
+                </a>
+            </li>
+            <li>
+                <a href="../html/approvedrejectedarticle.html">
+                    <i class='bx bx-news'></i>
+                    <span class="text">Approved/Rejected Article</span>
+                </a>
+            </li>
+			<li>
 				<a href="../html/advertisement.html">
 					<i class='bx bxs-image'></i>
 					<span class="text">Advertisement</span>
@@ -60,7 +79,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="#" id="logout-btn" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -70,7 +89,14 @@
 	</section>
 	<!-- SIDEBAR -->
 
-
+	<!-- ✅ Logout Confirmation Modal (ADDED) -->
+	<div id="log-modal-pop" class="log-modal-pop">
+		<div class="log-modal-content-pop">
+			<p>Are you sure you want to logout?</p>
+			<button id="log-confirmYes">Yes</button>
+			<button id="log-confirmNo">No</button>
+		</div>
+	</div>
 
 	<!-- CONTENT -->
 	<section id="content">
@@ -78,10 +104,10 @@
 		<nav>
 			<i class='bx bx-menu' ></i>
 			<form action="#">
-				<div class="form-input">
+				<!-- <div class="form-input">
 					<input type="search" placeholder="Search...">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
+				</div> -->
 			</form>
 			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
@@ -101,115 +127,117 @@
 				<div class="order">
 					<div class="head">
 						<h3>Ads Viewers</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
+						<!-- <i class='bx bx-search' ></i> -->
+						<!-- <i class='bx bx-filter' ></i> -->
 					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>User</th>
-                                <th>Viewed Ads</th>
-                                <th>Ads Pts</th>
-                                <th>Earned Pts</th>
-								<th>Refer</th>
-                                <th>Total Pts</th>
-                                <th>Amount</th>
-								<th>Bank Details</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Vijay</p>
-								</td>
-								<td>10</td>
-                                <td>200</td>
-                                <td>250</td>
-                                <td>2</td>
-                                <td>450</td>
-                                <td>₹100</td>
-								<td>
-									Account: 1234567890 <br>
-									IFSC: SBI0001234 <br>
-									Branch: SBI, Chennai <br>
-
-								</td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Sudheer</p>
-								</td>
-								<td>8</td>
-                                <td>300</td>
-                                <td>150</td>
-                                <td>1</td>
-                                <td>450</td>
-                                <td>₹100</td>
-								<td>
-									Account: 1234567890 <br>
-									IFSC: SBI0001234 <br>
-									Branch: SBI, Chennai <br>
-									
-								</td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Madhavi</p>
-								</td>
-								<td>15</td>
-                                <td>400</td>
-                                <td>150</td>
-                                <td>2</td>
-                                <td>550</td>
-                                <td>₹130</td>
-								<td>
-									Account: 1234567890 <br>
-									IFSC: SBI0001234 <br>
-									Branch: SBI, Chennai <br>
-									
-								</td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Tanushree</p>
-								</td>
-								<td>3</td>
-                                <td>100</td>
-                                <td>10</td>
-                                <td>0</td>
-                                <td>110</td>
-                                <td>₹31</td>
-								<td>
-									Account: 1234567890 <br>
-									IFSC: SBI0001234 <br>
-									Branch: SBI, Chennai <br>
-									
-								</td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Rajeshwari</p>
-								</td>
-								<td>13</td>
-                                <td>170</td>
-                                <td>30</td>
-                                <td>1</td>
-                                <td>300</td>
-                                <td>₹80</td>
-								<td>
-									Account: 1234567890 <br>
-									IFSC: SBI0001234 <br>
-									Branch: SBI, Chennai <br>
-									
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="table-container">
+						<table id="adsTable" class="display">
+							<thead>
+								<tr>
+									<th>User</th>
+									<th>Viewed Ads</th>
+									<th>Ads Pts</th>
+									<th>Earned Pts</th>
+									<th>Refer</th>
+									<th>Total Pts</th>
+									<th>Amount</th>
+									<th>Bank Details</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Vijay</p>
+									</td>
+									<td>10</td>
+									<td>200</td>
+									<td>250</td>
+									<td>2</td>
+									<td>450</td>
+									<td>₹100</td>
+									<td>
+										Account: 1234567890 <br>
+										IFSC: SBI0001234 <br>
+										Branch: SBI, Chennai <br>
+	
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Sudheer</p>
+									</td>
+									<td>8</td>
+									<td>300</td>
+									<td>150</td>
+									<td>1</td>
+									<td>450</td>
+									<td>₹100</td>
+									<td>
+										Account: 1234567890 <br>
+										IFSC: SBI0001234 <br>
+										Branch: SBI, Chennai <br>
+										
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Madhavi</p>
+									</td>
+									<td>15</td>
+									<td>400</td>
+									<td>150</td>
+									<td>2</td>
+									<td>550</td>
+									<td>₹130</td>
+									<td>
+										Account: 1234567890 <br>
+										IFSC: SBI0001234 <br>
+										Branch: SBI, Chennai <br>
+										
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Tanushree</p>
+									</td>
+									<td>3</td>
+									<td>100</td>
+									<td>10</td>
+									<td>0</td>
+									<td>110</td>
+									<td>₹31</td>
+									<td>
+										Account: 1234567890 <br>
+										IFSC: SBI0001234 <br>
+										Branch: SBI, Chennai <br>
+										
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Rajeshwari</p>
+									</td>
+									<td>13</td>
+									<td>170</td>
+									<td>30</td>
+									<td>1</td>
+									<td>300</td>
+									<td>₹80</td>
+									<td>
+										Account: 1234567890 <br>
+										IFSC: SBI0001234 <br>
+										Branch: SBI, Chennai <br>
+										
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -219,5 +247,6 @@
 	
 
 	<script src="../js/script.js"></script>
+	<script src="../js/viewer.js"></script>
 </body>
 </html>

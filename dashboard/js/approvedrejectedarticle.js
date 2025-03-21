@@ -1,15 +1,16 @@
 $(document).ready(function() {
-    $('#adsTable').DataTable({
-        "paging": true,   // Enable Pagination
-        "searching": true, // Enable Search
-        "ordering": true,  // Enable Sorting
-        "info": true,      // Show info like "Showing 1 to 10 of 50 entries"
-        "pageLength": 5,   // Records per page
+    $('#artTable').DataTable({
+        "paging": true,   
+        "searching": true, 
+        "ordering": true,  
+        "info": true,      
+        "pageLength": 5,   
         "columnDefs": [
-            { "orderable": false, "targets": [0, 2, 3] } // Disable sorting on AdCode, Title, Ad Type
+            { "orderable": false, "targets": [0, 2, 3] } // Disable sorting on specific columns
         ]
     });
 });
+
 
 // pop up
 document.addEventListener("DOMContentLoaded", function () {

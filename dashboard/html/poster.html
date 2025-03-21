@@ -8,6 +8,12 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="../css/style.css">
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+	<!-- jQuery and DataTables JS -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 	<title>Poster</title>
 </head>
@@ -46,6 +52,18 @@
 				</a>
 			</li>
 			<li>
+                <a href="../html/approvedrejectedads.html">
+                    <i class='bx bxs-landscape'></i>
+                    <span class="text">Approved/Rejected Ads</span>
+                </a>
+            </li>
+            <li>
+                <a href="../html/approvedrejectedarticle.html">
+                    <i class='bx bx-news'></i>
+                    <span class="text">Approved/Rejected Article</span>
+                </a>
+            </li>
+			<li>
 				<a href="../html/advertisement.html">
 					<i class='bx bxs-image'></i>
 					<span class="text">Advertisement</span>
@@ -60,7 +78,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="#" id="logout-btn" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -69,7 +87,14 @@
 	</section>
 	<!-- SIDEBAR -->
 
-
+	<!-- ✅ Logout Confirmation Modal (ADDED) -->
+	<div id="log-modal-pop" class="log-modal-pop">
+		<div class="log-modal-content-pop">
+			<p>Are you sure you want to logout?</p>
+			<button id="log-confirmYes">Yes</button>
+			<button id="log-confirmNo">No</button>
+		</div>
+	</div>
 
 	<!-- CONTENT -->
 	<section id="content">
@@ -77,10 +102,10 @@
 		<nav>
 			<i class='bx bx-menu' ></i>
 			<form action="#">
-				<div class="form-input">
+				<!-- <div class="form-input">
 					<input type="search" placeholder="Search...">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
+				</div> -->
 			</form>
 			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
@@ -101,124 +126,127 @@
 				<div class="order">
 					<div class="head">
 						<h3>Poster Ads</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
+						<!-- <i class='bx bx-search' ></i> -->
+						<!-- <i class='bx bx-filter' ></i> -->
 					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>User</th>
-                                <th>Plan</th>
-								<th>Mod of Payment</th>
-                                <th>No of Ads</th>
-                                <th>Status</th>
-                                <th>No of Articles</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Vijay</p>
-								</td>
-								<td>Hot Vacancy</td>
-								<td>UPI</td>
-								<td>8</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 4</span>
-                                    <span class="status pending">Not Approved : 3</span>
-                                    <span class="status process">Pending : 1</span>
-                                </td>
-								<td>2</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 4</span>
-                                    <span class="status pending">Not Approved : 3</span>
-                                    <span class="status process">Pending : 1</span>
-                                </td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Rajeshwari</p>
-								</td>
-								<td>Premium</td>
-								<td>Credit Card</td>
-								<td>6</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 5</span>
-                                    <span class="status pending">Not Approved : 1</span>
-                                    <span class="status process">Pending : 0</span>
-                                </td>
-								<td>1</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 0</span>
-                                    <span class="status pending">Not Approved : 1</span>
-                                    <span class="status process">Pending : 0</span>
-                                </td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Sudheer</p>
-								</td>
-								<td>Premium</td>
-								<td>UPI</td>
-								<td>8</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 4</span>
-                                    <span class="status pending">Not Approved : 4</span>
-                                    <span class="status process">Pending : 0</span>
-                                </td>
-								<td>0</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 0</span>
-                                    <span class="status pending">Not Approved : 0</span>
-                                    <span class="status process">Pending : 0</span>
-                                </td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Varchas</p>
-								</td>
-								<td>Gold</td>
-								<td>net-banking</td>
-								<td>10</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 8</span>
-                                    <span class="status pending">Not Approved : 0</span>
-                                    <span class="status process">Pending : 2</span>
-                                </td>
-								<td>2</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 4</span>
-                                    <span class="status pending">Not Approved : 3</span>
-                                    <span class="status process">Pending : 1</span>
-                                </td>
-							</tr>
-							<tr>
-								<td class="user">
-									<img src="../images/admin.jpg">
-									<p>Rohan</p>
-								</td>
-								<td>Limited</td>
-								<td>UPI</td>
-								<td>2</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 1</span>
-                                    <span class="status pending">Not Approved : 0</span>
-                                    <span class="status process">Pending : 1</span>
-                                </td>
-								<td>1</td>
-								<td class="status">
-                                    <span class="status completed">Approved : 1</span>
-                                    <span class="status pending">Not Approved : 0</span>
-                                    <span class="status process">Pending : 0</span>
-                                </td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="table-container">
+						<table id="adsTable" class="display">
+							<thead>
+								<tr>
+									<th>User</th>
+									<th>Plan</th>
+									<th>Mod of Payment</th>
+									<th>No of Ads</th>
+									<th>Ads Status</th>
+									<th>No of Articles</th>
+									<th>Article Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Vijay</p>
+									</td>
+									<td>Hot Vacancy</td>
+									<td>UPI</td>
+									<td>8</td>
+									<td class="status">
+										<span class="status completed">Approved : 4</span>
+										<span class="status pending">Not Approved : 3</span>
+										<span class="status process">Pending : 1</span>
+									</td>
+									<td>2</td>
+									<td class="status">
+										<span class="status completed">Approved : 4</span>
+										<span class="status pending">Not Approved : 3</span>
+										<span class="status process">Pending : 1</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Rajeshwari</p>
+									</td>
+									<td>Premium</td>
+									<td>Credit Card</td>
+									<td>6</td>
+									<td class="status">
+										<span class="status completed">Approved : 5</span>
+										<span class="status pending">Not Approved : 1</span>
+										<span class="status process">Pending : 0</span>
+									</td>
+									<td>1</td>
+									<td class="status">
+										<span class="status completed">Approved : 0</span>
+										<span class="status pending">Not Approved : 1</span>
+										<span class="status process">Pending : 0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Sudheer</p>
+									</td>
+									<td>Premium</td>
+									<td>UPI</td>
+									<td>8</td>
+									<td class="status">
+										<span class="status completed">Approved : 4</span>
+										<span class="status pending">Not Approved : 4</span>
+										<span class="status process">Pending : 0</span>
+									</td>
+									<td>0</td>
+									<td class="status">
+										<span class="status completed">Approved : 0</span>
+										<span class="status pending">Not Approved : 0</span>
+										<span class="status process">Pending : 0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Varchas</p>
+									</td>
+									<td>Gold</td>
+									<td>net-banking</td>
+									<td>10</td>
+									<td class="status">
+										<span class="status completed">Approved : 8</span>
+										<span class="status pending">Not Approved : 0</span>
+										<span class="status process">Pending : 2</span>
+									</td>
+									<td>2</td>
+									<td class="status">
+										<span class="status completed">Approved : 4</span>
+										<span class="status pending">Not Approved : 3</span>
+										<span class="status process">Pending : 1</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="user">
+										<img src="../images/admin.jpg">
+										<p>Rohan</p>
+									</td>
+									<td>Limited</td>
+									<td>UPI</td>
+									<td>2</td>
+									<td class="status">
+										<span class="status completed">Approved : 1</span>
+										<span class="status pending">Not Approved : 0</span>
+										<span class="status process">Pending : 1</span>
+									</td>
+									<td>1</td>
+									<td class="status">
+										<span class="status completed">Approved : 1</span>
+										<span class="status pending">Not Approved : 0</span>
+										<span class="status process">Pending : 0</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
 				</div>
 			</div>
 		</main>
@@ -228,5 +256,6 @@
 	
 
 	<script src="../js/script.js"></script>
+	<script src="../js/poster.js"></script>
 </body>
 </html>
