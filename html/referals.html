@@ -206,17 +206,41 @@
                         <p><i class="fa-solid fa-tags"></i> You get 20% for every friend that makes a 50% subscription</p>
                     </div>
                 </div>
-                <!-- <div class="textbox">
-                    <input type="text" placeholder="First Name" class="name"><br>
-                    <input type="text" placeholder="Email" class="email"><br>
-                   <div class="agree">
-                    <input type="checkbox" id="agree">
-                    <label for="agree">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                   </div>
-                </div> -->
+
+                <!-- Trigger Button -->
                 <div class="link">
-                    <p> Start Referring</p>
+                  <button type="button" id="referBtn" class="refer-button">Start Referring</button>
                 </div>
+
+                <!-- Popup Modal -->
+                <div id="popup" class="popup-overlay">
+                  <div class="popup-content">
+                    <span class="close-btn" id="closePopup">&times;</span>
+                    <h2>Refer a Friend</h2>
+                    <p>Enter your friend's email to send a referral link.</p>
+
+                    <div class="input-group">
+                      <input type="email" id="emailInput" placeholder="Enter email address" />
+                      <span class="error-msg" id="errorMsg">
+                        <svg width="16" height="16" fill="red" style="vertical-align: middle; margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zm0 18.3c-4.6 0-8.3-3.7-8.3-8.3S5.4 1.7 10 1.7s8.3 3.7 8.3 8.3-3.7 8.3-8.3 8.3zM9 5h2v6H9V5zm0 8h2v2H9v-2z"/>
+                        </svg>
+                        Please enter a valid email address.
+                      </span>
+                    </div>
+
+                    <button id="sendEmailBtn" class="send-button">Send Link</button>
+                  </div>
+                </div>
+                <!-- alert notification -->
+                <div id="kikiCustomNotification" class="kikiNotification" style="display: none;">
+                  <div class="kikiNotificationContent">
+                    <span id="kikiNotificationMessage">Please select a category before proceeding.</span>
+                    <button onclick="kikiCloseNotification()">OK</button>
+                  </div>
+                </div>
+                
+
             </div>   
             <div class="half">
                 <div class="part">
@@ -273,7 +297,6 @@
   </section>
   
     <!-- footer -->
-     <!-- footer -->
      <footer>
       <div class="footer-container">
         <div class="footer-logo"> <a href="../html/kikiclickadshome.html" class="main-logo footlog">KIKICLICK ADS</a> 
@@ -339,10 +362,9 @@
       </div>
 
     </footer>
-   <!-- footer -->
      <!-- footer -->
      <script src="../js/humberger.js"></script>
-
+      <script src="../js/share.js"></script>
          
 </body>
 </html>
